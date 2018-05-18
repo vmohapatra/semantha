@@ -6,6 +6,8 @@ https://spring.io/guides/gs/serving-web-content/
 
 Build steps :
 
-```cd semantha
+```
+cd semantha
 mvn clean install
-mvn tomcat7:run```
+mvn tomcat7:run
+```
