@@ -1,52 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb5b3db9-802f-49a3-a1c9-5c244a5917b8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finder.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finder.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/settingsContainer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/settingsContainer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/Bounds.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/Bounds.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/Item.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/Item.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/ItemService.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/ItemService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/ItemsRequests.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/ItemsRequests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/LatLong.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/LatLong.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/Provider.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/Provider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/build/header.txt" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/build/header.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/common/Events.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/common/Events.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/common/Utilities.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/common/Utilities.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/google/Content.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/google/Content.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/google/Map.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/google/Map.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/mapui.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/mapui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/Semantha.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/Semantha.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/app.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/collections/DetailsPane.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/collections/DetailsPane.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/collections/ResultList.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/collections/ResultList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/models/DetailsPaneItem.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/models/DetailsPaneItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/models/ResultListItem.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/models/ResultListItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/Capture.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/Capture.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/Gemma.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/Gemma.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/HotelBrief.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/HotelBrief.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/HotelSearch.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/HotelSearch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/Nautilus.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/Nautilus.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/PriceRange.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/PriceRange.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/Review.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/servicePlugins/Review.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/filterMenu.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/filterMenu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/handlebarsHelpers.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/handlebarsHelpers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/mapStyle.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/mapStyle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/marionetteOverrides.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/marionetteOverrides.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/Account.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/Account.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/Booking.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/Booking.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/DestinationFinder.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/DestinationFinder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/Hotel.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/Hotel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/Search.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/Search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/subviews/DetailsPaneView.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/subviews/DetailsPaneView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/subviews/ResultListView.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/subviews/ResultListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/semantha/custom-ie8.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/semantha/custom-ie8.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/semantha/custom-ie9.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/semantha/custom-ie9.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/semantha/custom-main.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/semantha/custom-main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/semantha/custom-responsive.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/semantha/custom-responsive.css" />
-    </list>
+    <list default="true" id="fb5b3db9-802f-49a3-a1c9-5c244a5917b8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/content/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -469,40 +424,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1372">
-              <caret line="1699" column="19" lean-forward="false" selection-start-line="1699" selection-start-column="19" selection-end-line="1699" selection-end-column="19" />
-              <folding>
-                <marker date="1526717037169" expanded="true" signature="102976:103018" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="102976:103035" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="102976:103053" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="102976:103066" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="102976:103081" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103116:106494" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103129:106479" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103183:103454" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103202:103439" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103235:103419" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103275:103385" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103296:103363" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103508:103908" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103527:103893" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103656:103873" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103696:103839" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103717:103817" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103958:104286" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="103977:104271" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="104073:104251" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="104113:104217" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="104134:104195" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="104337:104685" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="104356:104670" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="104472:104650" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="104512:104616" ph="..." />
-                <marker date="1526717037169" expanded="true" signature="104533:104594" ph="..." />
-              </folding>
+            <state relative-caret-position="-1950">
+              <caret line="472" column="0" lean-forward="false" selection-start-line="472" selection-start-column="0" selection-end-line="472" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -520,7 +447,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebMvcConfig.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WebMvcConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/semantha/config/WebMvcConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -543,26 +470,6 @@
     </option>
   </component>
   <component name="FindInProjectRecents">
-    <findStrings>
-      <find>spring-webmvc</find>
-      <find>setOrder</find>
-      <find>getContext</find>
-      <find>confirm</find>
-      <find>jst</find>
-      <find>&quot;&lt;c:url value=&quot;</find>
-      <find>&quot;&quot;</find>
-      <find>src=/resources</find>
-      <find>/resources/js</find>
-      <find>&quot;/&gt;</find>
-      <find>?v=${version}</find>
-      <find>lnk_logo</find>
-      <find>logo</find>
-      <find>settings</find>
-      <find>Map-F</find>
-      <find>div_map</find>
-      <find>sema</find>
-      <find>expedia</find>
-    </findStrings>
     <replaceStrings>
       <replace>aidep</replace>
     </replaceStrings>
@@ -616,8 +523,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/pages/settingsContainer.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/scripts/mapui.js" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finder.jsp" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -703,18 +610,6 @@
               <item name="sphinx" type="b2602c69:ProjectViewProjectNode" />
               <item name="sphinx" type="462c0819:PsiDirectoryNode" />
               <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sphinx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sphinx" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sphinx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sphinx" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-              <item name="libraries" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sphinx" type="b2602c69:ProjectViewProjectNode" />
@@ -960,12 +855,12 @@
       <workItem from="1526667709532" duration="22706000" />
       <workItem from="1526716049116" duration="281000" />
       <workItem from="1526716345305" duration="8000" />
-      <workItem from="1526716369939" duration="740000" />
+      <workItem from="1526716369939" duration="880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23735000" />
+    <option name="totallyTimeSpent" value="23875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="97" y="23" width="1343" height="740" extended-state="0" />
@@ -1625,42 +1520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1372">
-          <caret line="1699" column="19" lean-forward="false" selection-start-line="1699" selection-start-column="19" selection-end-line="1699" selection-end-column="19" />
-          <folding>
-            <marker date="1526717037169" expanded="true" signature="102976:103018" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="102976:103035" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="102976:103053" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="102976:103066" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="102976:103081" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103116:106494" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103129:106479" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103183:103454" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103202:103439" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103235:103419" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103275:103385" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103296:103363" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103508:103908" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103527:103893" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103656:103873" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103696:103839" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103717:103817" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103958:104286" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="103977:104271" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="104073:104251" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="104113:104217" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="104134:104195" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="104337:104685" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="104356:104670" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="104472:104650" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="104512:104616" ph="..." />
-            <marker date="1526717037169" expanded="true" signature="104533:104594" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finder.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -1679,6 +1538,14 @@
           <folding>
             <element signature="e#840#878#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1950">
+          <caret line="472" column="0" lean-forward="false" selection-start-line="472" selection-start-column="0" selection-end-line="472" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
