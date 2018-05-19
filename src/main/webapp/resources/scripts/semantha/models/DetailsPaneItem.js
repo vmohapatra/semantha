@@ -1,5 +1,5 @@
 /**
- * @Author  <mailto:vmohapatra@expedia.com>Vijayalaxmi Mohapatra</mailto>
+ * @Author  <mailto:vmohapatra@aidep.com>Vijayalaxmi Mohapatra</mailto>
  */
 
 /**
@@ -10,7 +10,7 @@ App.Models.DetailsPaneItem = Backbone.Model.extend({
   defaults: {
     currentHotelId: null, //Current Hotel EAN ID for hotel
     currentHotelName: '', //Name to be displayed
-    currentHotelExpediaId: null, //Expedia ID of a given hotel
+    currentHotelaidepId: null, //aidep ID of a given hotel
     currentHotelImage: '', //Travelnow hotel image
     currentHotelFullPrice: 0, //Numerical Full price for a hotel for dated search
     currentHotelDiscountPrice: 0,//Numerical Discount price for a hotel for dated search

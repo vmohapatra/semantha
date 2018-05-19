@@ -1,20 +1,20 @@
-var Util=expedia.dmap.common.Utilities,
-	Map=expedia.dmap.google.Map,//import
-	Events=expedia.dmap.common.Events,
+var Util=aidep.dmap.common.Utilities,
+	Map=aidep.dmap.google.Map,//import
+	Events=aidep.dmap.common.Events,
 	CONTENT_EVENT_NAMES=[],
 	CONTENT_EVENT_HANDLERS={},
 	Content,
 	tracker={};
-Util.namespace("expedia.dmap.google");
+Util.namespace("aidep.dmap.google");
 
 /**
  * @namespace Content
  * @description Content is a container for map markers and info boxes to be added to a Map.  Content interacts with the Map, so if the Map is not yet initialized (still loading google.maps), some getters of Content may not be available.  All setters will delay their action until the Map is available.
- * @param {expedia.dmap.google.Map} map map to display in.
- * @param {expedia.dmap.LatLong} position position to center the Content
- * @param {expedia.dmap.google.Content.Configuration} opts the properties to apply this content.  Accepts associative-array instead of {expedia.dmap.google.Content.Configuration}
+ * @param {aidep.dmap.google.Map} map map to display in.
+ * @param {aidep.dmap.LatLong} position position to center the Content
+ * @param {aidep.dmap.google.Content.Configuration} opts the properties to apply this content.  Accepts associative-array instead of {aidep.dmap.google.Content.Configuration}
  */
-expedia.dmap.google.Content = function(map, position, opts) {
+aidep.dmap.google.Content = function(map, position, opts) {
 	this.events=new Events(this, CONTENT_EVENT_NAMES, CONTENT_EVENT_HANDLERS);
 	this.map=map;
 	this.position=position;
@@ -38,11 +38,11 @@ expedia.dmap.google.Content = function(map, position, opts) {
 		}
 	}
 };
-Content=expedia.dmap.google.Content;//shorthand
+Content=aidep.dmap.google.Content;//shorthand
 
 
 /**
- * @namespace Configuration properties for expedia.dmap.google.Map constructor.
+ * @namespace Configuration properties for aidep.dmap.google.Map constructor.
  * 
  * @property {Object} alignment x and y alignment, where the value of x and y are which direction should the position/latlong be from closest edge of the Content x:'left'|'center'|'right' y:'top','center','bottom'. Default is {x:'right',y:'bottom'}.  Default is best performance.  If you know the height and width of the content area, it is best to use CSS class with position:absolute, top, left to control position.
  * @property {String} className css class names to apply to the div.  Note that you can also apply the classes directly to the node(s) in content.  Optional
@@ -50,12 +50,12 @@ Content=expedia.dmap.google.Content;//shorthand
  * @property {Object} events Associative Array of Event name to event function.  This allows early registration of the events before content is available on the page.
  * @property {String} id html id to assign to the Element.  Optional
  * @property {Object} offset x and y offset (in pixels) to move the closest corner from the anchor Item or LatLong 
- * @property {expedia.dmap.google.Content.Configuration} shadow.  The configuration to be used as shadow of this Content.  Shadow's are in effect a second Content that is automatically generated relative to this Content.  All properties except id and content will inherit from this Configuration if not set.
+ * @property {aidep.dmap.google.Content.Configuration} shadow.  The configuration to be used as shadow of this Content.  Shadow's are in effect a second Content that is automatically generated relative to this Content.  All properties except id and content will inherit from this Configuration if not set.
  * @property {Object} style style to apply to the div. It is recommended to use className instead to centrally manage all the display properties via css.  Optional
  * 
  * @param {Object} opts initial configuration
  */
-expedia.dmap.google.Content.Configuration=function(opts) {
+aidep.dmap.google.Content.Configuration=function(opts) {
 	opts=opts||{};
 	this.alignment=opts.alignment;
 	this.className=opts.className;
@@ -70,70 +70,70 @@ expedia.dmap.google.Content.Configuration=function(opts) {
 /**
  * Align the content so that it is centered on the position.  Applies to the x or y alignment.  offset ignored in the centered direction.
  * 
- * new expedia.dmap.google.Content({...,align:{x:{'center'},y:'center'}});
+ * new aidep.dmap.google.Content({...,align:{x:{'center'},y:'center'}});
  */
-expedia.dmap.google.Content.ALIGN_CENTER='center';
+aidep.dmap.google.Content.ALIGN_CENTER='center';
 
 /**
  * Align the content so that the bottom edge is facing the position.  Applies to the y alignment.  offset.y moves the content up the page.
  * 
- * new expedia.dmap.google.Content({...,align:{x:...,y:'top'}});
+ * new aidep.dmap.google.Content({...,align:{x:...,y:'top'}});
  */
-expedia.dmap.google.Content.ALIGN_TOP='top';
+aidep.dmap.google.Content.ALIGN_TOP='top';
 
 /**
  * Align the content so that the bottom edge is facing the position.  Applies to the y alignment.  offset.y moves the content down the page.
  * 
- * new expedia.dmap.google.Content({...,align:{x:{'center'},y:'center'}});
+ * new aidep.dmap.google.Content({...,align:{x:{'center'},y:'center'}});
  */
-expedia.dmap.google.Content.ALIGN_BOTTOM='bottom';
+aidep.dmap.google.Content.ALIGN_BOTTOM='bottom';
 
 /**
  * Align the content so that the left edge is facing the position.  Applies to the x alignment.  offset.x moves the content to the right.
  * 
- * new expedia.dmap.google.Content({...,align:{x:{'right'},y:...}});
+ * new aidep.dmap.google.Content({...,align:{x:{'right'},y:...}});
  */
-expedia.dmap.google.Content.ALIGN_RIGHT='right';
+aidep.dmap.google.Content.ALIGN_RIGHT='right';
 
 /**
  * Align the content so that the right edge is facing the position.  Applies to the x alignment.  offset.x moves the content to the left.
  * 
- * new expedia.dmap.google.Content({...,align:{x:{'left'},y:...}});
+ * new aidep.dmap.google.Content({...,align:{x:{'left'},y:...}});
  */
-expedia.dmap.google.Content.ALIGN_LEFT='left';
+aidep.dmap.google.Content.ALIGN_LEFT='left';
 
 /**
  * @event
  * @description fired when a Content is removed from the map by #remove
  */
-expedia.dmap.google.Content.EVENT_REMOVED='removed';
-CONTENT_EVENT_NAMES.push(expedia.dmap.google.Content.EVENT_REMOVED);
+aidep.dmap.google.Content.EVENT_REMOVED='removed';
+CONTENT_EVENT_NAMES.push(aidep.dmap.google.Content.EVENT_REMOVED);
 
 /**
  * @event
  * @description fired when a Content #setOptions is called
- * @param {expedia.dmap.google.Content.Configuration} optsOld old configuration
+ * @param {aidep.dmap.google.Content.Configuration} optsOld old configuration
  * @param {Object} optsNew changing configuration as passed to #setOptions
  */
-expedia.dmap.google.Content.EVENT_CONTENT_CHANGED='content_changed';
-CONTENT_EVENT_NAMES.push(expedia.dmap.google.Content.EVENT_CONTENT_CHANGED);
+aidep.dmap.google.Content.EVENT_CONTENT_CHANGED='content_changed';
+CONTENT_EVENT_NAMES.push(aidep.dmap.google.Content.EVENT_CONTENT_CHANGED);
 
 /**
  * @event
  * @description fired when a Content #setPosition is called
- * @param {expedia.dmap.LatLong} position
+ * @param {aidep.dmap.LatLong} position
  * @param {Object} optsNew changing configuration as passed to #setOptions
  */
-expedia.dmap.google.Content.EVENT_POSITION_CHANGED='position_changed';
-CONTENT_EVENT_NAMES.push(expedia.dmap.google.Content.EVENT_POSITION_CHANGED);
+aidep.dmap.google.Content.EVENT_POSITION_CHANGED='position_changed';
+CONTENT_EVENT_NAMES.push(aidep.dmap.google.Content.EVENT_POSITION_CHANGED);
 
 /**
  * @event
  * @description fired when mouse is clicked within the content
  * @param {MouseEvent} Mouse event
  */
-expedia.dmap.google.Content.EVENT_MOUSE_CLICK='click';
-CONTENT_EVENT_NAMES.push(expedia.dmap.google.Content.EVENT_MOUSE_CLICK);
+aidep.dmap.google.Content.EVENT_MOUSE_CLICK='click';
+CONTENT_EVENT_NAMES.push(aidep.dmap.google.Content.EVENT_MOUSE_CLICK);
 
 
 /**
@@ -141,16 +141,16 @@ CONTENT_EVENT_NAMES.push(expedia.dmap.google.Content.EVENT_MOUSE_CLICK);
  * @description fired when mouse enters the content
  * @param {MouseEvent} Mouse event
  */
-expedia.dmap.google.Content.EVENT_MOUSE_ENTER='mouse_enter';
-CONTENT_EVENT_NAMES.push(expedia.dmap.google.Content.EVENT_MOUSE_ENTER);
+aidep.dmap.google.Content.EVENT_MOUSE_ENTER='mouse_enter';
+CONTENT_EVENT_NAMES.push(aidep.dmap.google.Content.EVENT_MOUSE_ENTER);
 
 /**
  * @event
  * @description fired when mouse exits the content
  * @param {MouseEvent} Mouse event
  */
-expedia.dmap.google.Content.EVENT_MOUSE_EXIT='mouse_exit';
-CONTENT_EVENT_NAMES.push(expedia.dmap.google.Content.EVENT_MOUSE_EXIT);
+aidep.dmap.google.Content.EVENT_MOUSE_EXIT='mouse_exit';
+CONTENT_EVENT_NAMES.push(aidep.dmap.google.Content.EVENT_MOUSE_EXIT);
 
 function createMouseHandler(evte, evtd) {
 	CONTENT_EVENT_HANDLERS[evte]=function() {
@@ -172,20 +172,20 @@ function createMouseHandler(evte, evtd) {
 	};
 };
 
-createMouseHandler(expedia.dmap.google.Content.EVENT_MOUSE_CLICK, 'click');
-createMouseHandler(expedia.dmap.google.Content.EVENT_MOUSE_ENTER, 'mouseover');
-createMouseHandler(expedia.dmap.google.Content.EVENT_MOUSE_EXIT, 'mouseout');
+createMouseHandler(aidep.dmap.google.Content.EVENT_MOUSE_CLICK, 'click');
+createMouseHandler(aidep.dmap.google.Content.EVENT_MOUSE_ENTER, 'mouseover');
+createMouseHandler(aidep.dmap.google.Content.EVENT_MOUSE_EXIT, 'mouseout');
 
 /**
  * This is a static helper method to register listeners that add Content (marker or InfoBox) to the map.  Automatically adds #trackItemsRemove.
  * @static
- * @param {expedia.dmap.ItemService} svc the ItemService that is handling items
- * @param {expedia.dmap.google.Content.Configuration} opts configuration for each Content
- * @param {Function} transform optional function to transform the content for the item being shown.  function({expedia.dmap.google.Map} map, {expedia.dmap.Item} item, {expedia.dmap.google.Content} content)
+ * @param {aidep.dmap.ItemService} svc the ItemService that is handling items
+ * @param {aidep.dmap.google.Content.Configuration} opts configuration for each Content
+ * @param {Function} transform optional function to transform the content for the item being shown.  function({aidep.dmap.google.Map} map, {aidep.dmap.Item} item, {aidep.dmap.google.Content} content)
  */
-expedia.dmap.google.Content.trackItems=function(svc, opts, transform){
+aidep.dmap.google.Content.trackItems=function(svc, opts, transform){
 	var map=svc.getMap();
-	svc.addEventListener(expedia.dmap.ItemService.EVENT_ITEM_DATA_UPDATED, function(items) {
+	svc.addEventListener(aidep.dmap.ItemService.EVENT_ITEM_DATA_UPDATED, function(items) {
 		for(var idx in items) {
 			var item=items[idx],
 				key=item.getType()+"."+item.getId(),
@@ -204,7 +204,7 @@ expedia.dmap.google.Content.trackItems=function(svc, opts, transform){
 			}
 		} 
 	});
-	svc.addEventListener(expedia.dmap.ItemService.EVENT_ITEM_REMOVED, function(items) {
+	svc.addEventListener(aidep.dmap.ItemService.EVENT_ITEM_REMOVED, function(items) {
 		for(var idx in items) {
 			var item=items[idx],
 				key=item.getType()+"."+item.getId(),
@@ -221,11 +221,11 @@ expedia.dmap.google.Content.trackItems=function(svc, opts, transform){
  * Static helper transform function for #trackItems to layer the items on the map by setting the z-index based on the Latitude
  * 
  * @static
- * @param {expedia.dmap.Map} map
- * @param {expedia.dmap.Item} item
- * @param {expedia.dmap.google.Content} content
+ * @param {aidep.dmap.Map} map
+ * @param {aidep.dmap.Item} item
+ * @param {aidep.dmap.google.Content} content
  */
-expedia.dmap.google.Content.transformLayerZIndex=function(map,item,content) {
+aidep.dmap.google.Content.transformLayerZIndex=function(map,item,content) {
 	var z=90-item.getLatLong().getLat();
 	z*=500000;
 	content.setOptions({style:{zIndex: z.toFixed(0) }});
@@ -236,7 +236,7 @@ expedia.dmap.google.Content.transformLayerZIndex=function(map,item,content) {
  * @param {String} evt event to listen for
  * @param {Function} listener function to invoke when the event happens
  */
-expedia.dmap.google.Content.prototype.addEventListener=function(evt,listener) {
+aidep.dmap.google.Content.prototype.addEventListener=function(evt,listener) {
 	this.events.addEventListener(evt,listener);
 };
 
@@ -248,16 +248,16 @@ expedia.dmap.google.Content.prototype.addEventListener=function(evt,listener) {
  * @param {Function} listener function to invoke when the event happens
  * @return true if the listener was successfully removed
  */
-expedia.dmap.google.Content.prototype.removeEventListener=function(evt,listener){
+aidep.dmap.google.Content.prototype.removeEventListener=function(evt,listener){
 	return this.events.removeEventListener(evt,listener);
 };
 
 /**
  * Set the current options.  This supports a partial update.  Any keys not mentioned in opts are not updated.  Changes to 'events' is ignored on an update.  If you need to update the events, use #addEventListener and #removeEventListener instead
  * 
- * @param {expedia.dmap.google.Content.Configuration} opts
+ * @param {aidep.dmap.google.Content.Configuration} opts
  */
-expedia.dmap.google.Content.prototype.setOptions=function(opts) {
+aidep.dmap.google.Content.prototype.setOptions=function(opts) {
 	var content=this,
 		optsOld = content.opts,
 		optsNew = {};
@@ -274,9 +274,9 @@ expedia.dmap.google.Content.prototype.setOptions=function(opts) {
 
 /**
  * Get the current options (or null if content is not yet finished initializing)
- * @return {expedia.dmap.google.Content.Configuration}
+ * @return {aidep.dmap.google.Content.Configuration}
  */
-expedia.dmap.google.Content.prototype.getOptions=function() {
+aidep.dmap.google.Content.prototype.getOptions=function() {
 	return this.opts;
 };
 
@@ -285,7 +285,7 @@ expedia.dmap.google.Content.prototype.getOptions=function() {
  * 
  * @param position
  */
-expedia.dmap.google.Content.prototype.setPosition=function(position) {
+aidep.dmap.google.Content.prototype.setPosition=function(position) {
 	var content=this;
 	content.position=position;
 	content.map.addEventListener(Map.EVENT_MAP_PROVIDER_LOADED, function() {
@@ -298,25 +298,25 @@ expedia.dmap.google.Content.prototype.setPosition=function(position) {
 
 /**
  * Get the current position (or null if the content hasn't finished initializing)
- * @returns {expedia.dmap.LatLong} position
+ * @returns {aidep.dmap.LatLong} position
  */
-expedia.dmap.google.Content.prototype.getPosition=function() {
+aidep.dmap.google.Content.prototype.getPosition=function() {
 	return this.position;
 };
 
 /**
  * Get the item associated with this Content
- * @returns {expedia.dmap.Item}
+ * @returns {aidep.dmap.Item}
  */
-expedia.dmap.google.Content.prototype.getItem=function() {
+aidep.dmap.google.Content.prototype.getItem=function() {
 	return this.item;
 };
 
 /**
  * Set the Item related to this Content
- * @param {expedia.dmap.Item} item
+ * @param {aidep.dmap.Item} item
  */
-expedia.dmap.google.Content.prototype.setItem=function(item) {
+aidep.dmap.google.Content.prototype.setItem=function(item) {
 	this.item=item;
 };
 
@@ -324,7 +324,7 @@ expedia.dmap.google.Content.prototype.setItem=function(item) {
 /**
  * Remove the Content from the map.
  */
-expedia.dmap.google.Content.prototype.remove=function() {
+aidep.dmap.google.Content.prototype.remove=function() {
 	var content=this;
 	content.map.addEventListener(Map.EVENT_MAP_PROVIDER_LOADED, function() {
 		content.impl.setMap(null);
@@ -337,10 +337,10 @@ expedia.dmap.google.Content.prototype.remove=function() {
 /**
  * Internal implementation of the Content to keep the external representation free of any google apis.
  * 
- * @param {expedia.dmap.google.Map} map
- * @param {expedia.dmap.LatLong} position
- * @param {expedia.dmap.common.Events} events the events to notify onAdd and onRemove 
- * @param {expedia.dmap.google.Content.Configuration} opts
+ * @param {aidep.dmap.google.Map} map
+ * @param {aidep.dmap.LatLong} position
+ * @param {aidep.dmap.common.Events} events the events to notify onAdd and onRemove 
+ * @param {aidep.dmap.google.Content.Configuration} opts
  */
 function GoogleContent (map, position, events, opts)
 {

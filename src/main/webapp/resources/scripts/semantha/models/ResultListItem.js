@@ -1,5 +1,5 @@
 /**
- * @Author  <mailto:smyrick@expedia.com>Shane Myrick</mailto>
+ * @Author  <mailto:smyrick@aidep.com>Shane Myrick</mailto>
  */
 
 /**
@@ -10,10 +10,10 @@ App.Models.ResultListItem = Backbone.Model.extend({
 
   defaults: {
     itemType: '', //cluster or hotel
-    itemId: null, // Expedia id, duplicated as we moved off of DMaps and on to Nautilus
+    itemId: null, // aidep id, duplicated as we moved off of DMaps and on to Nautilus
     itemName: '', //Name to be displayed
     itemShortName: '', //Short name for hotel clusters
-    itemExpediaId: null, //Expedia ID of a given hotel. null for clusters
+    itemaidepId: null, //aidep ID of a given hotel. null for clusters
     itemMapContent: null, //DMAP content. Includes lat longs for both clusters and hotels
     itemImage: '', //Travelnow hotel image
     itemSize: 0, //Number of hotels for a cluster

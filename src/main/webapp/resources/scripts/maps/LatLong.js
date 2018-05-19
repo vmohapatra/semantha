@@ -1,6 +1,6 @@
-var Util=expedia.dmap.common.Utilities,
+var Util=aidep.dmap.common.Utilities,
 	toDeg=180/Math.PI;
-Util.namespace("expedia.dmap");
+Util.namespace("aidep.dmap");
 
 /**
  * @public
@@ -8,9 +8,9 @@ Util.namespace("expedia.dmap");
  * @param {Number} lat latitude
  * @param {Number} lng longitude
  * 
- * @Author  <mailto:svenz@expedia.com>Sven Zethelius</mailto>
+ * @Author  <mailto:svenz@aidep.com>Sven Zethelius</mailto>
  */
-expedia.dmap.LatLong=function(lat,lng){
+aidep.dmap.LatLong=function(lat,lng){
 	if(lat==undefined||lng==undefined||lat>90.0||lat<-90.0)
 		throw new Error("LatLong must define both lat and long");
 	// normalize longitude
@@ -27,7 +27,7 @@ expedia.dmap.LatLong=function(lat,lng){
  * @public
  * @returns {Number} the latitude
  */
-expedia.dmap.LatLong.prototype.getLat=function() {
+aidep.dmap.LatLong.prototype.getLat=function() {
 	return this.lat;
 };
 
@@ -35,7 +35,7 @@ expedia.dmap.LatLong.prototype.getLat=function() {
  * @public
  * @returns {Number} the longitude
  */
-expedia.dmap.LatLong.prototype.getLong=function() {
+aidep.dmap.LatLong.prototype.getLong=function() {
 	return this.lng;
 };
 
@@ -45,9 +45,9 @@ expedia.dmap.LatLong.prototype.getLong=function() {
  * @param heightpx height in pixels
  * @param widthpx width in pixels
  * @param zoom zoom level
- * @returns {expedia.dmap.Bounds}
+ * @returns {aidep.dmap.Bounds}
  */
-expedia.dmap.LatLong.prototype.getBoundsFromDisplayable=function(heightpx,widthpx,zoom) {
+aidep.dmap.LatLong.prototype.getBoundsFromDisplayable=function(heightpx,widthpx,zoom) {
 	var mapSize = 128 << zoom,
 	// compute center as point in overall map.
 		xCenter = getPixelX(this.getLong(), mapSize),
@@ -58,12 +58,12 @@ expedia.dmap.LatLong.prototype.getBoundsFromDisplayable=function(heightpx,widthp
 		lngE = getLngFromPixelX(xCenter + widthpx / 2, mapSize),
 		latS = getLatFromPixelY(yCenter + heightpx / 2, mapSize),
 		lngW = getLngFromPixelX(xCenter - widthpx / 2, mapSize);
-	return new expedia.dmap.Bounds(
-				new expedia.dmap.LatLong(latN, lngE), 
-				new expedia.dmap.LatLong(latS, lngW));
+	return new aidep.dmap.Bounds(
+				new aidep.dmap.LatLong(latN, lngE), 
+				new aidep.dmap.LatLong(latS, lngW));
 };
 
-expedia.dmap.LatLong.prototype.toString=function() {
+aidep.dmap.LatLong.prototype.toString=function() {
 	return this.getLat()+','+this.getLong();
 };
 

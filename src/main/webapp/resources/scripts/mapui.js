@@ -24,7 +24,7 @@ var isCtrl = false;
 var isAlt = false;
 var priceMarkerNum = 10;
 var requestTime=0;
-var nlpSortOrder = 'EXPEDIA_PICKS';
+var nlpSortOrder = 'aidep_PICKS';
 var nlpHotelName = '';
 var nlpHotelIds = [];
 var nlpHotelNames = [];
@@ -286,9 +286,9 @@ function initMap()
 		zoom = 14;
 	}
 
-	map = new expedia.dmap.google.Map(document.getElementById('GoogleMap'), {
+	map = new aidep.dmap.google.Map(document.getElementById('GoogleMap'), {
 		zoom: zoom,
-		center: new expedia.dmap.LatLong( lat, lng ),
+		center: new aidep.dmap.LatLong( lat, lng ),
 		zoomMax:19,
 		zoomMin:2
 	});
@@ -315,7 +315,7 @@ function initMap()
 		mapLoaded();
 	});
 
-	map.events.addEventListener(expedia.dmap.Map.EVENT_CLICK, function (event) {
+	map.events.addEventListener(aidep.dmap.Map.EVENT_CLICK, function (event) {
 		deactive_tiptip();
 		var target;
 		if (typeof event.target == 'undefined')
@@ -333,10 +333,10 @@ function initMap()
 		}
 	});
 
-	map.events.addEventListener(expedia.dmap.Map.EVENT_DOUBLE_CLICK, removeClickBubble);
-	map.events.addEventListener(expedia.dmap.Map.EVENT_DOUBLE_CLICK, deactive_tiptip);
+	map.events.addEventListener(aidep.dmap.Map.EVENT_DOUBLE_CLICK, removeClickBubble);
+	map.events.addEventListener(aidep.dmap.Map.EVENT_DOUBLE_CLICK, deactive_tiptip);
 
-	map.events.addEventListener(expedia.dmap.Map.EVENT_CENTER_CHANGED, function(){
+	map.events.addEventListener(aidep.dmap.Map.EVENT_CENTER_CHANGED, function(){
 		updateMapConfig();
 
 		removeClickBubble();
@@ -351,7 +351,7 @@ function initMap()
 		mapViewChangedCount++;
 	});
 
-	map.events.addEventListener(expedia.dmap.Map.EVENT_ZOOM_CHANGED, function () {
+	map.events.addEventListener(aidep.dmap.Map.EVENT_ZOOM_CHANGED, function () {
 		if (hoverBox)
 		{
 			hoverBox.setOptions({content: ""});
@@ -405,7 +405,7 @@ function initMap()
 		events: {
 			'click': function (event) {
 
-				map.events.removeEventListener(expedia.dmap.Map.EVENT_CLICK, removeClickBubble);
+				map.events.removeEventListener(aidep.dmap.Map.EVENT_CLICK, removeClickBubble);
 				event = event ? event : window.event;
 				var target;
 				if (typeof event.target == 'undefined') {
@@ -474,7 +474,7 @@ function initMap()
 			'mouse_enter': function (event) {
 
 				// set the position for the hoverBox
-				map.events.removeEventListener(expedia.dmap.Map.EVENT_CLICK, removeClickBubble);
+				map.events.removeEventListener(aidep.dmap.Map.EVENT_CLICK, removeClickBubble);
 
 				var item = this.getItem(),
 				data = item.getData(),
@@ -627,7 +627,7 @@ function initMap()
 				}
 				hoverBox.setOptions({content: ""});
 
-				map.events.addEventListener(expedia.dmap.Map.EVENT_CLICK, removeClickBubble);
+				map.events.addEventListener(aidep.dmap.Map.EVENT_CLICK, removeClickBubble);
 			}
 		}
 	},
@@ -1484,7 +1484,7 @@ function fitBounds(hotelids)
 			url: hotelLocatorURL,
 			success: function (data){
 				if(data && data.Latitude && data.Longitude){
-					latlongs.push(new expedia.dmap.LatLong(data.Latitude, data.Longitude));
+					latlongs.push(new aidep.dmap.LatLong(data.Latitude, data.Longitude));
 				}},
 			error: function(data){
 				// do nothing
@@ -1497,7 +1497,7 @@ function fitBounds(hotelids)
 		//Also reset nlpHotelIds to not send them as filters in the dmaps call
 		nlpHotelIds = [];
 		nlpHotelNames = [];
-		//var center=new expedia.dmap.LatLong(34.099406047644386,-93.23253935761407);
+		//var center=new aidep.dmap.LatLong(34.099406047644386,-93.23253935761407);
 		//map.setCenter(center);
 		//map.setZoom(5);
 		centerToUS();
@@ -1505,13 +1505,13 @@ function fitBounds(hotelids)
 	else if(latlongs.length == 1)
 	{
 		// If there is only one lat long to fit, use it as center with a fixed zoom level to avoid streel level zoom.
-		var center=new expedia.dmap.LatLong(latlongs[0].getLat(),latlongs[0].getLong());
+		var center=new aidep.dmap.LatLong(latlongs[0].getLat(),latlongs[0].getLong());
 		map.setCenter(center);
 		map.setZoom(15);
 	}
 	else
 	{
-		var bounds = expedia.dmap.Bounds.fromLatLongs(latlongs);
+		var bounds = aidep.dmap.Bounds.fromLatLongs(latlongs);
 		map.fitBounds(bounds);
 	}
 
@@ -1519,7 +1519,7 @@ function fitBounds(hotelids)
 
 function updateViewport(location, zoomLevel) {
 	//console.log('renderMap');
-	// keeping geocoder out of expedia.dmap.google.Map since its not coupled with the map implementation, we only get bounds for a given location.
+	// keeping geocoder out of aidep.dmap.google.Map since its not coupled with the map implementation, we only get bounds for a given location.
 	var geocoder = new google.maps.Geocoder();
 
 	var searchLocation=location.replace(/\(All\)|\(and Vicinity\)|\(region\)|\(province\)|\(all\)/i,"");
@@ -1561,9 +1561,9 @@ function updateViewport(location, zoomLevel) {
 
 			var ne=viewport.getNorthEast(), sw=viewport.getSouthWest();
 			map.fitBounds(
-					new expedia.dmap.Bounds(
-							new expedia.dmap.LatLong(ne.lat(),ne.lng()),
-							new expedia.dmap.LatLong(sw.lat(),sw.lng())));
+					new aidep.dmap.Bounds(
+							new aidep.dmap.LatLong(ne.lat(),ne.lng()),
+							new aidep.dmap.LatLong(sw.lat(),sw.lng())));
 
 			// set to specific zoom level (address, event, etc).
 			if(zoomLevel)
@@ -1633,7 +1633,7 @@ function renderNLPMap(location, zoomLevel)
 }
 
 function centerToUS(){
-	//var center=new expedia.dmap.LatLong(34.099406047644386,-93.23253935761407);
+	//var center=new aidep.dmap.LatLong(34.099406047644386,-93.23253935761407);
 	//map.setCenter(center);
 	//map.setZoom(2);
 	boundsBasedZoom(65.02,122.34,-40.53,-130.78);
@@ -2768,15 +2768,15 @@ function addHotelToListHandle() {
 
 function boundsBasedZoom(nelat, nelng, swlat, swlng)
 {
-	var	neLatLong = new expedia.dmap.LatLong(nelat, nelng);
-	var	swLatLong = new expedia.dmap.LatLong(swlat, swlng);
-	map.fitBounds(new expedia.dmap.Bounds(neLatLong, swLatLong));
+	var	neLatLong = new aidep.dmap.LatLong(nelat, nelng);
+	var	swLatLong = new aidep.dmap.LatLong(swlat, swlng);
+	map.fitBounds(new aidep.dmap.Bounds(neLatLong, swLatLong));
 }
 
 function centerBasedZoom(lat, lng)
 {
 	itemsvcHotel.clearItems();
-    map.setCenter(new expedia.dmap.LatLong(lat, lng));
+    map.setCenter(new aidep.dmap.LatLong(lat, lng));
 	map.setZoom(aggrZoomLevel + 1);
 }
 

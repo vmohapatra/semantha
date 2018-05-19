@@ -1,5 +1,5 @@
 /**
- * @Author  <mailto:smyrick@expedia.com>Shane Myrick</mailto>
+ * @Author  <mailto:smyrick@aidep.com>Shane Myrick</mailto>
  */
 
 /**
@@ -17,7 +17,7 @@ App.Collections.ResultList = Backbone.Collection.extend({
   getHotelIdsWithPrice: function () {
     return this.chain()
       .filter(this.itemHasPrice)
-      .map(this.getItemExpediaId)
+      .map(this.getItemaidepId)
       .value();
   },
 
@@ -25,7 +25,7 @@ App.Collections.ResultList = Backbone.Collection.extend({
     return (item.get('itemPrice') != 0);
   },
 
-  getItemExpediaId: function (item) {
-    return item.get('itemExpediaId');
+  getItemaidepId: function (item) {
+    return item.get('itemaidepId');
   }
 });

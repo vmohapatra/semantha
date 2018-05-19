@@ -1,6 +1,6 @@
 /**
- * Copyright ${YEAR} Expedia, Inc. All rights reserved.
- * EXPEDIA PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright ${YEAR} aidep, Inc. All rights reserved.
+ * aidep PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 (function(){
 

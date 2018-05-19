@@ -1,25 +1,25 @@
-var Item = expedia.dmap.Item,//import
-	  LatLong = expedia.dmap.LatLong,//import
-	  Util = expedia.dmap.common.Utilities,//import
+var Item = aidep.dmap.Item,//import
+	  LatLong = aidep.dmap.LatLong,//import
+	  Util = aidep.dmap.common.Utilities,//import
 	  ITEM_SVC_EVENT_NAMES = [],
 	  ITEM_SVC_EVENT_HANDLERS = {},
     ItemService,
     s_serviceURL,
     DATA_FIELDS = ['Address','Bounds','Image','Price','Star','EanId','Size'];
 
-Util.namespace('expedia.dmap');
+Util.namespace('aidep.dmap');
 
 /**
- * @namespace ItemService uses Dynamic Maps REST service to provide {expedia.dmap.Item} for display
+ * @namespace ItemService uses Dynamic Maps REST service to provide {aidep.dmap.Item} for display
  * 
- * @param {expedia.dmap.Map} map the map to associate with this service
- * @param {expedia.dmap.ItemService.Configuration} config the configuration for this service.  Also accepts an Associative array Object with the same key names as Configuration.
- * @returns {expedia.dmap.ItemService}
+ * @param {aidep.dmap.Map} map the map to associate with this service
+ * @param {aidep.dmap.ItemService.Configuration} config the configuration for this service.  Also accepts an Associative array Object with the same key names as Configuration.
+ * @returns {aidep.dmap.ItemService}
  */
-expedia.dmap.ItemService=function(map,config){
-	this.events=new expedia.dmap.common.Events(this, ITEM_SVC_EVENT_NAMES, ITEM_SVC_EVENT_HANDLERS);
+aidep.dmap.ItemService=function(map,config){
+	this.events=new aidep.dmap.common.Events(this, ITEM_SVC_EVENT_NAMES, ITEM_SVC_EVENT_HANDLERS);
 	this.map=map;
-	this.config=new expedia.dmap.ItemService.Configuration(config);
+	this.config=new aidep.dmap.ItemService.Configuration(config);
 	
 	this.items={};
 	this.itemRequests={};
@@ -34,25 +34,25 @@ expedia.dmap.ItemService=function(map,config){
 	}
 	addMapListeners(map, this);
 };
-ItemService=expedia.dmap.ItemService;
+ItemService=aidep.dmap.ItemService;
 
 /**
  * Set the URL to use 
  * @param url DMap REST Service URL to invoke.
  */
-expedia.dmap.ItemService.setServiceUrl=function(url) {
+aidep.dmap.ItemService.setServiceUrl=function(url) {
 	s_serviceURL=url;
 };
 
 /**
- * @namespace Configuration properties for expedia.dmap.ItemService constructor.
+ * @namespace Configuration properties for aidep.dmap.ItemService constructor.
  * @property {Number} requestExtra amount of extra space (as decimal percentage) that should be requested outside of the viewport.  This is used to fetch extra data so pan can appear smoother over slow connections.  Asking of 1.0 means requesting 4 times more area to cover an area 50% greater in each cardinal direction.  Default:1
  * @property {Number} requestBuffer minimum amount of extra space (as decimal percentage of requestExtra, 0-1) before a new request should be sent for more data.  The higher this value, the less network network requests will be made, but may result in visible delay.  Default:0.5
  * @property {Boolean} removeItemsNotVisible remove items not in the visible bounds (+ requestExtra space).  Default false so that manually added items aren't removed.
  * @param {Object} config initial configuration
  */
 
-expedia.dmap.ItemService.Configuration=function(config) {
+aidep.dmap.ItemService.Configuration=function(config) {
 	config=config||{};
 	this.requestExtra=Math.min(0, config.requestExtra||1);
 	this.requestBuffer=Math.min(0, Math.max(1, config.requestBuffer||0.5));
@@ -62,26 +62,26 @@ expedia.dmap.ItemService.Configuration=function(config) {
 /**
  * @event 
  * @description Event fired when the map provider is loaded.  Fired by either addItems, or as a result of requestItems
- * @param {Array} Array of expedia.dmap.Item added.
+ * @param {Array} Array of aidep.dmap.Item added.
  */
-expedia.dmap.ItemService.EVENT_ITEM_ADDED='itemadded';
-ITEM_SVC_EVENT_NAMES.push(expedia.dmap.ItemService.EVENT_ITEM_ADDED);
+aidep.dmap.ItemService.EVENT_ITEM_ADDED='itemadded';
+ITEM_SVC_EVENT_NAMES.push(aidep.dmap.ItemService.EVENT_ITEM_ADDED);
 
 /**
  * @event
  * @description Event fired when an item is removed from the map due to a call to #removeItem
- * @param {Array} Array of expedia.dmap.Item removed
+ * @param {Array} Array of aidep.dmap.Item removed
  */
-expedia.dmap.ItemService.EVENT_ITEM_REMOVED='itemremoved';
-ITEM_SVC_EVENT_NAMES.push(expedia.dmap.ItemService.EVENT_ITEM_REMOVED);
+aidep.dmap.ItemService.EVENT_ITEM_REMOVED='itemremoved';
+ITEM_SVC_EVENT_NAMES.push(aidep.dmap.ItemService.EVENT_ITEM_REMOVED);
 
 /**
  * @event
  * @description Event fired when data is added to one or more items
- * @param {Array} Array of expedia.dmap.Item updated
+ * @param {Array} Array of aidep.dmap.Item updated
  */
-expedia.dmap.ItemService.EVENT_ITEM_DATA_UPDATED='itemdataupdated';
-ITEM_SVC_EVENT_NAMES.push(expedia.dmap.ItemService.EVENT_ITEM_DATA_UPDATED);
+aidep.dmap.ItemService.EVENT_ITEM_DATA_UPDATED='itemdataupdated';
+ITEM_SVC_EVENT_NAMES.push(aidep.dmap.ItemService.EVENT_ITEM_DATA_UPDATED);
 
 
 /**
@@ -89,31 +89,31 @@ ITEM_SVC_EVENT_NAMES.push(expedia.dmap.ItemService.EVENT_ITEM_DATA_UPDATED);
  * @description Event fired when the request is sent to the service for Item or Data
  * @param {XMLHttpRequest} request
  */
-expedia.dmap.ItemService.EVENT_REQUEST_START='requeststart';
-ITEM_SVC_EVENT_NAMES.push(expedia.dmap.ItemService.EVENT_REQUEST_START);
+aidep.dmap.ItemService.EVENT_REQUEST_START='requeststart';
+ITEM_SVC_EVENT_NAMES.push(aidep.dmap.ItemService.EVENT_REQUEST_START);
 
 /**
  * @event 
  * @description Event fired when the service response arrives, before processing the response body
  * @param {XMLHttpRequest} request
  */
-expedia.dmap.ItemService.EVENT_REQUEST_END='requestend';
-ITEM_SVC_EVENT_NAMES.push(expedia.dmap.ItemService.EVENT_REQUEST_END);
+aidep.dmap.ItemService.EVENT_REQUEST_END='requestend';
+ITEM_SVC_EVENT_NAMES.push(aidep.dmap.ItemService.EVENT_REQUEST_END);
 
 /**
  * @event 
  * @description Event fired when all of the response's map items has been processed
  * @param {XMLHttpRequest} request
  */
-expedia.dmap.ItemService.EVENT_RESPONSE_PROCESSED='responseprocessed';
-ITEM_SVC_EVENT_NAMES.push(expedia.dmap.ItemService.EVENT_RESPONSE_PROCESSED);
+aidep.dmap.ItemService.EVENT_RESPONSE_PROCESSED='responseprocessed';
+ITEM_SVC_EVENT_NAMES.push(aidep.dmap.ItemService.EVENT_RESPONSE_PROCESSED);
 
 /**
  * Add a listener for a specific event.
  * @param {String} evt event to listen for
  * @param {Function} listener function to invoke when the event happens
  */
-expedia.dmap.ItemService.prototype.addEventListener=function(evt,listener) {
+aidep.dmap.ItemService.prototype.addEventListener=function(evt,listener) {
 	this.events.addEventListener(evt,listener);
 	
 	if((evt==ItemService.EVENT_ITEM_ADDED || evt==ItemService.EVENT_ITEM_DATA_UPDATED) && Util.hasKeys(this.items)) {
@@ -134,31 +134,31 @@ expedia.dmap.ItemService.prototype.addEventListener=function(evt,listener) {
  * @param {Function} listener function to invoke when the event happens
  * @return true if the listener was successfully removed
  */
-expedia.dmap.ItemService.prototype.removeEventListener=function(evt,listener){
+aidep.dmap.ItemService.prototype.removeEventListener=function(evt,listener){
 	return this.events.removeEventListener(evt,listener);
 };
 
-expedia.dmap.ItemService.prototype.getRequestHandler=function() {
+aidep.dmap.ItemService.prototype.getRequestHandler=function() {
 	return this.requestHandler;
 };
 
-expedia.dmap.ItemService.prototype.setRequestHandler=function(requestHandler) {
+aidep.dmap.ItemService.prototype.setRequestHandler=function(requestHandler) {
 	this.requestHandler = requestHandler;
 };
 
 /**
  * get the map that this service is associated with
- * @returns {expedia.dmap.Map} 
+ * @returns {aidep.dmap.Map} 
  */
-expedia.dmap.ItemService.prototype.getMap=function() {
+aidep.dmap.ItemService.prototype.getMap=function() {
 	return this.map;
 };
 
 /**
  * Get the current items this service knows about.
- * @returns {Array} Array of {expedia.dmap.Item} 
+ * @returns {Array} Array of {aidep.dmap.Item} 
  */
-expedia.dmap.ItemService.prototype.getItems=function() {
+aidep.dmap.ItemService.prototype.getItems=function() {
 	var items = [];
 	for(var key in this.items) {
 		items.push(this.items[key]);
@@ -173,7 +173,7 @@ expedia.dmap.ItemService.prototype.getItems=function() {
  * required.  If Item with the same type and id already exists, the existing Item's data is updated with the Item from 
  * the parameter, and the parameters Item is replaced in the Array.
  */
-expedia.dmap.ItemService.prototype.addItems=function(/*Array<Item>*/items) {
+aidep.dmap.ItemService.prototype.addItems=function(/*Array<Item>*/items) {
 	var itemsAdded=[], itemsRemoved = [];
 	for(var idx in this.items){
 		
@@ -222,10 +222,10 @@ expedia.dmap.ItemService.prototype.addItems=function(/*Array<Item>*/items) {
 
 /**
  * Remove Items from the Map. These may have been added by addItems or by requestItems.  Items are matched on #type and #id
- * @param {Array} items array of {expedia.dmap.Item} to remove.  Matches just the type and id, so it doesn't need to be the same instance of Item.
+ * @param {Array} items array of {aidep.dmap.Item} to remove.  Matches just the type and id, so it doesn't need to be the same instance of Item.
  * @return {Array} actual items removed.s
  */
-expedia.dmap.ItemService.prototype.removeItems=function(/*Array<Item>*/items) {
+aidep.dmap.ItemService.prototype.removeItems=function(/*Array<Item>*/items) {
 	var itemsRemoved=[];
 	for(var idx=0; idx<items.length;idx++) {
 		var item=items[idx],
@@ -246,7 +246,7 @@ expedia.dmap.ItemService.prototype.removeItems=function(/*Array<Item>*/items) {
  * Remove all items from the map.
  * @return {Array} actual items removed
  */
-expedia.dmap.ItemService.prototype.clearItems=function() {
+aidep.dmap.ItemService.prototype.clearItems=function() {
 	var itemsRemoved=[],
 		items=this.items;
 	this.items={};
@@ -264,7 +264,7 @@ expedia.dmap.ItemService.prototype.clearItems=function() {
  * Retain all items already retrieved within a given bounds.  Remove all others
  * @param bounds the bounds to keep.  Defaults to last requested bounds, or if no requests, the viewable area of the map.
  */
-expedia.dmap.ItemService.prototype.retainItemsInBounds=function(bounds){
+aidep.dmap.ItemService.prototype.retainItemsInBounds=function(bounds){
 	var itemsRemoved=[];
 	if(!bounds) {
 		if(this.boundsWithExtraRequested.length > 0) {
@@ -298,17 +298,17 @@ expedia.dmap.ItemService.prototype.retainItemsInBounds=function(bounds){
  * Add listener for #EVENT_ITEM_ADDED to get the results if necessary.
  * Supported key/values:
  * geoEXPE : 'POI'
- * hotels  : {expedia.dmap.HotelItemsRequest}
+ * hotels  : {aidep.dmap.HotelItemsRequest}
  * @param {Object} items key/value pairs of items to request
  */
-expedia.dmap.ItemService.prototype.addItemsRequest=function(/*Map<String,Object>*/items) {
+aidep.dmap.ItemService.prototype.addItemsRequest=function(/*Map<String,Object>*/items) {
 	Util.merge(this.itemRequests, items);
 };
 
 /**
  * Remove all item requests for any future calls.
  */
-expedia.dmap.ItemService.prototype.clearItemsRequests=function() {
+aidep.dmap.ItemService.prototype.clearItemsRequests=function() {
 	this.itemRequests={};
 };
 
@@ -325,14 +325,14 @@ expedia.dmap.ItemService.prototype.clearItemsRequests=function() {
  * Size : true - Return the size associated with hotel clusters
  * @param {Object} data key/value pairs of item data to request
  */
-expedia.dmap.ItemService.prototype.addItemDataRequest=function(/*Map<String,Object>*/data) {
+aidep.dmap.ItemService.prototype.addItemDataRequest=function(/*Map<String,Object>*/data) {
 	Util.merge(this.dataRequests,data);
 };
 
 /**
  * Remove all data requests for any future calls
  */
-expedia.dmap.ItemService.prototype.clearItemDataRequests=function() {
+aidep.dmap.ItemService.prototype.clearItemDataRequests=function() {
 	this.dataRequests={'Bounds':true};
 };
 
@@ -342,7 +342,7 @@ expedia.dmap.ItemService.prototype.clearItemDataRequests=function() {
  * @see #addItemsRequest
  * @see #addItemDataRequest
  */
-expedia.dmap.ItemService.prototype.makeRequests=function() {
+aidep.dmap.ItemService.prototype.makeRequests=function() {
 
 	if(!Util.hasKeys(this.itemRequests) || !_.isEmpty(App.nautilusHotels) || isSearchInProgress) {
     return; // NOOP
@@ -496,10 +496,10 @@ expedia.dmap.ItemService.prototype.makeRequests=function() {
 
 
 /**
- * Convert a JSON Item to {expedia.dmap.Item}
+ * Convert a JSON Item to {aidep.dmap.Item}
  * @param {Object} items associative array tracking existing items (in/out)
- * @param {Object} itemJSON JSON representation of an {expedia.dmap.Item}
- * @returns {expedia.dmap.Item}
+ * @param {Object} itemJSON JSON representation of an {aidep.dmap.Item}
+ * @returns {aidep.dmap.Item}
  */
 function parseJSONItem(items, itemJSON) {
 	var key=itemJSON.Type+'.'+itemJSON.Id,
@@ -523,7 +523,7 @@ function parseJSONItem(items, itemJSON) {
 
 /**
  * Convert Bounds to url representation
- * @param {expedia.dmap.Bounds} b
+ * @param {aidep.dmap.Bounds} b
  * @returns {String} url representation "north,east,south,west"
  */
 function boundsToParam(b, c, z) {
@@ -531,8 +531,8 @@ function boundsToParam(b, c, z) {
 		sw=b.getSouthWest();
 	
 	if(z == 2){
-		var newSw = new expedia.dmap.LatLong(-45, -160);
-		var newNe = new expedia.dmap.LatLong(65, 160);
+		var newSw = new aidep.dmap.LatLong(-45, -160);
+		var newNe = new aidep.dmap.LatLong(65, 160);
 		b.setNorthEast(newNe);
 		b.setSouthWest(newSw);
 		return '65,160,-45,-160';
@@ -543,7 +543,7 @@ function boundsToParam(b, c, z) {
 
 /**
  * Convert LatLong to url representation
- * @param {expedia.dmap.LatLong} ll
+ * @param {aidep.dmap.LatLong} ll
  * @returns {String} url representation "lat,lng"
  */
 function latLongToParam(ll) {
@@ -561,8 +561,8 @@ function dateToISODate(d) {
 
 /**
  * Register events with the map to update data on pan/zoom
- * @param {expedia.dmap.Map} map
- * @param {expedia.dmap.ItemService} svc
+ * @param {aidep.dmap.Map} map
+ * @param {aidep.dmap.ItemService} svc
  */
 function addMapListeners(map, svc) {
 	var fn=function() {
@@ -575,9 +575,9 @@ function addMapListeners(map, svc) {
 		
 	};
 	// Need to fully qualify Map b/c it gets loaded after this js
-	//map.addEventListener(expedia.dmap.Map.EVENT_ZOOM_CHANGED,fn);
-	//map.addEventListener(expedia.dmap.Map.EVENT_CENTER_CHANGED,fn);
-	//map.addEventListener(expedia.dmap.Map.EVENT_BOUNDS_CHANGED,fn);
-	map.addEventListener(expedia.dmap.Map.EVENT_IDLE,fn);
+	//map.addEventListener(aidep.dmap.Map.EVENT_ZOOM_CHANGED,fn);
+	//map.addEventListener(aidep.dmap.Map.EVENT_CENTER_CHANGED,fn);
+	//map.addEventListener(aidep.dmap.Map.EVENT_BOUNDS_CHANGED,fn);
+	map.addEventListener(aidep.dmap.Map.EVENT_IDLE,fn);
 };
 

@@ -9,13 +9,13 @@ function namespace(namespace){
 	}
 	return pkgCurr;
 };
-namespace("expedia.dmap.common");
+namespace("aidep.dmap.common");
 
 /**
  * @namespace Common utilities 
- * @Author  <mailto:svenz@expedia.com>Sven Zethelius</mailto>
+ * @Author  <mailto:svenz@aidep.com>Sven Zethelius</mailto>
  */
-expedia.dmap.common.Utilities={
+aidep.dmap.common.Utilities={
 	/**
 	 * Dynamically add a javascript include. Note that the javascript is not
 	 * immediately available. This function should only be called before the
@@ -109,7 +109,7 @@ expedia.dmap.common.Utilities={
  * For browsers that don't support DOM addEventListener (IE8 and below), emulate it by replacing the onevent function.
  */
 if(!window.addEventListener) {
-	expedia.dmap.common.Utilities.addEventListener=function(target,event,listener) {
+	aidep.dmap.common.Utilities.addEventListener=function(target,event,listener) {
 		if(target["on"+event] !== undefined) {
 			var on=target["on"+event];
 			target["on"+event]=on ? 
@@ -127,7 +127,7 @@ if(!window.addEventListener) {
  * For browsers that don't support Array.indexOf, provide an alternative
  */
 if(! Array.prototype.indexOf) {
-	expedia.dmap.common.Utilities.indexOf=function(arr,val) {
+	aidep.dmap.common.Utilities.indexOf=function(arr,val) {
 		for(var idx=0; idx < arr.length;idx++) {
 			if(val==arr[idx])
 				return idx;

@@ -1,25 +1,25 @@
-var Util=expedia.dmap.common.Utilities,
-	LatLong=expedia.dmap.LatLong;
-Util.namespace("expedia.dmap");
+var Util=aidep.dmap.common.Utilities,
+	LatLong=aidep.dmap.LatLong;
+Util.namespace("aidep.dmap");
 
 /**
  * @namespace A rectangle defined by its NorthEast and SouthWest LatLong
  * 
- * @param {expedia.dmap.LatLong} ne NorthEast point of the rectangle.
- * @param {expedia.dmap.LatLong} sw SouthWest point of the rectangle.
- * @returns {expedia.dmap.Bounds}
+ * @param {aidep.dmap.LatLong} ne NorthEast point of the rectangle.
+ * @param {aidep.dmap.LatLong} sw SouthWest point of the rectangle.
+ * @returns {aidep.dmap.Bounds}
  */
-expedia.dmap.Bounds = function(ne,sw) {	
+aidep.dmap.Bounds = function(ne,sw) {	
 	this.ne=ne;
 	this.sw=sw;
 };
 
 /**
- * Compute Bounds from an array of {expedia.dmap.LatLong}
- * @param {Array} lls array of {expedia.dmap.LatLong}
- * @return {expedia.dmap.Bounds} the bounds that encapsulates the set of points
+ * Compute Bounds from an array of {aidep.dmap.LatLong}
+ * @param {Array} lls array of {aidep.dmap.LatLong}
+ * @return {aidep.dmap.Bounds} the bounds that encapsulates the set of points
  */
-expedia.dmap.Bounds.fromLatLongs = function(lls) {
+aidep.dmap.Bounds.fromLatLongs = function(lls) {
 	if(!lls || !lls.length)
 		throw new Error("Unable to compute bounds from "+lls);
 	var ll=lls[0];
@@ -46,45 +46,45 @@ expedia.dmap.Bounds.fromLatLongs = function(lls) {
 			}
 		}
 	}
-	return new expedia.dmap.Bounds(new LatLong(n,e), new LatLong(s,w));
+	return new aidep.dmap.Bounds(new LatLong(n,e), new LatLong(s,w));
 };
 
 /**
  * Get the NorthEast point of the rectangle
- * @returns {expedia.dmap.LatLong}
+ * @returns {aidep.dmap.LatLong}
  */
-expedia.dmap.Bounds.prototype.getNorthEast=function() {
+aidep.dmap.Bounds.prototype.getNorthEast=function() {
 	return this.ne;
 };
 
 /**
  * Get the SouthWest point of the rectangle
- * @returns {expedia.dmap.LatLong}
+ * @returns {aidep.dmap.LatLong}
  */
-expedia.dmap.Bounds.prototype.getSouthWest=function() {
+aidep.dmap.Bounds.prototype.getSouthWest=function() {
 	return this.sw;
 };
 
 /**
  * Set the SouthWest point of the rectangle
  */
-expedia.dmap.Bounds.prototype.setNorthEast=function(ne) {
+aidep.dmap.Bounds.prototype.setNorthEast=function(ne) {
 	return this.ne = ne;
 };
 
 /**
  * Set the SouthWest point of the rectangle
  */
-expedia.dmap.Bounds.prototype.setSouthWest=function(sw) {
+aidep.dmap.Bounds.prototype.setSouthWest=function(sw) {
 	return this.sw = sw;
 };
 
 /**
  * Check if the given LatLong resides within this rectangle.
- * @param {expedia.dmap.LatLong} ll
+ * @param {aidep.dmap.LatLong} ll
  * @returns {Boolean} true if the point is within the bounds.
  */
-expedia.dmap.Bounds.prototype.contains=function(ll) {
+aidep.dmap.Bounds.prototype.contains=function(ll) {
 	return (this.sw.getLat() <= ll.getLat()) &&
 			(ll.getLat() <= this.ne.getLat()) &&
 			containsLongitude(this,ll.getLong());

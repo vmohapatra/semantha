@@ -1,5 +1,5 @@
 /**
- * @Author  <mailto:smyrick@expedia.com>Shane Myrick</mailto>
+ * @Author  <mailto:smyrick@aidep.com>Shane Myrick</mailto>
  */
 'use strict';
 /**
@@ -23,7 +23,7 @@ App.Views.ResultListItemView = Backbone.Marionette.ItemView.extend({
       attrs = {
         id: 'h' + this.model.get('itemId'),
         'class': 'searchsItem clearfix', 
-        hotelid: this.model.get('itemExpediaId')
+        hotelid: this.model.get('itemaidepId')
       };
     }
     else if (itemType === 'hotelcluster') {

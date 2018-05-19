@@ -1,5 +1,5 @@
 /******************************************************************************************
-** @Author  <mailto:vmohapatra@expedia.com>Vijayalaxmi Mohapatra</mailto>
+** @Author  <mailto:vmohapatra@aidep.com>Vijayalaxmi Mohapatra</mailto>
 ** Custom responsive styles for Semantha pages
 ** Using bootstrap based classes
 ******************************************************************************************/
@@ -28,7 +28,7 @@ padding: 3px;
 	margin-right: 5px;
 	cursor: context-menu;
 	border: 1px solid #02ADF7;
-	background: #FFF;	
+	background: #FFF;
 	display: none !important;
 	text-align:center;
 }
@@ -62,18 +62,18 @@ padding: 3px;
 
 /********************Semantha terms and privacy********************/
 #div_termsPrivacy {
-	font-size:10px; 
-    color:#444; 
-    white-space:nowrap; 
-    height:19px; 
-    line-height:19px; 
-    direction:ltr; 
+	font-size:10px;
+    color:#444;
+    white-space:nowrap;
+    height:19px;
+    line-height:19px;
+    direction:ltr;
     text-align:right;
-	position:fixed; 
-    margin-left:-185px; 
-    bottom:20px; 
+	position:fixed;
+    margin-left:-185px;
+    bottom:20px;
     /*z-index:11; */
-    padding-right:2px; 
+    padding-right:2px;
     padding-left:50px;
 	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.498039) 50px);
 }
@@ -111,16 +111,16 @@ padding: 3px;
     margin-right: 25px;
 }
 .priceUpdateNotice {
-	display:none; 
-	font-size:12px; 
-	color:#999; 
+	display:none;
+	font-size:12px;
+	color:#999;
 	text-align:left;
 }
 /********************Results List Container********************/
 #div_resultsContainer .zeroCountComment {
-	display:none; 
-	font-size:12px; 
-	color:#999; 
+	display:none;
+	font-size:12px;
+	color:#999;
 	text-align:left;
 	padding:10px;
     border-top: 1px solid #D7D7D7;
@@ -144,8 +144,8 @@ padding: 3px;
 }
 /*******Hotel Cluster styles*******/
 .lazy{
-    display:none; 
-    height:100%; 
+    display:none;
+    height:100%;
     width:100%;
 }
 #div_resultsList .cluster-info {
@@ -184,7 +184,7 @@ div.noClusterPhoto div.destination-name {
     position: relative;
     display: inline-block;
     float: left;
-    width: 250px; 
+    width: 250px;
     color: #222222;
     padding: 0px 0px 10px 10px;
 }
@@ -210,7 +210,7 @@ div.noClusterPhoto div.destination-name h3.destination-name {
     background-size: cover;
     background-position: center;
     padding-top: 60%;
-    padding-bottom: 5%; 
+    padding-bottom: 5%;
     background-repeat: no-repeat;
 }
 .hotel-name-starrating {
@@ -219,7 +219,7 @@ div.noClusterPhoto div.destination-name h3.destination-name {
     float: left;
     color: #FFFFFF;
     margin-left: -200px;
-    width: 200px;    
+    width: 200px;
 }
 .hotel-name {
     color: #FFFFFF;
@@ -328,7 +328,7 @@ div.noClusterPhoto div.destination-name h3.destination-name {
     height: 10px;
     display: inline-block;
     background: url("../img/hotel_finder_sprites.png") -87px -77px no-repeat;
-    margin-top: 10px;   
+    margin-top: 10px;
 }
 #div_resultsListContainer div.searchsItem:hover { background-color: #F9F9F9;}
 .loadClusterPhoto:hover .cluster-hover-overlay, .searchsItem:hover .hotel-hover-overlay, .searchsItem:hover .hover-btn, .resultItemSelected .hotel-hover-overlay, .resultItemSelected .hover-btn {
@@ -422,7 +422,7 @@ div.noClusterPhoto:hover div.destination-name h3.destination-name { color: #02AD
 }
 .details-pane-price-info {
     text-align: right;
-    width: 80%;    
+    width: 80%;
 }
 .details-pane-price-info .full-price {
     font-size: 20px;

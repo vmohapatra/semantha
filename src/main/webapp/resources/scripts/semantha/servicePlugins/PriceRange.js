@@ -1,8 +1,8 @@
 /**
- * Copyright 2015 Expedia, Inc. All rights reserved.
- * EXPEDIA PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright 2015 aidep, Inc. All rights reserved.
+ * aidep PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  *
- * @Author  <mailto:smyrick@expedia.com>Shane Myrick</mailto>
+ * @Author  <mailto:smyrick@aidep.com>Shane Myrick</mailto>
  */
 'use strict';
 

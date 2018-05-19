@@ -2,18 +2,18 @@
  * This file describes the complex items used in Map.addItemRequests
  */
 var 
-	Util=expedia.dmap.common.Utilities;
+	Util=aidep.dmap.common.Utilities;
 
-Util.namespace("expedia.dmap");
+Util.namespace("aidep.dmap");
 
 /**
  * @namespace data holder to request hotel items.  At least one of the properties must be set.
- * @property {expedia.dmap.DateRange} dates.  Optional
+ * @property {aidep.dmap.DateRange} dates.  Optional
  * @property {Boolean} deal has a GDE deal associated.  Optional
- * @property {expedia.dmap.NumberRange} price min/max price.  Optional
- * @property {expedia.dmap.NumberRange} star min/max Star rating of the hotel.  10=1star,...,50=5star.  max is assumed 50 if not specified.  Optional
+ * @property {aidep.dmap.NumberRange} price min/max price.  Optional
+ * @property {aidep.dmap.NumberRange} star min/max Star rating of the hotel.  10=1star,...,50=5star.  max is assumed 50 if not specified.  Optional
  */
-expedia.dmap.HotelItemsRequest=function(){
+aidep.dmap.HotelItemsRequest=function(){
 };
 
 /**
@@ -24,7 +24,7 @@ expedia.dmap.HotelItemsRequest=function(){
  * @property {Array} startDays Array of {Number}, Allowed Day of Week of checkin. 1=sunday,...,7=saturday. Optional.  If not specified, defaults to All days.
  * 
  */
-expedia.dmap.DateRange=function() {
+aidep.dmap.DateRange=function() {
 };
 
 /**
@@ -32,5 +32,5 @@ expedia.dmap.DateRange=function() {
  * @property {Number} min
  * @property {Number} max
  */
-expedia.dmap.NumberRange=function() {
+aidep.dmap.NumberRange=function() {
 };

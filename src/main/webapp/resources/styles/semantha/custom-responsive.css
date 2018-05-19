@@ -1,5 +1,5 @@
 /******************************************************************************************
-** @Author  <mailto:vmohapatra@expedia.com>Vijayalaxmi Mohapatra</mailto>
+** @Author  <mailto:vmohapatra@aidep.com>Vijayalaxmi Mohapatra</mailto>
 ** Custom responsive styles for Semantha pages
 ** Using bootstrap based classes
 ******************************************************************************************/
@@ -75,7 +75,7 @@
     }
     .price-info .full-price {
         font-size: 14px !important;
-        line-height: 1.2 !important;    
+        line-height: 1.2 !important;
         margin-top: -3px;
     }
 
@@ -91,7 +91,7 @@
     }
     div.noClusterPhoto div.destination-name h3.destination-name {
         font-size: 16px;
-        padding-left: 13px;    
+        padding-left: 13px;
     }
     #div_resultsList div.loadClusterPhoto .cluster-info {
         padding-left: 13px;
@@ -145,23 +145,23 @@
     }
     h2.list-hotel-price {
         font-size: 24px;
-    }    
+    }
 }
 
     /* off canvas */
 @media screen and (max-width: 767px) {
-        
+
 	.row-offcanvas {
 		position: relative;
 	}
-	
+
 	.row-offcanvas-right {
 		right:0%;
 		-webkit-transition: right 0.3s ease;
 		-moz-transition: right 0.3s ease;
 		-o-transition: right 0.3s ease;
 		-ms-transition: right 0.3s ease;
-		transition: right 0.3s ease;    
+		transition: right 0.3s ease;
 	}
 	.row-offcanvas-right
 	.sidebar-offcanvas {
@@ -170,10 +170,10 @@
 		-moz-transition: right 0.3s ease;
 		-o-transition: right 0.3s ease;
 		-ms-transition: right 0.3s ease;
-		transition: right 0.3s ease;    
-				
+		transition: right 0.3s ease;
+
 	}
-	        
+
 	/* apply to map? */
 	.row-offcanvas-right.active {
 		right: 90%;
@@ -181,9 +181,9 @@
 		-moz-transition: right 0.3s ease;
 		-o-transition: right 0.3s ease;
 		-ms-transition: right 0.3s ease;
-		transition: right 0.3s ease;    
+		transition: right 0.3s ease;
 	}
-	
+
 	/* apply to sidebar? */
 	.sidebar-offcanvas {
 		position: absolute;
@@ -243,7 +243,7 @@
     }
     div.noClusterPhoto div.destination-name h3.destination-name {
         font-size: 18px;
-        padding-left: 20px;    
+        padding-left: 20px;
     }
     #div_resultsList div.loadClusterPhoto .cluster-info {
         padding-left: 20px;

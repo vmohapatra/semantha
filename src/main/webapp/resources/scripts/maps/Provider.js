@@ -4,8 +4,8 @@
  */
 
 var 
-	providerNS=expedia.dmap.google;
+	providerNS=aidep.dmap.google;
 
 for(var key in providerNS) {
-	expedia.dmap[key]=providerNS[key];
+	aidep.dmap[key]=providerNS[key];
 }

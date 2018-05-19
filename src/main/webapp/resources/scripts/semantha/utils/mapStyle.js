@@ -1,5 +1,5 @@
 /**
- * @Author  <mailto:vmohapatra@expedia.com>Vijayalaxmi Mohapatra</mailto>
+ * @Author  <mailto:vmohapatra@aidep.com>Vijayalaxmi Mohapatra</mailto>
  * This file stores the styles for the map
  */
 var customMapStyles = [

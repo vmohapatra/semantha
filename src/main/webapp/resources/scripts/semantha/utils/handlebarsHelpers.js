@@ -1,9 +1,9 @@
 /**
- * @Author  <mailto:smyrick@expedia.com>Shane Myrick</mailto>
+ * @Author  <mailto:smyrick@aidep.com>Shane Myrick</mailto>
  */
 
 /**
- * Generate localized text for hotel cluster 
+ * Generate localized text for hotel cluster
  * @param  {number} itemSize  The size of the cluster, passed by a ListItem Model
  * @return {string}           Returns localizes text '{0} hotel(s)'
  */
@@ -11,14 +11,14 @@ Handlebars.registerHelper('localizedClusterSize', function(itemSize) {
   if (itemSize === 1) {
     return getLocalizedString('hotel-finder.hotels-in-cluster.single');
   }
-    
+
   return getLocalizedString('hotel-finder.hotels-in-cluster.multiple').replace('{0}', itemSize);
-  
+
 });
 
 /**
  * Get localized text in Handlebars template
- * @param  {string} key The JSON key for a string value stored in in the 
+ * @param  {string} key The JSON key for a string value stored in in the
  *                      <div id="localizedText" ...> element
  * @return {string}     Returns localized text for the given key
  */
@@ -73,7 +73,7 @@ Handlebars.registerHelper('chooseDateStringPane', function() {
   getLocalizedString('hotel-finder.brief-content.choose-dates.anchor') + '</a>';
  var chooseDates = getLocalizedString('hotel-finder.brief-content.choose-dates').replace('{0}', chooseDatesAnchor);
  var priceStr = '<p class="hotelPriceNote">' + chooseDates + '</p>';
-  
+
   return priceStr;
 });
 
@@ -86,7 +86,7 @@ Handlebars.registerHelper('hotelSoldOutStringPane', function() {
     var guestCountAnchor = '<a href="#" onclick="chooseGuest()">' + getLocalizedString('hotel-finder.brief-content.sold-out.anchor.guest-count') + '</a>';
 
     var soldOut = getLocalizedString('hotel-finder.brief-content.sold-out').replace('{0}', differentDatesAnchor).replace('{1}', guestCountAnchor);
-      
+
   return soldOut;
 });
 
@@ -115,11 +115,11 @@ Handlebars.registerHelper('formatReviewCount', function(reviewCount) {
   if (reviewCount === 1) {
     return getLocalizedString('hotel-finder.list-item.reviews.single');
   }
-    
+
   return getLocalizedString('hotel-finder.list-item.reviews.multiple').replace('{0}', reviewCount);
 });
 
-Handlebars.registerHelper('formatReasonToBelieve', function(reasonToBelieve, expediaId) {
+Handlebars.registerHelper('formatReasonToBelieve', function(reasonToBelieve, aidepId) {
   if(reasonToBelieve.length != 0) {
     var reasonToBelieveList = '',
         sentiment = '';
@@ -127,7 +127,7 @@ Handlebars.registerHelper('formatReasonToBelieve', function(reasonToBelieve, exp
     if (nlpAmenityIds == null) {
       nlpAmenityIds = [];
     }
-    
+
 		for(var n=0;n<nlpAmenityIds.length;n++){
 
       var id = nlpAmenityIds[n],
@@ -157,12 +157,12 @@ Handlebars.registerHelper('formatReasonToBelieve', function(reasonToBelieve, exp
 				displayTag = '<span class="bold">' + displayTag + '</span>';
 				content = getLocalizedString('hotel-details.reasontobelieve');
 				content = content.replace('{0}',sentiment);
-				content = '<li>' + content.replace('{1}',displayTag) + '</li>';		
+				content = '<li>' + content.replace('{1}',displayTag) + '</li>';
 			}
 			reasonToBelieveList += content;
 		}
         return reasonToBelieveList;
-        
+
     }
 });
 /**
@@ -170,7 +170,7 @@ Handlebars.registerHelper('formatReasonToBelieve', function(reasonToBelieve, exp
  */
 Handlebars.registerHelper('addReviewSummaries', function(summaries){
     var reviewSummariesToBeShownInPane = 5;
-    
+
     var snippetList = '<li class=\"reason-to-believe-heading\">'+getLocalizedString('hotel-details.reviews-heading')+'</li>';
     var lengthOfList = reviewSummariesToBeShownInPane < summaries.length ? reviewSummariesToBeShownInPane : summaries.length ;
     for(var i = 0; i < lengthOfList; i++) {
@@ -221,22 +221,22 @@ Handlebars.registerHelper('addDetailsPaneReasonToBelieve', function(reasonToBeli
 				content = '<li class=\"reason-to-believe-heading\">'+getLocalizedString('hotel-details.reasontobelieve')+'</li>';
 				content = content.replace('{0}',sentiment);
 				content = content.replace('{1}',displayTag);
-				for(var i = 0;i<reasonToBelieve[tag].reviewSnippets.length;i++){     				
+				for(var i = 0;i<reasonToBelieve[tag].reviewSnippets.length;i++){
 				content += "<li snippetID=\""+reasonToBelieve[tag].reviewSnippets[i].id+"\" sentiment=\""+reasonToBelieve[tag].termSentimentScore+"\" class=\"details-pane-reason-to-believe-item\">"+
 										"<h4 class=\"pane-review-summary-marker\"><span style=\"display:inline-block;width:75%;\">\" "+reasonToBelieve[tag].reviewSnippets[i].content+" \"</span></h4>"+
 											"</li>";
-				}			
+				}
 			}
 			reasonToBelieveList += content;
 		}
         return reasonToBelieveList;
-        
+
     }
 });
 
 /**
- * 
- * @return 
+ *
+ * @return
  */
 Handlebars.registerHelper('formatReviewRating', function(rating) {
     return rating.toFixed(1);
@@ -250,7 +250,7 @@ Handlebars.registerHelper('isDatelessSearch', function(options) {
 
   var dpFrom = $("#ip_dpfrom").val();
   var dpTo = $("#ip_dpto").val();
-  
+
   if(dpFrom.indexOf('/') === -1 && dpTo.indexOf('/') === -1) {
       return options.fn(this);
   }

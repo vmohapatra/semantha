@@ -1,7 +1,7 @@
 /**
- * Copyright 2013 Expedia, Inc. All rights reserved.
- * EXPEDIA PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- * @Author  <mailto:vmohapatra@expedia.com>Vijayalaxmi Mohapatra</mailto>
+ * Copyright 2013 aidep, Inc. All rights reserved.
+ * aidep PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * @Author  <mailto:vmohapatra@aidep.com>Vijayalaxmi Mohapatra</mailto>
  */
 'use strict';
 
@@ -96,7 +96,7 @@
    * Public Review API
    */
   review.addReviewsToCollection = function (collection){
-    var idsList = collection.pluck('itemExpediaId').join() || [];
+    var idsList = collection.pluck('itemaidepId').join() || [];
 
     if (_.isEmpty(idsList)) {
       return;
@@ -107,7 +107,7 @@
       if (!_.isEmpty(data)){
         for (var i =0; i< data.length; i++) {
           var hotelId = Number(data[i].hotelId),
-              item = collection.findWhere({'itemExpediaId': hotelId});
+              item = collection.findWhere({'itemaidepId': hotelId});
 
           if (!_.isEmpty(item)) {
             item.set({itemReview: data[i].reviewScore});  
@@ -124,7 +124,7 @@
         if(!_.isEmpty(data)){
           for(var i =0; i< data.length; i++) {
             var hotelId = Number(data[i].hotelId),
-                item = collection.findWhere({'itemExpediaId': hotelId});
+                item = collection.findWhere({'itemaidepId': hotelId});
 
             if(!_.isEmpty(item)) {
               item.set({itemReasonToBelieve: data[i].reasonToBelieve}); 
@@ -378,18 +378,18 @@
   
   review.addReviewsToDetailsPane = function (collection){        
     var item = collection.at(0),
-        eid = item.get('currentHotelExpediaId'),
+        eid = item.get('currentHotelaidepId'),
         reviewSummariesUrl = reviewServicePrefix +'api=reviewsummaries&id='+ eid,
         reviewScoresUrl = reviewServicePrefix +'api=reviewscores&id='+ eid;
             
-    //If expedia hotelid is -1 just render the itemVIew with null Review related objects
+    //If aidep hotelid is -1 just render the itemVIew with null Review related objects
     if (_.isEmpty(eid) || eid === -1) {
       App.detailsPaneView.render();
       return;
     }
         
     if (eid === 'missing-hotel' && !_.isEmpty(item)) {
-      item.set({currentHotelExpediaId: "-1"});
+      item.set({currentHotelaidepId: "-1"});
       return;
     }
         

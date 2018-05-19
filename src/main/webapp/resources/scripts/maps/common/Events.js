@@ -1,6 +1,6 @@
-var Util = expedia.dmap.common.Utilities;// import
+var Util = aidep.dmap.common.Utilities;// import
 
-Util.namespace("expedia.dmap.common");
+Util.namespace("aidep.dmap.common");
 
 /**
  * Events class is a helper to manage events
@@ -9,9 +9,9 @@ Util.namespace("expedia.dmap.common");
  * @param {Object} handlers associative array of {String} to {Function} that should be invoked when a listener is first registered for an event
  * 
  * @namespace
- * @authur <mailto:svenz@expedia.com>Sven Zethelius</mailto>
+ * @authur <mailto:svenz@aidep.com>Sven Zethelius</mailto>
  */
-expedia.dmap.common.Events = Events = function(owner, evts, handlers) {
+aidep.dmap.common.Events = Events = function(owner, evts, handlers) {
 	this.owner=owner;
 	this.events=evts;
 	this.listeners = {};
@@ -27,7 +27,7 @@ expedia.dmap.common.Events = Events = function(owner, evts, handlers) {
  *            listener the function to invoke when the event is fired.
  * @return number of event handlers for this event
  */
-expedia.dmap.common.Events.prototype.addEventListener = function(evt,listener) {
+aidep.dmap.common.Events.prototype.addEventListener = function(evt,listener) {
 	var q = this.listeners[evt],
 		handler;
 	if (!q) {
@@ -52,7 +52,7 @@ expedia.dmap.common.Events.prototype.addEventListener = function(evt,listener) {
  * @param {Function} listener the function previously added by addEventListener
  * @returns {Boolean} true if the listener was removed, false otherwise
  */
-expedia.dmap.common.Events.prototype.removeEventListener = function(evt,listener) {
+aidep.dmap.common.Events.prototype.removeEventListener = function(evt,listener) {
 	var q = this.listeners[evt], idx=-1;
 	if (q) {
 		idx = Util.indexOf(q,listener); // Find the index
@@ -76,7 +76,7 @@ expedia.dmap.common.Events.prototype.removeEventListener = function(evt,listener
  * @param {String} evt the event to fire
  * @param {Array} params the parameters to pass to the listeners
  */
-expedia.dmap.common.Events.prototype.fireEvent = function(evt,params) {
+aidep.dmap.common.Events.prototype.fireEvent = function(evt,params) {
 	var q = this.listeners[evt],
 		idx;
 	if (q) {
@@ -94,7 +94,7 @@ expedia.dmap.common.Events.prototype.fireEvent = function(evt,params) {
  * 
  * @param {String} evt the event to remove listeners for.  null/undefined will clear listeners for all events 
  */
-expedia.dmap.common.Events.prototype.clearListeners = function(evt) {
+aidep.dmap.common.Events.prototype.clearListeners = function(evt) {
 	if(evt) {
 		checkRegistered(this.events, evt);
 		this.listeners[evt]=[];

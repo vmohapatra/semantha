@@ -1,5 +1,5 @@
 /**
- * @Author  <mailto:vmohapatra@expedia.com>Vijayalaxmi Mohapatra</mailto>
+ * @Author  <mailto:vmohapatra@aidep.com>Vijayalaxmi Mohapatra</mailto>
  */
 
 /**
@@ -19,7 +19,7 @@ App.Views.DetailsPaneItemView = Backbone.Marionette.ItemView.extend({
     attrs = {
         id: 'div_' + this.model.get('currentHotelId'),
         "class": 'details-pane full-height', 
-        expediaId: this.model.get('currentHotelExpediaId')
+        aidepId: this.model.get('currentHotelaidepId')
     };
 
     return attrs;

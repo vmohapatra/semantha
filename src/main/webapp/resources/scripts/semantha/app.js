@@ -1,5 +1,5 @@
 /**
- * @Author  <mailto:smyrick@expedia.com>Shane Myrick</mailto>
+ * @Author  <mailto:smyrick@aidep.com>Shane Myrick</mailto>
  */
 
 // Global Marionette App setup

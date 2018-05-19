@@ -1,5 +1,5 @@
 /**
- * @Author  <mailto:v-bfeng@expedia.com>Bingzhong feng</mailto>
+ * @Author  <mailto:v-bfeng@aidep.com>Bingzhong feng</mailto>
  */
 	/* Model */
 	

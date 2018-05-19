@@ -26,7 +26,7 @@
 <div id="div_feedbackDialog" class="settingsDialog" style="display:none">
 	<div id="div_customerService" style="margin-bottom: 31px;">
 		<h1 id="hdr_CustomerService"></h1>
-		<c:set var="supportEmail" value="bestsupport@expedia.com"/>
+		<c:set var="supportEmail" value="bestsupport@aidep.com"/>
 		<c:set var="supportEmailElement">
 			<span id="spn_supportEmail" class="hyperlink" onclick="mailTo('${supportEmail}?subject=Semantha BEST Booking Support Request')">${supportEmail}</span>
 		</c:set>
@@ -40,7 +40,7 @@
 	</div>
 	<div id="div_semanthaFeedback" style="margin-bottom: 31px;">
 		<h1 id="hdr_semanthaFeedback" ></h1>
-		<c:set var="feedbackEmail" value="semantha@expedia.com"/>
+		<c:set var="feedbackEmail" value="semantha@aidep.com"/>
 			<span id="spn_feedbackEmail" class="hyperlink" onclick="mailTo('${feedbackEmail}?subject=Semantha Feedback')">${feedbackEmail}</span>
 	</div>
 	<div id="div_bestDiscount">

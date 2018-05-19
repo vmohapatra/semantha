@@ -158,7 +158,7 @@
                         <div id="div_feedbackDialog" class="settingsDialog" style="display:none">
                             <div id="div_customerService" style="margin-bottom: 31px;">
                                 <h1 id="hdr_CustomerService"></h1>
-                                <c:set var="supportEmail" value="bestsupport@expedia.com"/>
+                                <c:set var="supportEmail" value="bestsupport@aidep.com"/>
                                 <c:set var="supportEmailElement">
                                     <span id="spn_supportEmail" class="hyperlink" onclick="mailTo('${supportEmail}?subject=Semantha BEST Booking Support Request')">${supportEmail}</span>
                                 </c:set>
@@ -172,7 +172,7 @@
                             </div>
                             <div id="div_semanthaFeedback" style="margin-bottom: 31px;">
                                 <h1 id="hdr_semanthaFeedback" ></h1>
-                                <c:set var="feedbackEmail" value="semantha@expedia.com"/>
+                                <c:set var="feedbackEmail" value="semantha@aidep.com"/>
                                 <span id="spn_feedbackEmail" class="hyperlink" onclick="mailTo('${feedbackEmail}?subject=Semantha Feedback')">${feedbackEmail}</span>
                             </div>
                             <div id="div_bestDiscount">
@@ -605,7 +605,7 @@
         </div>
         <div id="div_sortList" class="filterMenu">
             <ul id="ul_sortList" class="singleSelect">
-                <li id="EXPEDIA_PICKS"><label id="lbl_sortItemPicks"></label></li>
+                <li id="aidep_PICKS"><label id="lbl_sortItemPicks"></label></li>
                 <li id="PRICE_ASCENDING"><label id="lbl_sortItemlowestPrice"></label></li>
                 <li id="PRICE_DESCENDING"><label id="lbl_sortItemHighestPrice"></label></li>
                 <li id="STAR_RATING_DESCENDING"><label id="lbl_sortItemRating"></label></li>
@@ -708,12 +708,12 @@
 
 
         <script>
-            var Map = expedia.dmap.Map,
-                Item = expedia.dmap.Item,
-                ItemService = expedia.dmap.ItemService,
-                LatLong = expedia.dmap.LatLong,
-                Bounds = expedia.dmap.Bounds,
-                Content = expedia.dmap.Content;
+            var Map = aidep.dmap.Map,
+                Item = aidep.dmap.Item,
+                ItemService = aidep.dmap.ItemService,
+                LatLong = aidep.dmap.LatLong,
+                Bounds = aidep.dmap.Bounds,
+                Content = aidep.dmap.Content;
             /*
              * Overrides the selectCurrency() function defined in settingsContainer.js.
              *
@@ -801,21 +801,21 @@
                 {{/isDatelessSearch}}
 
                 <!-- Review Score -->
-                <div id="div_reviewScoreAndCount_h{{ itemExpediaId }}" class="list-review-container">
+                <div id="div_reviewScoreAndCount_h{{ itemaidepId }}" class="list-review-container">
                     {{#if itemReview }}
                     <span class="guestRating guestRating-lg">
-                <span id="spn_reviewScore_h{{ itemExpediaId }}" class="listStarValue {{ reviewStarRatingClass itemReview }}"></span>
+                <span id="spn_reviewScore_h{{ itemaidepId }}" class="listStarValue {{ reviewStarRatingClass itemReview }}"></span>
             </span>
                     <p>
-                        <span id="spn1_reviewCount_h{{ itemExpediaId }}" class="reviewCount">{{ formatReviewCount itemReview.count }}</span>
+                        <span id="spn1_reviewCount_h{{ itemaidepId }}" class="reviewCount">{{ formatReviewCount itemReview.count }}</span>
                     </p>
                     {{else}}
-                    <span id="spn_reviewCount_h{{ itemExpediaId }}" class="reviewCount">{{ i18n 'hotel-finder.brief-content.no-reviews' }}</span>
+                    <span id="spn_reviewCount_h{{ itemaidepId }}" class="reviewCount">{{ i18n 'hotel-finder.brief-content.no-reviews' }}</span>
                     {{/if}}
                 </div>
                 <div style="padding-left:10px;">
                     {{#if itemReasonToBelieve }}
-                    <ul class="list-reasonToBelieve">{{{ formatReasonToBelieve itemReasonToBelieve itemExpediaId }}}</ul>
+                    <ul class="list-reasonToBelieve">{{{ formatReasonToBelieve itemReasonToBelieve itemaidepId }}}</ul>
                     {{/if}}
                 </div>
 
@@ -870,10 +870,10 @@
                     {{/if}}
                 </div>
                 {{#if currentHotelId}}
-                {{#if currentHotelExpediaId}}
+                {{#if currentHotelaidepId}}
                 <div class="details-pane-name-starrating">
                     <h2>
-                        <a id="lnk_detailsPaneHotelName" onclick="hoteldetails(&quot;{{currentHotelExpediaId}}&quot;)" target="_blank">{{ currentHotelName }}</a>
+                        <a id="lnk_detailsPaneHotelName" onclick="hoteldetails(&quot;{{currentHotelaidepId}}&quot;)" target="_blank">{{ currentHotelName }}</a>
                     </h2>
                     <span class="hotelRating rating stars-lg ir"><span class="value stars{{{formatStarRating currentHotelStarRating }}}"></span></span>
                 </div>
@@ -893,7 +893,7 @@
                     </div>
                     <div class="details-pane-redirect-btn floatR">
                         <div class="roundEdgeForIE9 floatR details-btn-outer">
-                            <a class="blueButton details-pane-btn" onclick="hoteldetails(&quot;{{currentHotelExpediaId}}&quot;)">{{{ i18n 'hotel-finder.brief-content.view-details' }}}&nbsp;<span class="hover-icon"></span></a>
+                            <a class="blueButton details-pane-btn" onclick="hoteldetails(&quot;{{currentHotelaidepId}}&quot;)">{{{ i18n 'hotel-finder.brief-content.view-details' }}}&nbsp;<span class="hover-icon"></span></a>
                         </div>
                     </div>
                 </div>
@@ -927,7 +927,7 @@
                 <div id="div_detailsPaneEanError" class="details-pane-ean-error">{{{ i18n 'hotel-finder.brief-content.ean-error' }}}</div>
                 {{/if}}
                 {{else}}
-                {{#if currentHotelExpediaId}}
+                {{#if currentHotelaidepId}}
                 <div class="details-pane-name-starrating">
                     <h2>
                         {{ currentHotelName }}

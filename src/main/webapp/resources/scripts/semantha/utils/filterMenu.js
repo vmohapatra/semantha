@@ -9,7 +9,7 @@ $(function(){
 			//Deselecting all items in the submenu
 			$(this).parent().find("ul").hide().find("li").removeClass("on").parent().parent().find("h4").removeClass("subOff");
 			twiceClickSubLi = true;
-			
+
 			if ($(event.target).closest($("#div_amenitiesList")).length > 0) {
 				eventTriggerer = "AmenityRemovedSearch";
 				typeOfSearch = "AmentityFilterUpdate";
@@ -24,7 +24,7 @@ $(function(){
 		if(!twiceClickSubLi) {
 			$(this).parent().trigger("click");
 		}
-		
+
 	});
 
 	$(".filterMenu ul.multiSelect li").live("click", function (event) {
@@ -42,8 +42,8 @@ $(function(){
 			}
 
 			$(this).removeClass("on");
-		} 
-		else if (($(this).children("ul").length > 0) && ($(this).children("ul").is(":hidden")) && !twiceClickSubLi) { 
+		}
+		else if (($(this).children("ul").length > 0) && ($(this).children("ul").is(":hidden")) && !twiceClickSubLi) {
 			// hassub class LI including ul clicked when hdr clicked. default first selection
 			$(this).removeClass("on").find("ul").find("li:first-child").addClass("on").parent().show().parent().find("h4").addClass("subOff");
 			if ($(event.target).closest($("#div_amenitiesList")).length > 0) {
@@ -72,7 +72,7 @@ $(function(){
 
 			$(this).removeClass("on");
 		}
-		else if (!$(this).hasClass("on") && $(this).parent().parent(".hasSub").length > 0) { 
+		else if (!$(this).hasClass("on") && $(this).parent().parent(".hasSub").length > 0) {
 			//submenu LI clicked
 			$(this).addClass("on").siblings("li").removeClass("on");
 			if ($(event.target).closest($("#div_amenitiesList")).length > 0) {
@@ -85,8 +85,8 @@ $(function(){
 				typeOfSearch = "ThemeFilterUpdate";
 				responseCount = 0;
 			}
-		} 
-		else if($(this).children("ul").length == 0){ 
+		}
+		else if($(this).children("ul").length == 0){
 			//single menu item LI clicked
 			if ($(event.target).closest($("#div_amenitiesList")).length > 0) {
 				eventTriggerer = "AmenityAddedSearch";
@@ -117,7 +117,7 @@ $(function(){
 			clickedBarLabel = ".filterWrapper .amenities span.menu-label";
 			clickedBarLabelIcon = ".filterWrapper .amenities span#spn_amenitiesGreyDownIcon";
 			clickedBarLabelBg = ".filterWrapper .amenities";
-		} 
+		}
 		else if ($(event.target).closest($("#div_themesList")).length > 0) {
 			filterListId = "#div_themesList";
 			filterBarLabelDefault = getLocalizedThemesFilterTitle();
@@ -152,22 +152,22 @@ $(function(){
 			color = "#FFFFFF";
 			$(clickedBarLabelIcon).removeClass("greyDownIcon");
 			$(clickedBarLabelIcon).addClass("greyDownIconActive");
-			$(clickedBarLabelBg).css("background-color","#02ADF7"); 
+			$(clickedBarLabelBg).css("background-color","#02ADF7");
 		} else if (selectedNum > 1) {
 			filterBarLabel = $(selectedLi).eq(0).html() + " + " + (selectedNum - 1);
 			color = "#FFFFFF";
 			$(clickedBarLabelIcon).removeClass("greyDownIcon");
 			$(clickedBarLabelIcon).addClass("greyDownIconActive");
-			$(clickedBarLabelBg).css("background-color","#02ADF7"); 
+			$(clickedBarLabelBg).css("background-color","#02ADF7");
 		}
 
 		$(clickedBarLabel).html(filterBarLabel).css("color",color);
 		renderHotel(true);
     });
-	
+
 	$(".filterMenu ul.singleSelect li").live("click", function (event) {
 		var filterBarLabel, color, filterListId, filterBarLabelDefault, clickedBarLabel, clickedBarLabelBg,clickedBarLabelIcon;
-		if ($(event.target).closest($("#div_priceList")).length > 0) {		
+		if ($(event.target).closest($("#div_priceList")).length > 0) {
 			typeOfSearch = "PriceFilterUpdate";
 
 			filterListId = "#div_priceList";
@@ -208,11 +208,11 @@ $(function(){
 					}
 				responseCount = 0;
 				}
-			}			
-		} 
+			}
+		}
 		else if ($(event.target).closest($("#div_starRatingList")).length > 0) {
 			typeOfSearch = "StarRatingFilterUpdate";
-			
+
 			filterListId = "#div_starRatingList";
 			filterBarLabelDefault = getLocalizedStarRatingFilterTitle();
 			clickedBarLabel = ".filterWrapper .starRating span.menu-label";
@@ -229,7 +229,7 @@ $(function(){
 			}
 			else{
 				eventTriggerer = "StarRatingFilterAddedSearch";
-				
+
 				if(starRating == 'anyStar'){
 					nlpStarMin = 0;
 					nlpStarMax = 50;
@@ -242,7 +242,7 @@ $(function(){
 					else {
 						responseCount = 0;//manually selecting any star
 					}
-					
+
 				}
 				else {
 					clickedBarLabelBg = ".filterWrapper .starRating";
@@ -254,18 +254,18 @@ $(function(){
 				}
 			}
 			//sendCaptureRequest('Enter',true);
-		} 
+		}
 		else if ($(event.target).closest($("#div_sortList")).length > 0) {
 			typeOfSearch = "SortUpdate";
-			
+
 			filterListId = "#div_sortList";
 			filterBarLabelDefault = getLocalizedString('hotel-finder.sort.title');
 			clickedBarLabel = ".sort span.sort-label";
       var HotelSearch = App.Services.HotelSearch;
 
 			if($(this).hasClass("on")){
-				nlpSortOrder =  'EXPEDIA_PICKS';
-				eventTriggerer = "SortExpediaPicks";
+				nlpSortOrder =  'aidep_PICKS';
+				eventTriggerer = "SortaidepPicks";
 				responseCount = 0;
         HotelSearch.setSortOrder(null);
 			}
@@ -295,16 +295,16 @@ $(function(){
             HotelSearch.setSortOrder('name');
 						break;
 					default:
-						eventTriggerer  = "SortExpediaPicks";
+						eventTriggerer  = "SortaidepPicks";
             HotelSearch.setSortOrder(null);
 						if($(this).hasClass("pageLoadSingleSelect")) {
 							$(this).removeClass("pageLoadSingleSelect");
 							responseCount = 1;//In order to prevent auto capture request on pageload
 						}
 						else {
-							responseCount = 0;//manually selecting expedia picks
+							responseCount = 0;//manually selecting aidep picks
 						}
-				}				
+				}
 			}
 		}
 
@@ -325,9 +325,9 @@ $(function(){
 			$(clickedBarLabelBg).css("background-color","");
 			$(clickedBarLabelIcon).removeClass("greyDownIconActive");
 			$(clickedBarLabelIcon).addClass("greyDownIcon");
-		} else if ($(this).hasClass("on") && $(this).attr("id")!='EXPEDIA_PICKS' && ($(event.target).closest($("#div_sortList")).length > 0)){
+		} else if ($(this).hasClass("on") && $(this).attr("id")!='aidep_PICKS' && ($(event.target).closest($("#div_sortList")).length > 0)){
 			$(this).removeClass("on");
-			$('#EXPEDIA_PICKS').addClass("on");
+			$('#aidep_PICKS').addClass("on");
 			filterBarLabel = filterBarLabelDefault;
 			color = "";
 			$(clickedBarLabelBg).css("background-color","");
@@ -348,7 +348,7 @@ $(function(){
 				$(clickedBarLabelIcon).addClass("greyDownIconActive");
 			}
 		}
-		if ($(this).attr("id")=='anyStar' || $(this).attr("id")=='li_anyPrice' || $(this).attr("id")=='EXPEDIA_PICKS') { // clicking first li
+		if ($(this).attr("id")=='anyStar' || $(this).attr("id")=='li_anyPrice' || $(this).attr("id")=='aidep_PICKS') { // clicking first li
 			filterBarLabel = filterBarLabelDefault;
 			color = "#222";
 			$(clickedBarLabelBg).css("background-color","");
@@ -445,11 +445,11 @@ $(function(){
     	}
 
 	});
-	
+
 	$("#ip_hotelRefine").live("blur", function () {
-		
+
 		var element = $(this);
-		
+
 		if ( $.trim(element.val()) == "" ) {
 			// Preserve the width. It was dynamically calculated
 			// on page load and there is no need to re-calculate it.
@@ -461,7 +461,7 @@ $(function(){
 			element.css( "border", "1px solid #0297d7" );
 		}
 	});
-	
+
 	var hotelRefineHandler = null;
 	$("#ip_hotelRefine").live("keyup", function () {
 		nlpHotelName = $("#ip_hotelRefine").val();
@@ -473,7 +473,7 @@ $(function(){
 			renderHotel(true);
 		},600);
 	});
-	
+
 	$('body').click(function(event){
 		if (($(event.target).closest('div.filterMenu')).length > 0||($(event.target).closest($(".filterBarContainer a.filterLabel"))).length > 0) {
                // if clicked on a dialog, do nothing

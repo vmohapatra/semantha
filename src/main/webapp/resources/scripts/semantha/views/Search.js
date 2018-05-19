@@ -1,5 +1,5 @@
 /**
- * @Author  <mailto:vmohapatra@expedia.com>Vijayalaxmi Mohapatra</mailto>
+ * @Author  <mailto:vmohapatra@aidep.com>Vijayalaxmi Mohapatra</mailto>
  */
 'use strict';
 
@@ -201,7 +201,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       item = {
         currentHotelId: null, //Current Hotel EAN ID for hotel
         currentHotelName: data.name, //Name to be displayed
-        currentHotelExpediaId: 'missing-hotel', //Expedia ID of a given hotel
+        currentHotelaidepId: 'missing-hotel', //aidep ID of a given hotel
         currentHotelImage: data.imageUrl, //Travelnow hotel image
         currentHotelFullPrice: null, //Numerical Full price for a hotel for dated search
         currentHotelDiscountPrice: null,//Numerical Discount price for a hotel for dated search
@@ -221,7 +221,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         item = {
           currentHotelId: data.hotelId, //Current Hotel EAN ID for hotel
           currentHotelName: data.name, //Name to be displayed
-          currentHotelExpediaId: data.ehotelId, //Expedia ID of a given hotel
+          currentHotelaidepId: data.ehotelId, //aidep ID of a given hotel
           currentHotelImage: data.imageUrl, //Travelnow hotel image
           currentHotelFullPrice: null, //Numerical Full price for a hotel for dated search
           currentHotelDiscountPrice: null,//Numerical Discount price for a hotel for dated search
@@ -239,7 +239,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         item = {
           currentHotelId: data.hotelId, //Current Hotel EAN ID for hotel
           currentHotelName: data.name, //Name to be displayed
-          currentHotelExpediaId: data.ehotelId, //Expedia ID of a given hotel
+          currentHotelaidepId: data.ehotelId, //aidep ID of a given hotel
           currentHotelImage: data.imageUrl, //Travelnow hotel image
           currentHotelFullPrice: data.regularDisplayPrice, //Numerical Full price for a hotel for dated search
           currentHotelDiscountPrice: data.displayPrice,//Numerical Discount price for a hotel for dated search
@@ -323,7 +323,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
 
       if (exactHotelData != undefined) {
         setTimeout(function() {
-          $('div[hotelid="'+ exactHotelData.itemExpediaId +'"]').trigger('mouseover').trigger('click').trigger('mouseout');
+          $('div[hotelid="'+ exactHotelData.itemaidepId +'"]').trigger('mouseover').trigger('click').trigger('mouseout');
         },1000);
       }
       else {
@@ -440,14 +440,14 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
   /**
    * Test if the hotelItem is the exact hotel in the nautilus concepts and if it is
    * a valid hotel (it has a valid star rating)
-   * @param {Object} hotelItem - A hotel model that has itemStarRating and itemExpediaId
+   * @param {Object} hotelItem - A hotel model that has itemStarRating and itemaidepId
    * @returns {Boolean}
    */
   isAvailableExactHotelMatch: function (hotelItem) {
     var starRating = parseInt(hotelItem.itemStarRating);
     return  nlpHotelIds != undefined &&
-            hotelItem.itemExpediaId != undefined &&
-            hotelItem.itemExpediaId == _.first(nlpHotelIds) &&
+            hotelItem.itemaidepId != undefined &&
+            hotelItem.itemaidepId == _.first(nlpHotelIds) &&
             starRating >= 1 &&
             starRating <= 5;
   },
@@ -463,7 +463,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       return;
     }
 
-    var hotelCenter = new expedia.dmap.LatLong(item.center.lat, item.center.lng),
+    var hotelCenter = new aidep.dmap.LatLong(item.center.lat, item.center.lng),
         price = (item.beforeDiscountPrice && item.afterDiscountPrice) ? {
           regularPrice: item.beforeDiscountPrice,
           discountPrice: item.afterDiscountPrice
@@ -481,7 +481,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         events: {
           'click': function (event) {
 
-            map.events.removeEventListener(expedia.dmap.Map.EVENT_CLICK, function() {
+            map.events.removeEventListener(aidep.dmap.Map.EVENT_CLICK, function() {
               App.searchView.hideDetailsPane();
             });
 
@@ -531,7 +531,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
 
           'mouse_enter': function (event) {
 
-            var itemMatch = App.listView.collection.findWhere({itemExpediaId: parseInt(item.id)});
+            var itemMatch = App.listView.collection.findWhere({itemaidepId: parseInt(item.id)});
 
             if (itemMatch == undefined) {
               return;
@@ -807,7 +807,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       itemFormattedPrice: item.afterDiscountPrice,
       itemSize: null,
       itemType: 'hotel',
-      itemExpediaId: parseInt(item.id),
+      itemaidepId: parseInt(item.id),
       itemReview: null,
       itemReasonToBelieve: null
     };
@@ -825,12 +825,12 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     }
 
     var region = _.first(item.regions),
-        clusterCenter = new expedia.dmap.LatLong(region.center.lat, region.center.lng),
+        clusterCenter = new aidep.dmap.LatLong(region.center.lat, region.center.lng),
         mapContent = new Content(map, clusterCenter, {
           className: 'aggregationMarker',
           events: {
             'click': function () {
-              map.events.removeEventListener(expedia.dmap.Map.EVENT_CLICK, function () {
+              map.events.removeEventListener(aidep.dmap.Map.EVENT_CLICK, function () {
                 App.searchView.hideDetailsPane();
               });
 
@@ -950,7 +950,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       itemFormattedPrice: null,
       itemSize: item.hotels.length,
       itemType: 'hotelcluster',
-      itemExpediaId: region.id,
+      itemaidepId: region.id,
       itemReview: null,
       itemReasonToBelieve: null
     };
@@ -1326,7 +1326,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         $('#div_tagContainer').before('<span class="nonClickableTag" tagData"' + 
           data.hotels[0].name.replace(regex,'&#39;') + '">' + data.hotels[0].name + '</span>');
       }
-      var center = new expedia.dmap.LatLong(data.hotels[0].center.lat, data.hotels[0].center.lng);
+      var center = new aidep.dmap.LatLong(data.hotels[0].center.lat, data.hotels[0].center.lng);
       map.setCenter(center);
       map.setZoom(15);
     }
@@ -1410,7 +1410,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
   putPOIMarkerOnMap: function (poi, className) {
     var poiLat = poi.center.lat,
         poiLng = poi.center.lng,
-        center = new expedia.dmap.LatLong(poiLat, poiLng),
+        center = new aidep.dmap.LatLong(poiLat, poiLng),
         poiMapMarker = new Content(map, center, {
           id : poi.name,
           className : className || 'poiMarker',
@@ -1484,7 +1484,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     var hotelLat = notFoundHotelDetails.CENTER.lat,
         hotelLng = notFoundHotelDetails.CENTER.lng,
         hotelName = notFoundHotelDetails.HOTEL, 
-        center = new expedia.dmap.LatLong(hotelLat,hotelLng);   
+        center = new aidep.dmap.LatLong(hotelLat,hotelLng);   
     
     var missingHotel = new Content(map, center, {
       id : hotelName,

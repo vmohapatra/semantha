@@ -23,7 +23,7 @@ var itemsvcHotel,
     isAlt = false,
     doNotClearMapMarkers = false,
     priceMarkerNum = 10,
-    nlpSortOrder = 'EXPEDIA_PICKS',
+    nlpSortOrder = 'aidep_PICKS',
     nlpHotelName = '',
     nlpHotelIds = [],
     regionhotelbrandlabel = '',
@@ -320,9 +320,9 @@ function initMap() {
     // Enable the visual refresh
 	google.maps.visualRefresh = true;
 
-	map = new expedia.dmap.google.Map(document.getElementById('div_mapContainer'), {
+	map = new aidep.dmap.google.Map(document.getElementById('div_mapContainer'), {
 		zoom: zoom,
-		center: new expedia.dmap.LatLong( lat, lng ),
+		center: new aidep.dmap.LatLong( lat, lng ),
     streetViewControl:true,
     streetViewControlOptions: {
       position:google.maps.ControlPosition.LEFT_CENTER
@@ -333,7 +333,7 @@ function initMap() {
     },
 		zoomMax:19,
 		zoomMin:3,
-		zoomControlOptions: {      
+		zoomControlOptions: {
 			style:google.maps.ZoomControlStyle.AUTO,
 			position:google.maps.ControlPosition.LEFT_CENTER
     },
@@ -360,12 +360,12 @@ function initMap() {
     updateHotelRequest();
 	});
 
-	map.events.addEventListener(expedia.dmap.Map.EVENT_CLICK, function () {
+	map.events.addEventListener(aidep.dmap.Map.EVENT_CLICK, function () {
 		deactive_tiptip();
 
 		if (previoustag == undefined) {
       App.searchView.hideDetailsPane();
-            
+
       if(!($.browser.msie && $.browser.version<=8)) {
         if($(window).width()<=767) {
           $('.row-offcanvas').removeClass("active");
@@ -374,7 +374,7 @@ function initMap() {
 		}
 	});
 
-	map.events.addEventListener(expedia.dmap.Map.EVENT_DOUBLE_CLICK, function() {
+	map.events.addEventListener(aidep.dmap.Map.EVENT_DOUBLE_CLICK, function() {
     App.searchView.hideDetailsPane();
 
     if(!($.browser.msie && $.browser.version<=8)) {
@@ -384,12 +384,12 @@ function initMap() {
     }
 	});
 
-	map.events.addEventListener(expedia.dmap.Map.EVENT_DOUBLE_CLICK, deactive_tiptip);
+	map.events.addEventListener(aidep.dmap.Map.EVENT_DOUBLE_CLICK, deactive_tiptip);
 
-	map.events.addEventListener(expedia.dmap.Map.EVENT_CENTER_CHANGED, function(){
+	map.events.addEventListener(aidep.dmap.Map.EVENT_CENTER_CHANGED, function(){
 		updateMapConfig();
     App.searchView.hideDetailsPane();
-		
+
 		deactive_tiptip();
 		Hotels.length = 0;
     App.nautilusHotels = [];
@@ -401,7 +401,7 @@ function initMap() {
 		mapViewChangedCount++;
 	});
 
-	map.events.addEventListener(expedia.dmap.Map.EVENT_ZOOM_CHANGED, function () {
+	map.events.addEventListener(aidep.dmap.Map.EVENT_ZOOM_CHANGED, function () {
 		if (hoverBox) {
 			hoverBox.setOptions({content: ''});
 		}
@@ -474,7 +474,7 @@ function init() {
     $('#div_mapAndListContainer').css("height",$(window).height() - $('#div_headerContainer').outerHeight() - $('#div_filterBarOuterContainer').outerHeight());
     //Set the height if the map container
     $('#div_mapContainer').css("height", $('#div_mapAndListContainer').outerHeight());
-   
+
 	initMap();
 }
 
@@ -512,7 +512,7 @@ function setUserPrefs() {
 		hotelRefine.val( hotelNameFilter );
 		hotelRefine.keyup();
 	}
-	
+
 	setUserPrefStarRating();
 	setUserPrefSingleSelect( $('#div_sortList ul'), "selectedSortFilterIndex" );
 }
@@ -521,7 +521,7 @@ function setUserPrefStarRating() {
 
 	var selectedStarRatingId = getAndRemoveSessionStorageKey( "selectedStarRatingIndex" );
 	var starRatingListElement = $( '#ul_starRating' );
-	
+
 	if ( selectedStarRatingId != undefined ) {
 		var selected = starRatingListElement.find( '#' + selectedStarRatingId );
 		if ( selected.length <= 0 ) {
@@ -529,7 +529,7 @@ function setUserPrefStarRating() {
 			addStarRatingListFilterGivenId( selectedStarRatingId );
 		}
 	}
-	
+
 	setSingleSelect( starRatingListElement, selectedStarRatingId );
 }
 
@@ -540,14 +540,14 @@ function setUserPrefStarRating() {
 function setUserPrefSingleSelect(singleSelectListElement, sessionStorageKey) {
 
 	var selectedId = getAndRemoveSessionStorageKey( sessionStorageKey );
-	
+
 	if ( singleSelectListElement != undefined ) {
 		setSingleSelect( singleSelectListElement, selectedId );
 	}
 }
 
 function setSingleSelect(singleSelectListElement, selectedId) {
-	
+
 	if ( selectedId != undefined ) {
 		var selected = singleSelectListElement.find( '#' + selectedId );
 		if ( selected.length > 0 ) {
@@ -560,7 +560,7 @@ function setSingleSelect(singleSelectListElement, selectedId) {
 		var firstChild = singleSelectListElement.children('li').get(0);
 		$(firstChild).addClass('pageLoadSingleSelect');
 		if(firstChild != undefined){
-			firstChild.click();		
+			firstChild.click();
 		}
 	}
 }
@@ -574,7 +574,7 @@ function setUserPrefsMultiSelect(containerId, sessionStorageKey) {
 
 		for (var i = 0; i < ids.length; i++) {
 			var arr = ids[i].split( '#' );
-			
+
 			if ( arr.length == 1 ) {
 				var element = $( '#' + containerId ).find( '#' + arr[0] );
 				if ( element.length > 0 ) {
@@ -584,7 +584,7 @@ function setUserPrefsMultiSelect(containerId, sessionStorageKey) {
 			else if ( arr.length == 2 ) {
 				// Add the extra filter
 				addExtraFilter( containerId, arr[0], arr[1] );
-				
+
 				var element = $( '#' + containerId ).find( '#' + arr[0] );
 				if ( element.length > 0 ) {
 					element.removeClass( 'on' );
@@ -595,7 +595,7 @@ function setUserPrefsMultiSelect(containerId, sessionStorageKey) {
 	}
 }
 
-$(document).ready(function () {	
+$(document).ready(function () {
 	App.start();
 	onPageReady();
 
@@ -610,7 +610,7 @@ $(document).ready(function () {
 	if($('#div_mapContainer').length>0){
 		init();
 	}
-	
+
   //Set the height of the map and list container
   $('#div_mapAndListContainer').css("height",$(window).height() - $('#div_headerContainer').outerHeight() - $('#div_filterBarOuterContainer').outerHeight());
   //Set the height if the map container
@@ -629,7 +629,7 @@ $(document).ready(function () {
 		}
 		var selectedElementId = $(this).attr('id').match(/\d+/g);
 		var selectedMarker = document.getElementById(selectedElementId);
-		
+
 		if(selectedElementId == null) {
 			simulate(document.getElementById($(this).attr('id').substring(1)), "mouseover");
 		}
@@ -640,10 +640,10 @@ $(document).ready(function () {
 		//Set the target class to normal based on availability
 		if($("#" + selectedElementId).hasClass("hotel_available_high"))
 			$("#" + selectedElementId).attr("class", "hotel_available_high");
-		
+
 		if($("#" + selectedElementId).hasClass("hotel_available_medium"))
 			$("#" + selectedElementId).attr("class", "hotel_available_medium");
-		
+
 		if($("#" + selectedElementId).hasClass("hotel_available_low"))
 			$("#" + selectedElementId).attr("class", "hotel_available_low");
 
@@ -663,7 +663,7 @@ $(document).ready(function () {
 		else {
 			simulate(selectedMarker, "mouseout");
 		}
-		
+
 		//Set target class to normal based on availability
 		if($("#" + selectedElementId).length>0) {
 			if ($("#" + selectedElementId).hasClass("hotel_available_high")) {
@@ -675,25 +675,25 @@ $(document).ready(function () {
 			else if ($("#" + selectedElementId).hasClass("hotel_available_low")) {
 				$("#" + selectedElementId).attr("class", "hotel_available_low");
 			}
-						
+
 		}
-		
+
 		//Set the target class to normal based on click bubble
 		if (($("#" + selectedElementId).attr("class")!=null && $("#" + selectedElementId).attr("class").indexOf("priceMarker") >= 0) && ($("#" + selectedElementId).attr("clickbubble") != '1'))
 		{
 			$("#" + selectedElementId).attr("class", "priceMarker");
 		}
-			
+
 		if (($("#" + selectedElementId).attr("class")!=null && $("#" + selectedElementId).attr("class").indexOf("hotMarker") >= 0) && ($("#" + selectedElementId).attr("clickbubble") != '1'))
 		{
 			$("#" + selectedElementId).attr("class", "hotMarker");
 		}
-			
+
 		if (($("#" + selectedElementId).attr("class")!=null && $("#" + selectedElementId).attr("class").indexOf("hotUnavailableMarker") >= 0) && ($("#" + selectedElementId).attr("clickbubble") != '1'))
 		{
 			$("#" + selectedElementId).attr("class", "hotUnavailableMarker");
 		}
-		
+
 		if ($("#" + selectedElementId).attr("clickbubble") != '1') {
 			$(this).removeClass("resultItemSelected");
 		}
@@ -717,7 +717,7 @@ $(document).ready(function () {
 		//console.log('hover click......' + selectedElementId);
 		hoteldetails(selectedElementId);
 	});
-	
+
 	$('.menuItem').click(function(){
 		clearPopup();
 	});
@@ -752,7 +752,7 @@ window.onload = function(){
 };
 
 $(window).resize(function () {
-    
+
   //Set the height of the map and list container
   $('#div_mapAndListContainer').css("height",$(window).height() - $('#div_headerContainer').outerHeight() - $('#div_filterBarOuterContainer').outerHeight());
   //Set the height if the map container
@@ -979,7 +979,7 @@ function createTravelRequestHandle(searchType, eventTrigger) {
   if (isSearchPage()) {
     App.searchView.hideDetailsPane();
   }
-	
+
 	//remove any exact address match marker
 	if(exactAddressContent != null) {
 		exactAddressContent.remove();
@@ -1010,7 +1010,7 @@ function createTravelRequestHandle(searchType, eventTrigger) {
 		mapViewChangedCount = 0;
     // For address queries, searching won't happen until the map moves
     isSearchInProgress = false;
-		updateViewport(address, addressZoomLevel, 'Address Prefix ');		
+		updateViewport(address, addressZoomLevel, 'Address Prefix ');
 
 	}
 	// Nautilus search
@@ -1257,7 +1257,7 @@ function nautilusHotelExactQuery (result) {
 
   // Moving the map to center on exact hotel will render other content on map
   if(result.CENTER !== undefined) {
-    var center = new expedia.dmap.LatLong(result.CENTER.lat,result.CENTER.lng),
+    var center = new aidep.dmap.LatLong(result.CENTER.lat,result.CENTER.lng),
         regex = new RegExp("'", 'g');
 
     map.setCenter(center);
@@ -1286,7 +1286,7 @@ function updateViewport(location, zoomLevel) {
       var address = results[0].formatted_address,
           lat = results[0].geometry.location.lat(),
           lng = results[0].geometry.location.lng(),
-          center = new expedia.dmap.LatLong(lat,lng);
+          center = new aidep.dmap.LatLong(lat,lng);
 
       map.setCenter(center);
       map.setZoom(zoomLevel);
@@ -1332,10 +1332,10 @@ function updateMapConfig(){
 }
 
 function boundsBasedZoom(nelat, nelng, swlat, swlng) {
-	var	neLatLong = new expedia.dmap.LatLong(nelat, nelng);
-	var	swLatLong = new expedia.dmap.LatLong(swlat, swlng);
+	var	neLatLong = new aidep.dmap.LatLong(nelat, nelng);
+	var	swLatLong = new aidep.dmap.LatLong(swlat, swlng);
   itemsvcHotel.clearItems();
-	map.fitBounds(new expedia.dmap.Bounds(neLatLong, swLatLong));
+	map.fitBounds(new aidep.dmap.Bounds(neLatLong, swLatLong));
 }
 
 /**
@@ -1348,16 +1348,16 @@ function moveMapToPolygon(polygon) {
 	var points = [];
 
 	polygon.forEach(function (point) {
-		points.push(new expedia.dmap.LatLong(point.lat, point.lng));
+		points.push(new aidep.dmap.LatLong(point.lat, point.lng));
 	});
 
 	itemsvcHotel.clearItems();
-	map.fitBounds(expedia.dmap.Bounds.fromLatLongs(points));
+	map.fitBounds(aidep.dmap.Bounds.fromLatLongs(points));
 }
 
 function centerBasedZoom(lat, lng) {
 	itemsvcHotel.clearItems();
-  map.setCenter(new expedia.dmap.LatLong(lat, lng));
+  map.setCenter(new aidep.dmap.LatLong(lat, lng));
 	map.setZoom(aggrZoomLevel);
 }
 
@@ -1397,7 +1397,7 @@ function createFriendlyAttributeTextFromId(nautilusId) {
 }
 
 function addNewStarRatingListFilterGivenRating(starRating) {
-	
+
 	var idSuffix = parseInt(starRating),
 	    id = 'star-' + starRating + '-' + idSuffix;
 
@@ -1405,18 +1405,18 @@ function addNewStarRatingListFilterGivenRating(starRating) {
 }
 
 function addStarRatingListFilterGivenId(starRatingId){
-	
+
 	var stars = parseInt( starRatingId.split( '-' )[1]);
-	
+
 	addNewStarRatingListFilterWithClass( starRatingId, stars, "extraFilter" );
 }
 
 function addNewStarRatingListFilterWithClass(id, stars, className) {
-	
+
 	var label = (stars == 1)
 		? getLocalizedString('hotel-finder.filter.rating.start.item.only.single')
 		: getLocalizedString('hotel-finder.filter.rating.start.item.only.multiple').replace('{0}', stars);
-	
+
 	var element = $('#ul_starRating');
 	element.children().removeClass('on');
 	element.prepend('<li class="' + className + '" id="' + id + '"><label>' + label + '</label><span count="0">(0)</span></li>');
@@ -1643,7 +1643,7 @@ function getAffinityCategory(affinityId){
 	if(affinityAttribute!=null){
 		category =  affinityAttribute['Category'];
 	}
-	return category; 
+	return category;
 }
 
 function addHotelsToList (hotels, containsPartialHotels) {
@@ -1686,7 +1686,7 @@ function updateHotelRequest() {
 			star: {
 				min: nlpStarMin,
 				max: nlpStarMax
-			}, 
+			},
 			brand: nlpbrand, //filter by brand
 			rooms: eval(roomFilter), //filter by room and adult and child
 			amenityids: nlpAmenityIds,
@@ -1850,7 +1850,7 @@ function clearNLPData(){
 	nlpPrice = {};
 	nlpbrand = '';
 	nlpHotelName = '';
-	nlpSortOrder ='EXPEDIA_PICKS';
+	nlpSortOrder ='aidep_PICKS';
 }
 
 function clearPopup(){

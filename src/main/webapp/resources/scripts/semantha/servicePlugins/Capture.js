@@ -1,7 +1,7 @@
 /**
- * Copyright 2013 Expedia, Inc. All rights reserved.
- * EXPEDIA PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- * @Author  <mailto:vmohapatra@expedia.com>Vijayalaxmi Mohapatra</mailto>
+ * Copyright 2013 aidep, Inc. All rights reserved.
+ * aidep PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * @Author  <mailto:vmohapatra@aidep.com>Vijayalaxmi Mohapatra</mailto>
  */
 //Declaring the capture namespace
 (function( capture, $, undefined) {
@@ -459,7 +459,7 @@
   capture.getHotelList = function() {
     var keyName='', key;
     for(key in itemsvcHotel.items) {
-      //key.toString().substring(key.toString().indexOf(".")+1);//this is expedia ID
+      //key.toString().substring(key.toString().indexOf(".")+1);//this is aidep ID
       if(key.toString().indexOf("hotelcluster")==-1) {
         if(keyName=='') {
           keyName = itemsvcHotel.items[key].data.HotelContent.EanId;//this is EAN ID
@@ -481,7 +481,7 @@
   capture.getClusterList = function() {
     var keyName='', key;
     for(key in itemsvcHotel.items) {
-      //key.toString().substring(key.toString().indexOf(".")+1);//this is expedia ID
+      //key.toString().substring(key.toString().indexOf(".")+1);//this is aidep ID
 
 
       if(key.toString().indexOf("hotelcluster")==-1) {
@@ -522,7 +522,7 @@
     }
 
     //Set page specific properties
-    pageInfo["TM.PointOfSale"] = "BEST - Expedia Inc.";
+    pageInfo["TM.PointOfSale"] = "BEST - aidep Inc.";
     if(captureServerData!=null && captureServerData!='' && captureServerData!=undefined ) {
       pageInfo["TM.IPAddress"] = captureServerData.iPAddress;
       pageInfo["TM.SessionId"] = captureServerData.sessionId;
