@@ -105,7 +105,7 @@ var dates = {
 
 var Semantha = {
   data: {},
-  NLPServicePrefix:"semantha/NLPService?requestQuery=",
+  NLPServicePrefix:"sphinx/NLPService?requestQuery=",
 
 
   onLoad: function () {
@@ -128,9 +128,9 @@ var Semantha = {
         showPrev = false;
 
     this.addEventToDP();
-    
+
     adjustWidthBasedOnPlaceholder( $("#ip_hotelRefine") );
-    
+
     $("#ip_dpfrom").datepicker({
       numberOfMonths: 2,
       minDate: 0,
@@ -149,10 +149,10 @@ var Semantha = {
           var btn = $('<button class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all" type="button">' + continueWithoutDates + '</button>');
           btn.unbind("click").bind("click", function () {
             $.datepicker._clearDate(input);
-            
+
             //Set the orange shadow on date input once the date field is cleared
             $("#ip_dpfrom").addClass('chooseDate');
-            $("#ip_dpfromShow").addClass('chooseDate'); 
+            $("#ip_dpfromShow").addClass('chooseDate');
             $("#ip_dpto").addClass('chooseDate');
             $("#ip_dptoShow").addClass('chooseDate');
 
@@ -181,10 +181,10 @@ var Semantha = {
           var btn = $('<button class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all" type="button">' + continueWithoutDates + '</button>');
           btn.unbind("click").bind("click", function () {
             $.datepicker._clearDate(input);
-            
+
             //Set the orange shadow on date input once the date field is cleared
             $("#ip_dpfrom").addClass('chooseDate');
-            $("#ip_dpfromShow").addClass('chooseDate'); 
+            $("#ip_dpfromShow").addClass('chooseDate');
             $("#ip_dpto").addClass('chooseDate');
             $("#ip_dptoShow").addClass('chooseDate');
 
@@ -207,11 +207,11 @@ var Semantha = {
       onSelect: function (date) {
         //Remove  the orange shadow on date input once the date field is clicked on
         $("#ip_dpfrom").removeClass('chooseDate');
-        $("#ip_dpfromShow").removeClass('chooseDate');  
+        $("#ip_dpfromShow").removeClass('chooseDate');
         $("#ip_dpto").removeClass('chooseDate');
         $("#ip_dptoShow").removeClass('chooseDate');
 
-        
+
         var date2 = Date.parse($("#ip_dpto").val());
         var date1 = Date.parse(date);
         if (isNaN(date1)) { $(this).val(''); return; }
@@ -240,7 +240,7 @@ var Semantha = {
         if (Semantha.validateDate(d1, d2))
         {
           // renderHotel();
-           
+
         }
 
 
@@ -251,7 +251,7 @@ var Semantha = {
         //Once calendar is closed check if date was selected. If not highlight showing orange shadow
         if($("#ip_dpfrom").val().indexOf('/') == -1) {
           $("#ip_dpfrom").addClass('chooseDate');
-          $("#ip_dpfromShow").addClass('chooseDate'); 
+          $("#ip_dpfromShow").addClass('chooseDate');
           $("#ip_dpto").addClass('chooseDate');
           $("#ip_dptoShow").addClass('chooseDate');
         }
@@ -265,11 +265,11 @@ var Semantha = {
             var checkinDate = new Date($("#ip_dpfrom").val());
             var checkoutDate = new Date(checkinDate.getFullYear(), checkinDate.getMonth(), checkinDate.getDate() + 1);
             $("#ip_dpto").datepicker("setDate", checkoutDate);
-            $("#ip_dpfromShow").css('color', '#222');                    
+            $("#ip_dpfromShow").css('color', '#222');
             $("#ip_dpto").focus();
-            $("#ip_dpto").click();                   
+            $("#ip_dpto").click();
 
-             closingByDefault = true;                 
+             closingByDefault = true;
 
             setTravelRequestWidth();
           }, 100);
@@ -280,11 +280,11 @@ var Semantha = {
             $('#ip_dptoShow').css('color', '#222');
             setTravelRequestWidth();
             Semantha.renderHotelDetail();
-             
-          }                
+
+          }
         }
-         
-         
+
+
         showNext = false;
       }
     });
@@ -293,7 +293,7 @@ var Semantha = {
     $('#ip_dpfromShow').click(function(evt){
       //Remove the orange shadow on date input once the date field is clicked
       $("#ip_dpfrom").removeClass('chooseDate');
-      $("#ip_dpfromShow").removeClass('chooseDate');  
+      $("#ip_dpfromShow").removeClass('chooseDate');
       $("#ip_dpto").removeClass('chooseDate');
       $("#ip_dptoShow").removeClass('chooseDate');
 
@@ -336,10 +336,10 @@ var Semantha = {
           var btn = $('<button class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all" type="button">' + continueWithoutDates + '</button>');
           btn.unbind("click").bind("click", function () {
             $.datepicker._clearDate(input);
-            
+
              //Set the orange shadow on date input once the date field is cleared
             $("#ip_dpfrom").addClass('chooseDate');
-            $("#ip_dpfromShow").addClass('chooseDate'); 
+            $("#ip_dpfromShow").addClass('chooseDate');
             $("#ip_dpto").addClass('chooseDate');
             $("#ip_dptoShow").addClass('chooseDate');
 
@@ -367,10 +367,10 @@ var Semantha = {
           var btn = $('<button class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all" type="button">' + continueWithoutDates + '</button>');
           btn.unbind("click").bind("click", function () {
             $.datepicker._clearDate(input);
-            
+
             //Set the orange shadow on date input once the date field is cleared
             $("#ip_dpfrom").addClass('chooseDate');
-            $("#ip_dpfromShow").addClass('chooseDate'); 
+            $("#ip_dpfromShow").addClass('chooseDate');
             $("#ip_dpto").addClass('chooseDate');
             $("#ip_dptoShow").addClass('chooseDate');
 
@@ -389,7 +389,7 @@ var Semantha = {
       onSelect: function (date) {
         //Remove the orange shadow on date input once the date field is clicked on
         $("#ip_dpfrom").removeClass('chooseDate');
-        $("#ip_dpfromShow").removeClass('chooseDate');  
+        $("#ip_dpfromShow").removeClass('chooseDate');
         $("#ip_dpto").removeClass('chooseDate');
         $("#ip_dptoShow").removeClass('chooseDate');
 
@@ -420,7 +420,7 @@ var Semantha = {
         Semantha.renderHotelDetail();
         if (Semantha.validateDate(d1, d2))
         {
-           
+
         }
 
       },
@@ -429,7 +429,7 @@ var Semantha = {
         //Once calendar is closed check if date was selected. If not highlight showing orange shadow
         if($("#ip_dpto").val().indexOf('/') == -1) {
           $("#ip_dpfrom").addClass('chooseDate');
-          $("#ip_dpfromShow").addClass('chooseDate'); 
+          $("#ip_dpfromShow").addClass('chooseDate');
           $("#ip_dpto").addClass('chooseDate');
           $("#ip_dptoShow").addClass('chooseDate');
         }
@@ -444,7 +444,7 @@ var Semantha = {
 
           closingByDefault = true;
           setTravelRequestWidth();
-           
+
         }
         else {
           if (closingByDefault) {
@@ -458,7 +458,7 @@ var Semantha = {
         var date1 = Date.parse($("#ip_dpto").val());
         if (!isNaN(date1)) {
           $("#ip_dptoShow").css('color','#222');
-        }            
+        }
 
         showPrev = false;
       }
@@ -470,7 +470,7 @@ var Semantha = {
       $(this).blur();
       //Remove the orange shadow on date input once the date field is clicked
       $("#ip_dpfrom").removeClass('chooseDate');
-      $("#ip_dpfromShow").removeClass('chooseDate');  
+      $("#ip_dpfromShow").removeClass('chooseDate');
       $("#ip_dpto").removeClass('chooseDate');
       $("#ip_dptoShow").removeClass('chooseDate');
 
@@ -528,7 +528,7 @@ var Semantha = {
       showNext = false;
       showPrev = false;
     });
-    
+
     var dpFromDate = getURLParameter('arrivalDate');
     if ( dpFromDate == undefined ) {
       dpFromDate = getAndRemoveSessionStorageKey("checkIn");
@@ -537,7 +537,7 @@ var Semantha = {
       $("#ip_dpfrom").datepicker("setDate",dpFromDate);
       $("#ip_dpfromShow").css('color','#222');
     }
-    
+
     var dpToDate = getURLParameter('departureDate');
     if ( dpToDate == undefined ) {
       dpToDate = getAndRemoveSessionStorageKey("checkOut");
@@ -546,14 +546,14 @@ var Semantha = {
       $("#ip_dpto").datepicker("setDate",dpToDate);
       $("#ip_dptoShow").css('color','#222');
     }
-    
+
     // Now adjust the size of the date pickers.
     // Add an extra 2 (a small random number) to the size to accomodate for certain
     // alphabets that need a bit more room to display. For example 'D' versus 'l'.
     var dpFromSize = $("#ip_dpfrom").val().length + 2;
     $("#ip_dpfrom").attr( 'size', dpFromSize );
     $("#ip_dpfromShow").attr( 'size', dpFromSize );
-    
+
     var dpToSize = $("#ip_dpto").val().length + 2;
     $("#ip_dpto").attr( 'size', dpToSize );
     $("#ip_dptoShow").attr( 'size', dpToSize );
@@ -596,7 +596,7 @@ var Semantha = {
     limitDate = new Date(today.getTime() + 330 * 24 * 60 * 60 * 1000);
     if (dates.compare(date2, limitDate) > 0) return false;
     return true;
-  }, 
+  },
 
   getDateFromTD: function (s) {
     var year = $(s).attr("data-year");
@@ -604,7 +604,7 @@ var Semantha = {
     var day = $(s).find("a").text();
     var date1 = new Date(Date.parse(month + "/" + day + "/" + year));
     return date1;
-  }, 
+  },
 
   compareDate: function (date1, date2) {
     return dates.compare(date1, date2);

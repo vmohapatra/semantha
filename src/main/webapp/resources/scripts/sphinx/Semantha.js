@@ -233,7 +233,7 @@ function hoteldetailsURL(id, prefix) {
 }
 
 function hoteldetails(id) {
-	var url = hoteldetailsURL(id, '/semantha/hoteldetails?');
+	var url = hoteldetailsURL(id, '/sphinx/hoteldetails?');
 
 	if (url != null) {
 		window.open(url);

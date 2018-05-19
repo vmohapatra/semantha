@@ -53,16 +53,16 @@
     <link href="/resources/styles/pages/settingsContainer.css" rel="stylesheet" type="text/css" />
     <link href="/resources/styles/pages/hotelfinder.css" rel="stylesheet" type="text/css" />
     <!--[if IE 9]>
-    <link href="/resources/styles/semantha/custom-main.css" rel="stylesheet" type="text/css" />
-    <link href="/resources/styles/semantha/custom-ie9.css" rel="stylesheet" type="text/css" />
-    <link href="/resources/styles/semantha/custom-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/styles/sphinx/custom-main.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/styles/sphinx/custom-ie9.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/styles/sphinx/custom-responsive.css" rel="stylesheet" type="text/css" />
     <![endif]-->
     <![if !IE]>
     <link href="/resources/styles/semantha/custom-main.css" rel="stylesheet" type="text/css" />
     <link href="/resources/styles/semantha/custom-responsive.css" rel="stylesheet" type="text/css" />
 
     <!--[if lt IE 9]>
-    <link href="/resources/styles/semantha/custom-ie8.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/styles/sphinx/custom-ie8.css" rel="stylesheet" type="text/css" />
     <![endif]-->
     <!-- Style Statements end -->
 

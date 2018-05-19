@@ -1,6 +1,6 @@
-package com.semantha.init;
+package com.sphinx.init;
 
-import com.semantha.config.WebMvcConfig;
+import com.sphinx.config.WebMvcConfig;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;
@@ -14,7 +14,7 @@ import java.util.Properties;
 
 public class AppInitializer implements WebApplicationInitializer {
 
-    private static final String CONFIG_LOCATION = "com.semantha.config";
+    private static final String CONFIG_LOCATION = "com.sphinx.config";
     private static final String MAPPING_URL = "/*";
     private static final String SPRING_PROPERTIES_FILE_NAME = "spring.properties";
     private static final String ACTIVE_PROFILE_PROPERTY_NAME = "spring.profiles.active";

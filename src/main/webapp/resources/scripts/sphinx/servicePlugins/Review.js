@@ -9,7 +9,7 @@
 (function( review, $, undefined ) {
   //Initialize the Object to store reviews
   var reviews = {},
-      reviewServicePrefix = '/semantha/ReviewService?';
+      reviewServicePrefix = '/sphinx/ReviewService?';
 
   /*
    * Private Methods
@@ -101,7 +101,7 @@
     if (_.isEmpty(idsList)) {
       return;
     }
-    
+
     var url = reviewServicePrefix + 'api=reviewscores&id=' + idsList;
     $.getJSON(url, function(data) {
       if (!_.isEmpty(data)){
@@ -110,16 +110,16 @@
               item = collection.findWhere({'itemaidepId': hotelId});
 
           if (!_.isEmpty(item)) {
-            item.set({itemReview: data[i].reviewScore});  
+            item.set({itemReview: data[i].reviewScore});
           }
-        }   
-      }   
+        }
+      }
     });
 
     if(!_.isEmpty(nlpAmenityIds)) {
       var tags = '&tags=' + nlpAmenityIds.join().toLowerCase(),
           reasonToBelieveUrl = reviewServicePrefix + 'api=reasontobelieve&id='+ idsList + tags;
-  
+
       $.getJSON(reasonToBelieveUrl, function(data) {
         if(!_.isEmpty(data)){
           for(var i =0; i< data.length; i++) {
@@ -127,14 +127,14 @@
                 item = collection.findWhere({'itemaidepId': hotelId});
 
             if(!_.isEmpty(item)) {
-              item.set({itemReasonToBelieve: data[i].reasonToBelieve}); 
+              item.set({itemReasonToBelieve: data[i].reasonToBelieve});
             }
-          }   
-        }   
-      }); 
+          }
+        }
+      });
     }
   };
-      
+
   review.reviewSummary = function() {
     var eid = $('#div_eHotelId').text(),
         host = $('#div_reviewSummaryHost').text(),
@@ -148,36 +148,36 @@
       $('#div_noReviewsContainer').show();
       $('#div_reviewsContainer').hide();
       return;
-    }   
+    }
 
     review.getReviewData(eid, tags);
   };
 
   review.getReviewData = function(eid, tags) {
-    //  /semantha/ReviewService?api=[reviewxxx]&id=123
+    //  /sphinx/ReviewService?api=[reviewxxx]&id=123
     var reviewSummariesUrl = reviewServicePrefix +'api=reviewsummaries&id='+ eid;
     var reviewHistogramUrl = reviewServicePrefix +'api=reviewhistogram&id='+ eid;
     var reviewScoreUrl = reviewServicePrefix +'api=reviewscores&id='+ eid;
-    
+
     $.getJSON(reviewHistogramUrl,function(data) {
       review.processReviewHistogram(data);
     });
     $.getJSON(reviewSummariesUrl,function(data) {
       review.processReviewSummaries(data);
-    });   
+    });
     $.getJSON(reviewScoreUrl,function(data) {
       review.processReviewScore(data);
-    }); 
-    
+    });
+
     if(!_.isEmpty(tags)) {
-      
+
       var reasonToBelieveUrl = reviewServicePrefix + 'api=reasontobelieve&id='+ eid + '&tags=' + tags;
       $.getJSON(reasonToBelieveUrl,function(data) {
         review.processReasonToBelieve(data[0].reasonToBelieve, tags);
-      }); 
-    } 
+      });
+    }
   };
-  
+
   review.processReasonToBelieve = function(data, tags) {
     var tagArray = tags.split(','),
         reasonToBelieveList = '',
@@ -200,12 +200,12 @@
 
         sentiment = '<span class="bold">' + getSentimentString(tempData.termSentimentScore) + '</span>';
         tag = '<span class="bold">' + createFriendlyAttributeTextFromId(tag) + '</span>';
-        
+
         contentTemp = '<li class=\"reason-to-believe-heading-details\">'+ getLocalizedString('hotel-details.reasontobelieve') + '</li>';
         contentTemp = contentTemp.replace('{0}', sentiment);
         contentTemp = contentTemp.replace('{1}', tag);
 
-        for(var i = 0; i < tempData.reviewSnippets.length; i++){    
+        for(var i = 0; i < tempData.reviewSnippets.length; i++){
           var snippetContent = '<li class="detailsReasonToBelieve" snippetID="$#4" sentiment="$#5"><h3><span>$#1</span></h3><p><span class="reviewerName">$#2</span><span class="reviewerLocation">$#3</span></p></li>',
               reviewSnippet = tempData.reviewSnippets[i],
               reviewContent = reviewSnippet.content,
@@ -220,33 +220,33 @@
           contentTemp += snippetContent;
         }
       }
-      reasonToBelieveList += contentTemp;   
+      reasonToBelieveList += contentTemp;
     }
 
     $('#ul_firstCollection').prepend(reasonToBelieveList);
-    
+
   };
-    
+
   review.processReviewSummaries = function(data) {
     if (_.isEmpty(data)) {
-      return;     
+      return;
     }
 
     var summaries = data[0].summaries,
         contentTemp = '<li class="detailsReviewStatement"><h3><a id="$#0">$#1</a></h3><p><span class="reviewerName">$#2</span><span class="reviewerLocation">$#3</span><span class="similarStatements">$#4</span></p></li>';
-    
+
     $('.reviewSummary').show();
 
     if(summaries.length > 3) {
       $('#lnk_showMoreSummaries').show();
-    }   
-        
+    }
+
     for (var i in summaries) {
       var content = summaries[i],
           contentText = contentTemp,
           brief = '',
           author = content.author;
-      
+
       if (!_.isEmpty(content.content)) {
         brief = content.content;
       }
@@ -254,29 +254,29 @@
       contentText = contentText.replace('$#1', brief);
       contentText = contentText.replace('$#2', getAuthorFirstName(author.firstName));
       contentText = contentText.replace('$#3', getAuthorLocationDescription(author.location));
-      
+
       var measure = getSimilarStatementMeasure(content.supportMeasure);
       if (_.isEmpty(measure)) {
         $(this).css('border','none');
       }
       contentText = contentText.replace('$#4', measure);
-      
+
       if (!_.isEmpty(content.originalReview)) {
         contentText = contentText.replace('$#0', content.originalReview.id);
         content.originalReview.dateSubmitted = content.dateSubmitted;
         reviews[content.originalReview.id] = content.originalReview;
       }
-      
+
       //Addition of content to the review Summaries
       if (i < 3) {
         $('.moreSummaries').before(contentText);
       }
       else {
         $('#ul_secondCollection').append(contentText);
-      }     
+      }
     }
   };
-  
+
   review.processReviewHistogram = function(data) {
     // Default behaviour
     $('#div_noReviewsContainer').show();
@@ -286,12 +286,12 @@
     if (!_.isEmpty(data)) {
       $('#div_noReviewsContainer').hide();
       $('#div_reviewsContainer').show();
-    
+
       var  largestCount = 0;
       data.forEach(function (rateData) {
-        largestCount = rateData.count > largestCount ? rateData.count : largestCount; 
+        largestCount = rateData.count > largestCount ? rateData.count : largestCount;
       });
-      
+
       var rateTemplate = $('#div_rateTemplate').html();
       data.forEach(function (rateData) {
         var rateContent = rateTemplate.replace(/\$1/g,rateData.rating),
@@ -305,12 +305,12 @@
       });
     }
   };
-  
+
   review.processReviewScore = function(data) {
     if (_.isEmpty(data)) {
-      return;     
+      return;
     }
-    
+
     var reviewScore = data[0].reviewScore;
     var totalCount = reviewScore.count;
     var rating = reviewScore.rating.toFixed(1);
@@ -318,9 +318,9 @@
     $('#spn_score').text(rating);
     $('#spn_scoreStars').addClass('stars'+scoreStars);
     $('#spn_reviewsCount').text(totalCount);
-      
+
   };
-  
+
   review.processHover = function(reviewId, reviewBrief) {
     var hoverContent = '<div class="reviewStarsDate"><span class="guestRating guestRating-lg"><span class="value stars$#1"></span></span><span class="reviewDate">$#2</span></div><p class="reviewText">"$#3<span class="matchingText">$#4</span>$#5"</p>';
 
@@ -349,56 +349,56 @@
         hoverContent = hoverContent.replace('$#3',prefix);
         if(!_.isEmpty(postSentence)) {
           var postArray = postSentence.split(' '),
-              postLimit = Math.min(30, postArray.length); 
-          
+              postLimit = Math.min(30, postArray.length);
+
           for(var x=0; x < postLimit; x++) {
             postfix = postfix + ' ' + postArray[x] ;
           }
           if(postArray.length > 30){
             postfix +='...';
-          }       
+          }
         }
         hoverContent = hoverContent.replace('$#5',postfix);
       }
-      
+
       var rating = 0;
-      if (!_.isEmpty(reviewContent.rating)) {   
+      if (!_.isEmpty(reviewContent.rating)) {
         rating = reviewContent.rating*10;
       }
       hoverContent = hoverContent.replace('$#1',rating);
-      
+
       var reviewDate = '';
       if (!_.isEmpty(reviewContent.dateSubmitted)) {
         reviewDate = new Date(reviewContent.dateSubmitted).format('d mmm, yyyy');
       }
       hoverContent = hoverContent.replace('$#2',reviewDate);
       $('#tiptip_review').html(hoverContent);
-    }   
+    }
   };
-  
-  review.addReviewsToDetailsPane = function (collection){        
+
+  review.addReviewsToDetailsPane = function (collection){
     var item = collection.at(0),
         eid = item.get('currentHotelaidepId'),
         reviewSummariesUrl = reviewServicePrefix +'api=reviewsummaries&id='+ eid,
         reviewScoresUrl = reviewServicePrefix +'api=reviewscores&id='+ eid;
-            
+
     //If aidep hotelid is -1 just render the itemVIew with null Review related objects
     if (_.isEmpty(eid) || eid === -1) {
       App.detailsPaneView.render();
       return;
     }
-        
+
     if (eid === 'missing-hotel' && !_.isEmpty(item)) {
       item.set({currentHotelaidepId: "-1"});
       return;
     }
-        
+
     $.getJSON(reviewScoresUrl, function (data) {
-      if(!_.isEmpty(data) && !_.isEmpty(item)) {  
-        item.set({currentHotelReviewScores: data[0]});  
-      }   
+      if(!_.isEmpty(data) && !_.isEmpty(item)) {
+        item.set({currentHotelReviewScores: data[0]});
+      }
     });
-        
+
     if (!_.isEmpty(nlpAmenityIds)) {
       var tags = '&tags=';
       for (var n=0;n<nlpAmenityIds.length;n++){
@@ -406,20 +406,20 @@
       }
 
       var reasonToBelieveUrl = reviewServicePrefix + 'api=reasontobelieve&id='+ eid + tags;
-    
-      $.getJSON(reasonToBelieveUrl, function(data) {
-        if(!_.isEmpty(data) && !_.isEmpty(item)){    
-          item.set({currentHotelReviewReasonToBelieve: data[0].reasonToBelieve}); 
-        }   
-      }); 
-    } 
 
-        
+      $.getJSON(reasonToBelieveUrl, function(data) {
+        if(!_.isEmpty(data) && !_.isEmpty(item)){
+          item.set({currentHotelReviewReasonToBelieve: data[0].reasonToBelieve});
+        }
+      });
+    }
+
+
     $.getJSON(reviewSummariesUrl, function(data) {
-      if(!_.isEmpty(data) && !_.isEmpty(item)){    
-        item.set({currentHotelReviewSummaries: data[0]}); 
-      }   
-    }); 
+      if(!_.isEmpty(data) && !_.isEmpty(item)){
+        item.set({currentHotelReviewSummaries: data[0]});
+      }
+    });
   };
-  
+
 }( window.review = window.review || {}, jQuery));

@@ -49,7 +49,7 @@
   App.Services.HotelBrief = App.Services.HotelBrief || {
 
     config: {
-      briefServiceUrl: '/semantha/hotelbrief'
+      briefServiceUrl: '/sphinx/hotelbrief'
     },
 
     /**

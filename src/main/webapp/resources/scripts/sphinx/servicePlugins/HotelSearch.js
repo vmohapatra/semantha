@@ -18,7 +18,7 @@
    */
 
   var config = {
-    serviceUrl: '/semantha/HotelSearchService',
+    serviceUrl: '/sphinx/HotelSearchService',
     validSortOrder: ['name', 'star', 'priceIncr', 'priceDesc'],
     tpid: 1,
     eapid: 1,

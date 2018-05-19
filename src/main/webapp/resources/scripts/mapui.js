@@ -107,7 +107,7 @@ function addCaptureInfo(url){
 }
 
 function hoteldetailsURL(id, prefix){
-	//var url = '/semantha/hoteldetails?';
+	//var url = '/sphinx/hoteldetails?';
 	var url = prefix;
 	// var hotelId = id;
 	var hotelId = id;
@@ -161,7 +161,7 @@ function hoteldetailsURL(id, prefix){
 }
 
 function hoteldetails(id){
-	var url = hoteldetailsURL(id, '/semantha/hoteldetails?');
+	var url = hoteldetailsURL(id, '/sphinx/hoteldetails?');
 
 	// console.log(url);
 	if(url!=null){
@@ -1115,7 +1115,7 @@ function getData() {
 	var prefix = escape($("#travelRequest").val());
 	if (prefix.length == 0) return myData;
 
-	var autoUrl = serverPrefix + "semantha/AutoSuggestService?travelRequest=" + prefix;
+	var autoUrl = serverPrefix + "sphinx/AutoSuggestService?travelRequest=" + prefix;
 	oldQuery = escape($("#travelRequest").val());
 	if(serverData==null){
 		getServerData("Manual", "SearchBoxEnter", true);

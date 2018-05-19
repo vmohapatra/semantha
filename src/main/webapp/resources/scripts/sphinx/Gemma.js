@@ -1,5 +1,5 @@
 function getData() {
-	
+
 	var code;
 	if (!e) e = window.event;
 	if (e.keyCode) code = e.keyCode;
@@ -20,17 +20,17 @@ function getData() {
 		createTravelRequest(searchType, eventTrigger);
 		$("#ip_travelRequest").autocomplete('close');
 	}
-	
+
 	var selectedLocale = $.cookie( 'localeId' ) || 'en_US';
 	//turn off for those non-english locale
-	if(selectedLocale!="en_US")return;	
+	if(selectedLocale!="en_US")return;
 
 	keycode = String.fromCharCode(code);
 	if (keycode.length == 0) return myData;
 	var prefix = escape($("#ip_travelRequest").val());
 	if (prefix.length == 0) return myData;
 
-	var autoUrl = serverPrefix + "semantha/AutoSuggestService?travelRequest=" + prefix;
+	var autoUrl = serverPrefix + "sphinx/AutoSuggestService?travelRequest=" + prefix;
 	oldQuery = escape($("#ip_travelRequest").val());
 
 	if(lcmAffinityMappingData==null){
@@ -41,7 +41,7 @@ function getData() {
 	}
 	if (!$.browser.msie||window.XDomainRequest)
 		autoUrl =  gemmaServerData.gemmaURL + "&prefix=" + prefix;
-	
+
 	if (!window.XDomainRequest) {
 		$.ajax({
 			url: autoUrl,
@@ -110,7 +110,7 @@ function getGemmaVersion(){
 		}
 		xdr.send();
 	}
-	
+
 	function getVersion(xmlResponse){
 		var gemmaVersion = $("GemmaSuggestResponse ", xmlResponse).attr('productVersion');
 		$('#spn_gemmaVersion').text(gemmaVersion);

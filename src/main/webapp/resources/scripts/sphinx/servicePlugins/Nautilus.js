@@ -13,7 +13,7 @@
   App.Services.Nautilus = App.Services.Nautilus || {
 
     config: {
-      versionServiceUrl: '/semantha/NautilusVersionService'
+      versionServiceUrl: '/sphinx/NautilusVersionService'
     },
 
     /**

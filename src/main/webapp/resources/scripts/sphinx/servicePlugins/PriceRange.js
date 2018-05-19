@@ -10,7 +10,7 @@
   App.Services.PriceRange = App.Services.PriceRange || {
 
     config: {
-      serviceUrl: '/semantha/priceRange'
+      serviceUrl: '/sphinx/priceRange'
     },
 
     /**
