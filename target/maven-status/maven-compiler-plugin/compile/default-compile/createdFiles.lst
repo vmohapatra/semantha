@@ -1,9 +1,0 @@
-com/semantha/config/WebMvcConfig.class
-com/semantha/config/PropertySourcesConfig$TestConfig.class
-com/semantha/config/PropertySourcesConfig$ProdConfig.class
-com/semantha/config/PropertySourcesConfig$DevConfig.class
-com/semantha/config/AppConfig.class
-com/semantha/controllers/AppController.class
-com/semantha/config/PropertySourcesConfig.class
-com/semantha/init/AppInitializer.class
-com/semantha/init/PropertiesLoader.class

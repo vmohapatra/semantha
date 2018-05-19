@@ -293,7 +293,7 @@ function initMap()
 		zoomMin:2
 	});
 
-	
+
 	var thePanorama = map.getMapProvider().getStreetView();
 
 	google.maps.event.addListener(thePanorama, 'visible_changed', function() {
@@ -404,7 +404,7 @@ function initMap()
 		className: "hotel_available",
 		events: {
 			'click': function (event) {
-				
+
 				map.events.removeEventListener(expedia.dmap.Map.EVENT_CLICK, removeClickBubble);
 				event = event ? event : window.event;
 				var target;
@@ -417,7 +417,7 @@ function initMap()
 				if(target.hasClass("priceLabel") || target.hasClass("markerDot")) {
 					target = target.parent();
 				}
-				
+
 				var item = this.getItem(),
 				data = item.getData();
 				if(data.Type == 'hotel')
@@ -427,7 +427,7 @@ function initMap()
 					if (target.attr("clickbubble") == '1') {
 						removeClickBubble();
 						$(selectedHotelItem).addClass("resultItemSelected");
-						
+
 						return;
 					}
 					removeClickBubble();
@@ -500,12 +500,12 @@ function initMap()
 								$("#hoverTipHotelPrice").css({"font-weight":"bold","color":"#555","display":"inline-block"});
 							}
 						}
-						
+
 					} else {
 						hoverTipHotelPrice = getLocalizedString('hotel-finder.no-rooms');
 						$("#hoverTipHotelPrice").css({"font-weight":"normal","color":"#999","display":"inline-block"});
 					}
-					
+
 
 					document.getElementById('hoverTipHotelStar').innerHTML = hoverTipHotelStar;
 					document.getElementById('hoverTipHotelPrice').innerHTML = hoverTipHotelPrice;
@@ -548,7 +548,7 @@ function initMap()
 				var selectedHotelItem = "#h" + selectedElementId;
 
 				$(selectedHotelItem).addClass("resultItemSelected");
-				
+
 
 				$("#hoverContent").css("position", "relative").css("z-index", "999");
 
@@ -715,7 +715,7 @@ function setUserPrefs() {
 		hotelRefine.val( hotelNameFilter );
 		hotelRefine.keyup();
 	}
-	
+
 	setUserPrefStarRating();
 	setUserPrefSingleSelect( $('#sortList ul'), "selectedSortFilterIndex" );
 }
@@ -724,7 +724,7 @@ function setUserPrefStarRating() {
 
 	var selectedStarRatingId = getAndRemoveSessionStorageKey( "selectedStarRatingIndex" );
 	var starRatingListElement = $( '#starRatingUl' );
-	
+
 	if ( selectedStarRatingId != undefined )
 	{
 		var selected = starRatingListElement.find( '#' + selectedStarRatingId );
@@ -734,7 +734,7 @@ function setUserPrefStarRating() {
 			addStarRatingListFilterGivenId( selectedStarRatingId );
 		}
 	}
-	
+
 	setSingleSelect( starRatingListElement, selectedStarRatingId );
 }
 
@@ -745,7 +745,7 @@ function setUserPrefStarRating() {
 function setUserPrefSingleSelect(singleSelectListElement, sessionStorageKey) {
 
 	var selectedId = getAndRemoveSessionStorageKey( sessionStorageKey );
-	
+
 	if ( singleSelectListElement != undefined )
 	{
 		setSingleSelect( singleSelectListElement, selectedId );
@@ -753,7 +753,7 @@ function setUserPrefSingleSelect(singleSelectListElement, sessionStorageKey) {
 }
 
 function setSingleSelect(singleSelectListElement, selectedId) {
-	
+
 	if ( selectedId != undefined )
 	{
 		var selected = singleSelectListElement.find( '#' + selectedId );
@@ -768,9 +768,9 @@ function setSingleSelect(singleSelectListElement, selectedId) {
 		// select the first list element as that is the default.
 		var firstChild = singleSelectListElement.children('li').get(0);
 		if(firstChild != undefined){
-			firstChild.click();		
+			firstChild.click();
 		}
-		
+
 	}
 }
 
@@ -784,7 +784,7 @@ function setUserPrefsMultiSelect(containerId, sessionStorageKey) {
 		for (var i = 0; i < ids.length; i++)
 		{
 			var arr = ids[i].split( '#' );
-			
+
 			if ( arr.length == 1 )
 			{
 				var element = $( '#' + containerId ).find( '#' + arr[0] );
@@ -797,7 +797,7 @@ function setUserPrefsMultiSelect(containerId, sessionStorageKey) {
 			{
 				// Add the extra filter
 				addExtraFilter( containerId, arr[0], arr[1] );
-				
+
 				var element = $( '#' + containerId ).find( '#' + arr[0] );
 				if ( element.length > 0 )
 				{
@@ -1197,7 +1197,7 @@ function getGemmaVersion(){
 		}
 		xdr.send();
 	}
-	
+
 	function getVersion(xmlResponse){
 		var gemmaVersion = $("GemmaSuggestResponse ", xmlResponse).attr('productVersion');
 		$('#gemmaVersion').text(gemmaVersion);
@@ -1241,11 +1241,11 @@ function setupAC() {
 
 var createTravelRequestHandler = null;
 function createTravelRequest(searchType, eventTrigger) {
-	
+
 	if(createTravelRequestHandler!=null){
 		clearTimeout(createTravelRequestHandler);
 	}
-	
+
 	requestTime=0;
 	createTravelRequestHandler = setTimeout(function(){createTravelRequestHandle(searchType, eventTrigger);},500);
 }
@@ -1453,7 +1453,7 @@ function getHotels(NLPResponse) {
 				hotelNames.push(nodes[i].getAttribute("name"));
 			}
 		}
-		
+
 	}
 	return {
 	  	ids: hotelIds,
@@ -1468,8 +1468,8 @@ function renderMapUsingHotelIds(hotelids)
 	itemsvcHotel.clearItemsRequests();
 	fitBounds(hotelids);
 
-	itemsvcHotel.makeRequests();	
-	
+	itemsvcHotel.makeRequests();
+
 }
 
 function fitBounds(hotelids)
@@ -1847,8 +1847,8 @@ function parseNLP(data,destination,unknowlocation) {
 
 
 		});
-		
-		
+
+
 		$xml.find("Domain[type='LCMHotelName']").each(function () {
 			hotelNameBySearch = $(this).attr('name');
 			hotelIdsBySearch = $(this).attr('id');
@@ -1948,8 +1948,8 @@ function parseNLP(data,destination,unknowlocation) {
 			hotelNameBySearch = nodes[0].getAttribute("name");
 			hotelIdsBySearch = nodes[0].getAttribute("id");
 		}
-		
-		
+
+
 		nodes = xmlDoc.selectNodes("//Domain[@type='SemanthaAttr']");
 		nlpAmenityIds.length=0;
 		nlpAmenities.length=0;
@@ -2135,7 +2135,7 @@ function addExtraFilter(containerId, fId, fName){
 }
 
 function addNewStarRatingListFilterGivenRating(starRating){
-	
+
 	var idSuffix = parseInt(starRating);
 	var id='star-' + starRating + '-' + idSuffix;
 
@@ -2145,19 +2145,19 @@ function addNewStarRatingListFilterGivenRating(starRating){
 }
 
 function addStarRatingListFilterGivenId(starRatingId){
-	
+
 	var starRating = parseInt( starRatingId.split( '-' )[1] );
 	var stars = starRating / 10;
-	
+
 	addNewStarRatingListFilterWithClass( starRatingId, stars, "extraFilter" );
 }
 
 function addNewStarRatingListFilterWithClass(id, stars, className) {
-	
+
 	var label = (stars == 1)
 		? getLocalizedString('hotel-finder.filter.rating.start.item.only.single')
 		: getLocalizedString('hotel-finder.filter.rating.start.item.only.multiple').replace('{0}', stars);
-	
+
 	var element = $('#starRatingUl');
 	element.children().removeClass('on');
 	element.prepend('<li class="' + className + '" id="' + id + '"><label>' + label + '</label><span count="0">(0)</span></li>');
@@ -2626,13 +2626,13 @@ function addHotelToListHandle() {
 	//if(Hotels.length>200)
 	//	{Hotels.length=0;return;}
 
-	
+
 	    //return arguments.callee._singletonInstance;
 
 
 	$("#loadmessagehtml").css("display", "block");
 	$(".resultsList ul").empty();
-	
+
 	if (Hotels.length == 0) {
 		$("#loadmessagehtml").css("display", "none");
 		//$('.resultsList').css('display','none');
@@ -2763,7 +2763,7 @@ function addHotelToListHandle() {
 	//itemsvcHotel.clearItemDataRequests();
 
 	updateHotelRequest();
-	
+
 }
 
 function boundsBasedZoom(nelat, nelng, swlat, swlng)
@@ -3092,14 +3092,14 @@ function introductionLink(linkHref){
 	if(queryIdx!=-1){
 		queryStr = linkHref.substring(queryIdx+6);
 		$('#travelRequest').val(queryStr);
-		createTravelRequest('Manual', 'SearchBoxEnter');		
+		createTravelRequest('Manual', 'SearchBoxEnter');
 	}else{
 		var context = $('#context').text();
 		window.location.href = context + linkHref;
 	}
-	
+
 	$("#introduction").dialog('close');
-	
+
 	//
 }
 
@@ -3139,7 +3139,7 @@ function onPageReady()
 //	$("#parseDiv").css("top", "26px");
 
 	getGemmaServerData();
-	
+
 	getLcmAmenityIdMappings();
 	getPriceMarkerNum();
 	getPriceRange();
@@ -3199,3 +3199,23 @@ function getGemmaVersionProcess(){
 function searchIconClick(){
 	createTravelRequest('Manual', 'SearchBoxIconClick');
 }
+
+/*
+	<target name="-init_webapp_properties" depends="build_common_webapp.-init_webapp_properties">
+		<property name="output.content" value="${output.war.loose}/resources" />
+		<path id="js.merge.files">
+			<pathelement path="${output.content}/js/maps/common/Utilities.js" />
+			<pathelement path="${output.content}/js/maps/common/Events.js" />
+			<pathelement path="${output.content}/js/maps/common/Json.js" />
+			<pathelement path="${output.content}/js/maps/Item.js" />
+			<pathelement path="${output.content}/js/maps/LatLong.js" />
+			<pathelement path="${output.content}/js/maps/Bounds.js" />
+			<pathelement path="${output.content}/js/maps/ItemsRequests.js" />
+			<pathelement path="${output.content}/js/maps/ItemService.js" />
+			<pathelement path="${output.content}/js/maps/google/Map.js" />
+			<pathelement path="${output.content}/js/maps/google/Content.js" />
+			<pathelement path="${output.content}/js/maps/Provider.js" />
+		</path>
+		<property name="js.merged.file" value="resources/js/Map-Full.js" />
+
+ */

@@ -1,0 +1,193 @@
+.roomSelectText {display:inline-block; text-align:right; cursor:pointer;/* margin-left:9px;*/}
+
+/**
+ * Styling for common elements of the settings container and the room select container.
+ */
+
+.roomSelectContainer, .settingsContainer {font-size:12px; vertical-align:middle;border-left: 1px solid #4A5559;}
+.roomSelectContainer a, .settingsContainer a {
+	display:inline-block; text-decoration:none; color:#fff; text-align:right;
+	width:auto; padding: 24px 20px;height:76px;}
+.roomSelectContainer a .downIcon, .settingsContainer a .downIcon {margin-left:6px;}
+.roomSelectContainer a:hover, .settingsContainer a:hover {
+	color:#fff;text-decoration:none;background-color:#2C3438;
+}
+.roomSelectContainer .downIcon, .settingsContainer .downIcon {float:none; vertical-align:top;}
+
+/**
+ * Styling for the settings container icons
+ */
+.settingsContainer {}
+.settingsContainer .gearIcon {
+	margin-left:4px; width:15px; height:12px; display:inline-block; margin-top:6px; margin-right:0;
+	background:url("/resources/images/hotel_finder_sprites.png")  -150px -2px no-repeat;margin-left: 0px;
+}
+#lnk_settingsContainer {padding: 26px 20px;}
+.curAndCountryIcon {position: relative; display:inline-block; vertical-align:super;}
+
+/* The background URL gets set in the setInitialLocale() function */
+.settingsContainer .countryIcon {
+	margin-left:5px; margin-bottom:4px; background-repeat:no-repeat;
+	width:16px; height:11px; display:inline-block;
+}
+
+.settingsContainer .currencyIcon {
+    color:#fff;
+    font-size:11px;
+    position: absolute;
+   	left:0px;
+    top:12px;
+}
+#div_settingsPopContainer #spn_localeFlagImg {margin-top:2px;}
+
+/**
+ * Styling for the 'settingsPopContainer' element (the settings drop down menu).
+ */
+#div_settingsPopContainer {width:auto; padding:17px 20px 3px; z-index:1005;}
+#div_settingsPopContainer ul {float:left;}
+#div_settingsPopContainer ul li {font-size:14px; padding-bottom:14px;}
+#div_settingsPopContainer ul li#lnkLocale a {padding-left:8px;}
+
+/**
+ * Styling for the pop up for the settings drop down element.
+ */
+.settingsDialog {width:520px;}
+.settingsDialog h1 {padding-bottom:10px;}
+.settingsDialog ul li {color: #069; font-size:17px; padding-top:10px; padding-bottom:10px; padding-left:20px;}
+.settingsDialog ul li.selected {color: #666; cursor: text;}
+.settingsDialog ul li.selected:hover {color: #666; cursor: text; text-decoration: none;}
+
+/**
+ * Styling for the currency picker.
+ */
+ #div_localeDialog, #div_currencyDialog {margin:1px 10px 14px 26px;}
+  #div_localeDialog h1, #div_currencyDialog h1 {padding-bottom:22px;}
+ #div_currencyDialog ul li, #div_localeDialog ul li {
+ 	font-size:14px; padding:0; margin-bottom:16px;
+ }
+ #div_currencyDialog ul li, #div_localeDialog ul li span {
+ 	display:inline-block;
+ }
+#div_localeDialog ul li span {margin-right:12px;width: 20px;color:#666;}
+
+ #div_currencyDialog ul li a, #div_localeDialog ul li a {
+ 	color:#069;
+ }
+
+#div_currencyDialog ul li:hover, #div_localeDialog ul li a:hover {color: #02b3fd; cursor:pointer; text-decoration: underline;}
+ #div_currencyDialog ul li.selected, #div_localeDialog ul li a.selected {
+ 	color:#666;
+ }
+#div_localeDialog ul li a.selected:hover, #div_currencyDialog ul li.selected {color:#666; cursor:text; text-decoration:none;}
+#div_currencyDialog {
+	width:730px; /* width ends up applied to parent dialog div, so include padding offsets in desired width */
+}
+#div_currencyDialog li {
+	width:220px;
+}
+#ul_languages .flag {margin-top:1px;}
+
+
+/**
+ * Styling for the locale picker.
+ */
+
+
+#ul_languages li a.selected {color: #666;}
+
+.flag {float:left; width:16px; height:11px;
+	background:url(/resources/images/flags.png) no-repeat;}
+
+.flag.flag_AU {
+    background-position: 0 0;
+}
+.flag.flag_AT {
+    background-position: -28px 0;
+}
+.flag.flag_BE {
+    background-position: -56px 0;
+}
+.flag.flag_CA {
+    background-position: -85px 0;
+}
+.flag.flag_CZ {
+    background-position: -56px -75px;
+}
+.flag.flag_DK {
+    background-position: -113px 0;
+}
+.flag.flag_FR {
+    background-position: -142px 0;
+}
+.flag.flag_DE {
+    background-position: 0 -15px;
+}
+.flag.flag_UK {
+    background-position: -28px -15px;
+}
+.flag.flag_IN {
+    background-position: -56px -15px;
+}
+.flag.flag_IE {
+    background-position: -85px -15px;
+}
+.flag.flag_IT {
+    background-position: -113px -15px;
+}
+.flag.flag_JP {
+    background-position: -142px -15px;
+}
+.flag.flag_KR {
+    background-position: 0 -30px;
+}
+.flag.flag_MY {
+    background-position: -28px -30px;
+}
+.flag.flag_MX {
+    background-position: -56px -30px;
+}
+.flag.flag_NL {
+    background-position: -85px -30px;
+}
+.flag.flag_NZ {
+    background-position: -113px -30px;
+}
+.flag.flag_NO {
+    background-position: -142px -30px;
+}
+.flag.flag_SG {
+    background-position: 0 -45px;
+}
+.flag.flag_ES {
+    background-position: -28px -45px;
+}
+.flag.flag_SE {
+    background-position: -56px -45px;
+}
+.flag.flag_TH {
+    background-position: -85px -45px;
+}
+.flag.flag_US {
+    background-position: -113px -45px;
+}
+.flag.flag_ID {
+    background-position: -142px -45px;
+}
+.flag.flag_TW {
+    background-position: 0 -60px;
+}
+.flag.flag_HK {
+    background-position: -28px -60px;
+}
+.flag.flag_VN {
+    background-position: -56px -60px;
+}
+.flag.flag_PH {
+    background-position: -85px -60px;
+}
+.flag.flag_BR {
+    background-position: -113px -60px;
+}
+.flag.flag_AR {
+    background-position: -142px -60px;
+}

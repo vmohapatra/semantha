@@ -47,7 +47,7 @@ public class AppController {
      * @param response
      * @return
      */
-    @RequestMapping(value = "/finder", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
+    @RequestMapping(value = "/finder", method = RequestMethod.GET, produces = "text/html;charset=UTF-8;")
     public ModelAndView renderView(HttpServletRequest request, HttpServletResponse response) {
         return getDefaultModelAndView("finder", request, response);
     }

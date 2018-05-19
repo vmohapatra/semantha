@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb5b3db9-802f-49a3-a1c9-5c244a5917b8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/iconCheckmark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/settingsContainer.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/semantha/config/WebMvcConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/semantha/config/WebMvcConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/semantha/controllers/AppController.class" afterPath="$PROJECT_DIR$/target/classes/com/semantha/controllers/AppController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/semantha/config/WebMvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/semantha/config/WebMvcConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/semantha/controllers/AppController.java" afterPath="$PROJECT_DIR$/src/main/java/com/semantha/controllers/AppController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finder.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finder.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/mapui.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/mapui.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/pages/hotelfinder.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/pages/hotelfinder.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-05-18" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-05-18" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/content/target/" />
@@ -23,75 +31,412 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AppConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/semantha/config/AppConfig.java">
+      <file leaf-file-name="mapui.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/mapui.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PropertySourcesConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/semantha/config/PropertySourcesConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+            <state relative-caret-position="38551">
+              <caret line="3219" column="0" lean-forward="true" selection-start-line="3219" selection-start-column="0" selection-end-line="3219" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#460#498#0" expanded="true" />
+                <marker date="1526712398718" expanded="true" signature="70404:70452" ph="..." />
+                <marker date="1526712398718" expanded="true" signature="87171:87229" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="135">
-                <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="Semantha.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/Semantha.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="1814" column="16" lean-forward="false" selection-start-line="1814" selection-start-column="16" selection-end-line="1814" selection-end-column="16" />
+              <folding>
+                <element signature="e#1611#1794#0" expanded="false" />
+                <element signature="e#1817#2009#0" expanded="false" />
+                <element signature="e#2026#3132#0" expanded="false" />
+                <element signature="e#2031#2082#0" expanded="false" />
+                <element signature="e#2087#2138#0" expanded="false" />
+                <element signature="e#2143#2193#0" expanded="false" />
+                <element signature="e#2198#2248#0" expanded="false" />
+                <element signature="e#2253#2302#0" expanded="false" />
+                <element signature="e#2307#2357#0" expanded="false" />
+                <element signature="e#2362#2412#0" expanded="false" />
+                <element signature="e#2417#2467#0" expanded="false" />
+                <element signature="e#2472#2521#0" expanded="false" />
+                <element signature="e#2526#2576#0" expanded="false" />
+                <element signature="e#2581#2631#0" expanded="false" />
+                <element signature="e#2636#2684#0" expanded="false" />
+                <element signature="e#2689#2738#0" expanded="false" />
+                <element signature="e#2743#2794#0" expanded="false" />
+                <element signature="e#2799#2850#0" expanded="false" />
+                <element signature="e#2855#2905#0" expanded="false" />
+                <element signature="e#2910#2961#0" expanded="false" />
+                <element signature="e#2966#3015#0" expanded="false" />
+                <element signature="e#3020#3071#0" expanded="false" />
+                <element signature="e#3076#3127#0" expanded="false" />
+                <element signature="n#!!block;n#getRoomFilterJSON#0" expanded="false" />
+                <element signature="e#3331#3845#0" expanded="false" />
+                <element signature="e#3543#3568#0" expanded="false" />
+                <element signature="e#3578#3841#0" expanded="false" />
+                <element signature="e#3688#3814#0" expanded="false" />
+                <element signature="e#3738#3809#0" expanded="false" />
+                <element signature="n#!!block;n#constructRoomFilter#0" expanded="false" />
+                <element signature="e#4019#4053#0" expanded="false" />
+                <element signature="n#!!block;n#hoteldetailsURL#0" expanded="false" />
+                <element signature="e#4447#4474#0" expanded="false" />
+                <element signature="e#4562#4591#0" expanded="false" />
+                <element signature="e#4621#4650#0" expanded="false" />
+                <element signature="e#4970#4989#0" expanded="false" />
+                <element signature="n#!!block;n#hoteldetails#0" expanded="false" />
+                <element signature="e#5145#5169#0" expanded="false" />
+                <element signature="n#!!block;n#createArray#0" expanded="false" />
+                <element signature="e#5266#5407#0" expanded="false" />
+                <element signature="e#5358#5404#0" expanded="false" />
+                <element signature="n#!!block;n#simulate#0" expanded="false" />
+                <element signature="e#5586#5662#0" expanded="false" />
+                <element signature="e#5794#6310#0" expanded="false" />
+                <element signature="e#5873#5947#0" expanded="false" />
+                <element signature="e#5955#6247#0" expanded="false" />
+                <element signature="e#6267#6306#0" expanded="false" />
+                <element signature="e#6317#6546#0" expanded="false" />
+                <element signature="e#6489#6542#0" expanded="false" />
+                <element signature="n#!!block;n#extend#0" expanded="false" />
+                <element signature="n#!!block;n#initMap#0" expanded="false" />
+                <element signature="e#6963#7023#0" expanded="false" />
+                <element signature="e#7049#7147#0" expanded="false" />
+                <element signature="e#7097#7116#0" expanded="false" />
+                <element signature="e#7126#7144#0" expanded="false" />
+                <element signature="e#7297#7778#0" expanded="false" />
+                <element signature="e#7419#7481#0" expanded="false" />
+                <element signature="e#7526#7588#0" expanded="false" />
+                <element signature="e#7639#7748#0" expanded="false" />
+                <element signature="e#7914#8084#0" expanded="false" />
+                <element signature="e#7950#8036#0" expanded="false" />
+                <element signature="e#8046#8081#0" expanded="false" />
+                <element signature="e#8185#8253#0" expanded="false" />
+                <element signature="e#8328#8607#0" expanded="false" />
+                <element signature="e#8384#8604#0" expanded="false" />
+                <element signature="e#8491#8600#0" expanded="false" />
+                <element signature="e#8528#8592#0" expanded="false" />
+                <element signature="e#8688#8883#0" expanded="false" />
+                <element signature="e#8779#8880#0" expanded="false" />
+                <element signature="e#8814#8874#0" expanded="false" />
+                <element signature="e#9050#9286#0" expanded="false" />
+                <element signature="e#9216#9257#0" expanded="false" />
+                <element signature="e#9368#9783#0" expanded="false" />
+                <element signature="e#9386#9430#0" expanded="false" />
+                <element signature="e#9714#9755#0" expanded="false" />
+                <element signature="e#9945#10061#0" expanded="false" />
+                <element signature="e#10134#10694#0" expanded="false" />
+                <element signature="e#10326#10511#0" expanded="false" />
+                <element signature="e#10519#10691#0" expanded="false" />
+                <element signature="e#10845#10865#0" expanded="false" />
+                <element signature="e#10871#10898#0" expanded="false" />
+                <element signature="n#!!block;n#getHoverBox#0" expanded="false" />
+                <element signature="e#10958#11007#0" expanded="false" />
+                <element signature="n#!!block;n#init#0" expanded="false" />
+                <element signature="e#11183#11273#0" expanded="false" />
+                <element signature="n#!!block;n#setUserPrefs#0" expanded="false" />
+                <element signature="e#11661#12408#0" expanded="false" />
+                <element signature="e#12510#12559#0" expanded="false" />
+                <element signature="e#12677#12784#0" expanded="false" />
+                <element signature="n#!!block;n#setUserPrefStarRating#0" expanded="false" />
+                <element signature="e#13114#13369#0" expanded="false" />
+                <element signature="e#13221#13366#0" expanded="false" />
+                <element signature="n#!!doc;n#setUserPrefSingleSelect#0" expanded="false" />
+                <element signature="n#!!block;n#setUserPrefSingleSelect#0" expanded="false" />
+                <element signature="e#13750#13812#0" expanded="false" />
+                <element signature="n#!!block;n#setSingleSelect#0" expanded="false" />
+                <element signature="e#13914#14041#0" expanded="false" />
+                <element signature="e#14012#14038#0" expanded="false" />
+                <element signature="e#14048#14334#0" expanded="false" />
+                <element signature="e#14052#14096#0" expanded="false" />
+                <element signature="e#14301#14331#0" expanded="false" />
+                <element signature="n#!!block;n#setUserPrefsMultiSelect#0" expanded="false" />
+                <element signature="e#14499#15054#0" expanded="false" />
+                <element signature="e#14573#15051#0" expanded="false" />
+                <element signature="e#14639#14768#0" expanded="false" />
+                <element signature="e#14734#14763#0" expanded="false" />
+                <element signature="e#14800#15047#0" expanded="false" />
+                <element signature="e#14979#15042#0" expanded="false" />
+                <element signature="e#15088#19894#0" expanded="false" />
+                <element signature="e#15172#15247#0" expanded="false" />
+                <element signature="e#15427#15441#0" expanded="false" />
+                <element signature="e#15849#15916#0" expanded="false" />
+                <element signature="e#16014#16877#0" expanded="false" />
+                <element signature="e#16071#16093#0" expanded="false" />
+                <element signature="e#16256#16345#0" expanded="false" />
+                <element signature="e#16353#16400#0" expanded="false" />
+                <element signature="e#16928#18854#0" expanded="false" />
+                <element signature="e#16985#17007#0" expanded="false" />
+                <element signature="e#17188#17276#0" expanded="false" />
+                <element signature="e#17284#17330#0" expanded="false" />
+                <element signature="e#17429#17888#0" expanded="false" />
+                <element signature="e#17499#17575#0" expanded="false" />
+                <element signature="e#17651#17729#0" expanded="false" />
+                <element signature="e#17802#17877#0" expanded="false" />
+                <element signature="e#18138#18203#0" expanded="false" />
+                <element signature="e#18395#18458#0" expanded="false" />
+                <element signature="e#18661#18735#0" expanded="false" />
+                <element signature="e#18800#18851#0" expanded="false" />
+                <element signature="e#18903#19178#0" expanded="false" />
+                <element signature="e#18926#18948#0" expanded="false" />
+                <element signature="e#19230#19432#0" expanded="false" />
+                <element signature="e#19469#19489#0" expanded="false" />
+                <element signature="e#19525#19599#0" expanded="false" />
+                <element signature="e#19622#19812#0" expanded="false" />
+                <element signature="e#19744#19809#0" expanded="false" />
+                <element signature="e#19924#20126#0" expanded="false" />
+                <element signature="e#20097#20124#0" expanded="false" />
+                <element signature="e#20158#21189#0" expanded="false" />
+                <element signature="e#20559#20936#0" expanded="false" />
+                <element signature="e#21098#21186#0" expanded="false" />
+                <element signature="n#!!block;n#getOldValue#0" expanded="false" />
+                <element signature="n#!!block;n#getOldQuery#0" expanded="false" />
+                <element signature="e#21345#21388#0" expanded="false" />
+                <element signature="e#21396#21419#0" expanded="false" />
+                <element signature="e#21463#21493#0" expanded="false" />
+                <element signature="e#21487#21491#0" expanded="false" />
+                <element signature="n#!!block;n#getPriceRange#0" expanded="false" />
+                <element signature="e#21638#21959#0" expanded="false" />
+                <element signature="e#21673#21689#0" expanded="false" />
+                <element signature="e#21761#21878#0" expanded="false" />
+                <element signature="n#!!block;n#getGemmaServerData#0" expanded="false" />
+                <element signature="e#22041#22141#0" expanded="false" />
+                <element signature="e#22104#22138#0" expanded="false" />
+                <element signature="n#!!block;n#getLcmAffinityMappings#0" expanded="false" />
+                <element signature="e#22233#22430#0" expanded="false" />
+                <element signature="n#!!block;n#getPriceMarkerNum#0" expanded="false" />
+                <element signature="e#22508#22537#0" expanded="false" />
+                <element signature="n#!!block;n#mailTo#0" expanded="false" />
+                <element signature="n#!!block;n#openParseWindow#0" expanded="false" />
+                <element signature="e#22659#23913#0" expanded="false" />
+                <element signature="e#22734#23852#0" expanded="false" />
+                <element signature="e#22933#23578#0" expanded="false" />
+                <element signature="e#23448#23563#0" expanded="false" />
+                <element signature="e#23621#23756#0" expanded="false" />
+                <element signature="n#!!block;n#setupAC#0" expanded="false" />
+                <element signature="e#24007#24215#0" expanded="false" />
+                <element signature="e#24110#24212#0" expanded="false" />
+                <element signature="e#24300#24325#0" expanded="false" />
+                <element signature="n#!!block;n#createTravelRequest#0" expanded="false" />
+                <element signature="e#24413#24672#0" expanded="false" />
+                <element signature="e#24487#24537#0" expanded="false" />
+                <element signature="e#24595#24661#0" expanded="false" />
+                <element signature="n#!!block;n#createTravelRequestHandle#0" expanded="false" />
+                <element signature="e#24830#24914#0" expanded="false" />
+                <element signature="e#25199#25588#0" expanded="false" />
+                <element signature="e#25354#25400#0" expanded="false" />
+                <element signature="e#25429#25475#0" expanded="false" />
+                <element signature="e#25507#25554#0" expanded="false" />
+                <element signature="e#25649#25720#0" expanded="false" />
+                <element signature="e#25728#25801#0" expanded="false" />
+                <element signature="e#25899#26110#0" expanded="false" />
+                <element signature="e#26339#26382#0" expanded="false" />
+                <element signature="e#26459#26495#0" expanded="false" />
+                <element signature="e#26592#27493#0" expanded="false" />
+                <element signature="e#26854#27035#0" expanded="false" />
+                <element signature="e#27043#27236#0" expanded="false" />
+                <element signature="e#27521#29140#0" expanded="false" />
+                <element signature="e#27546#27571#0" expanded="false" />
+                <element signature="e#27657#29134#0" expanded="false" />
+                <element signature="e#27815#27890#0" expanded="false" />
+                <element signature="e#28086#28275#0" expanded="false" />
+                <element signature="e#28435#28736#0" expanded="false" />
+                <element signature="e#28748#29061#0" expanded="false" />
+                <element signature="e#29167#29256#0" expanded="false" />
+                <element signature="n#!!block;n#parseNautilusResult#0" expanded="false" />
+                <element signature="e#29523#29575#0" expanded="false" />
+                <element signature="e#29599#29637#0" expanded="false" />
+                <element signature="e#29692#29734#0" expanded="false" />
+                <element signature="e#29786#29827#0" expanded="false" />
+                <element signature="e#29892#29951#0" expanded="false" />
+                <element signature="e#30041#30254#0" expanded="false" />
+                <element signature="e#30083#30199#0" expanded="false" />
+                <element signature="e#30207#30250#0" expanded="false" />
+                <element signature="e#30319#30362#0" expanded="false" />
+                <element signature="e#30413#30447#0" expanded="false" />
+                <element signature="n#!!block;n#nautilusAmbiguousQuery#0" expanded="false" />
+                <element signature="e#30786#32783#0" expanded="false" />
+                <element signature="e#30923#31474#0" expanded="false" />
+                <element signature="e#31012#31078#0" expanded="false" />
+                <element signature="e#31537#32571#0" expanded="false" />
+                <element signature="e#31599#32526#0" expanded="false" />
+                <element signature="e#31678#32090#0" expanded="false" />
+                <element signature="e#32103#32518#0" expanded="false" />
+                <element signature="e#32538#32565#0" expanded="false" />
+                <element signature="e#32644#32779#0" expanded="false" />
+                <element signature="n#!!block;n#nautilusAddressQuery#0" expanded="false" />
+                <element signature="n#!!block;n#nautilusRegionExactQuery#0" expanded="false" />
+                <element signature="e#33588#33635#0" expanded="false" />
+                <element signature="e#33703#33822#0" expanded="false" />
+                <element signature="e#33847#33892#0" expanded="false" />
+                <element signature="e#33916#33966#0" expanded="false" />
+                <element signature="e#34198#34277#0" expanded="false" />
+                <element signature="n#!!doc;n#createLocationTag#0" expanded="false" />
+                <element signature="n#!!block;n#createLocationTag#0" expanded="false" />
+                <element signature="e#34543#34861#0" expanded="false" />
+                <element signature="e#34934#35075#0" expanded="false" />
+                <element signature="n#!!doc;n#createBrandNameTag#0" expanded="false" />
+                <element signature="n#!!block;n#createBrandNameTag#0" expanded="false" />
+                <element signature="e#35312#36208#0" expanded="false" />
+                <element signature="e#35387#36204#0" expanded="false" />
+                <element signature="e#35553#35924#0" expanded="false" />
+                <element signature="e#36005#36198#0" expanded="false" />
+                <element signature="n#!!block;n#nautilusHotelExactQuery#0" expanded="false" />
+                <element signature="e#36419#37230#0" expanded="false" />
+                <element signature="e#36652#36969#0" expanded="false" />
+                <element signature="e#37037#37190#0" expanded="false" />
+                <element signature="n#!!block;n#updateViewport#0" expanded="false" />
+                <element signature="e#37471#38918#0" expanded="false" />
+                <element signature="e#37545#38783#0" expanded="false" />
+                <element signature="e#37822#37890#0" expanded="false" />
+                <element signature="e#37972#38666#0" expanded="false" />
+                <element signature="e#38070#38658#0" expanded="false" />
+                <element signature="e#38113#38566#0" expanded="false" />
+                <element signature="e#38241#38300#0" expanded="false" />
+                <element signature="e#38318#38373#0" expanded="false" />
+                <element signature="e#38604#38648#0" expanded="false" />
+                <element signature="e#38793#38914#0" expanded="false" />
+                <element signature="n#!!block;n#updateMapConfig#0" expanded="false" />
+                <element signature="n#!!block;n#boundsBasedZoom#0" expanded="false" />
+                <element signature="n#!!doc;n#moveMapToPolygon#0" expanded="false" />
+                <element signature="n#!!block;n#moveMapToPolygon#0" expanded="false" />
+                <element signature="e#39629#39696#0" expanded="false" />
+                <element signature="n#!!block;n#centerBasedZoom#0" expanded="false" />
+                <element signature="n#!!block;n#centerToUS#0" expanded="false" />
+                <element signature="n#!!block;n#isExtraFilter#0" expanded="false" />
+                <element signature="e#40093#40161#0" expanded="false" />
+                <element signature="e#40126#40158#0" expanded="false" />
+                <element signature="n#!!block;n#addExtraFilter#0" expanded="false" />
+                <element signature="n#!!doc;n#createFriendlyAttributeTextFromId#0" expanded="false" />
+                <element signature="n#!!block;n#createFriendlyAttributeTextFromId#0" expanded="false" />
+                <element signature="e#40692#40752#0" expanded="false" />
+                <element signature="n#!!block;n#addNewStarRatingListFilterGivenRating#0" expanded="false" />
+                <element signature="n#!!block;n#addStarRatingListFilterGivenId#0" expanded="false" />
+                <element signature="n#!!block;n#addNewStarRatingListFilterWithClass#0" expanded="false" />
+                <element signature="n#!!block;n#selectAmenityFilter#0" expanded="false" />
+                <element signature="e#41762#41967#0" expanded="false" />
+                <element signature="e#41975#42009#0" expanded="false" />
+                <element signature="n#!!block;n#clearAmentityFilter#0" expanded="false" />
+                <element signature="n#!!block;n#updateAmenityLabel#0" expanded="false" />
+                <element signature="e#43142#43582#0" expanded="false" />
+                <element signature="e#43612#44070#0" expanded="false" />
+                <element signature="e#44098#44583#0" expanded="false" />
+                <element signature="e#44606#44993#0" expanded="false" />
+                <element signature="e#45020#45425#0" expanded="false" />
+                <element signature="e#45451#45881#0" expanded="false" />
+                <element signature="e#45939#46411#0" expanded="false" />
+                <element signature="e#46452#46802#0" expanded="false" />
+                <element signature="e#46843#47180#0" expanded="false" />
+                <element signature="e#47225#47551#0" expanded="false" />
+                <element signature="e#47598#47774#0" expanded="false" />
+                <element signature="e#47656#47741#0" expanded="false" />
+                <element signature="e#47819#47876#0" expanded="false" />
+                <element signature="e#47916#48082#0" expanded="false" />
+                <element signature="e#47998#48078#0" expanded="false" />
+                <element signature="n#!!block;n#resultListScroll#0" expanded="false" />
+                <element signature="n#!!block;n#getBriefContent#0" expanded="false" />
+                <element signature="e#48584#48649#0" expanded="false" />
+                <element signature="e#48722#49050#0" expanded="false" />
+                <element signature="e#48756#48824#0" expanded="false" />
+                <element signature="n#!!block;n#renderHotel#0" expanded="false" />
+                <element signature="e#49124#49164#0" expanded="false" />
+                <element signature="e#49210#49251#0" expanded="false" />
+                <element signature="n#!!block;n#renderHotelHandle#0" expanded="false" />
+                <element signature="e#49365#49475#0" expanded="false" />
+                <element signature="e#49369#49426#0" expanded="false" />
+                <element signature="e#49855#49927#0" expanded="false" />
+                <element signature="n#!!block;n#getAffinityCategory#0" expanded="false" />
+                <element signature="e#50082#50131#0" expanded="false" />
+                <element signature="n#!!block;n#addHotelsToList#0" expanded="false" />
+                <element signature="e#50250#50296#0" expanded="false" />
+                <element signature="e#50346#50424#0" expanded="false" />
+                <element signature="n#!!block;n#clearFilterCount#0" expanded="false" />
+                <element signature="n#!!doc;n#formatStarRating#0" expanded="false" />
+                <element signature="n#!!block;n#formatStarRating#0" expanded="false" />
+                <element signature="n#!!block;n#updateHotelRequest#0" expanded="false" />
+                <element signature="e#51142#51522#0" expanded="false" />
+                <element signature="e#51177#51224#0" expanded="false" />
+                <element signature="e#51559#51792#0" expanded="false" />
+                <element signature="e#51690#51786#0" expanded="false" />
+                <element signature="e#51705#51780#0" expanded="false" />
+                <element signature="e#51825#51861#0" expanded="false" />
+                <element signature="e#51921#52106#0" expanded="false" />
+                <element signature="e#51937#52103#0" expanded="false" />
+                <element signature="n#!!block;n#chooseDate#0" expanded="false" />
+                <element signature="n#!!block;n#chooseGuest#0" expanded="false" />
+                <element signature="e#52210#52246#0" expanded="false" />
+                <element signature="n#!!block;n#dateFormatTransfer#0" expanded="false" />
+                <element signature="n#!!block;n#generateMediaUrl#0" expanded="false" />
+                <element signature="e#52621#52735#0" expanded="false" />
+                <element signature="n#!!block;n#handleImage#0" expanded="false" />
+                <element signature="e#52930#53164#0" expanded="false" />
+                <element signature="e#53173#53304#0" expanded="false" />
+                <element signature="e#53438#53721#0" expanded="false" />
+                <element signature="e#53685#53717#0" expanded="false" />
+                <element signature="e#53747#53854#0" expanded="false" />
+                <element signature="e#53874#53934#0" expanded="false" />
+                <element signature="e#53954#54014#0" expanded="false" />
+                <element signature="e#54268#54784#0" expanded="false" />
+                <element signature="e#54463#54525#0" expanded="false" />
+                <element signature="e#54531#54781#0" expanded="false" />
+                <element signature="e#54536#54578#0" expanded="false" />
+                <element signature="n#!!block;n#searchIconClick#0" expanded="false" />
+                <element signature="n#!!block;n#clearNLPData#0" expanded="false" />
+                <element signature="n#!!block;n#clearPopup#0" expanded="false" />
+                <element signature="e#55390#55427#0" expanded="false" />
+                <element signature="e#55487#55770#0" expanded="false" />
+                <element signature="e#55612#55662#0" expanded="false" />
+                <element signature="e#55674#55764#0" expanded="false" />
+                <element signature="n#!!block;n#isSearchPage#0" expanded="false" />
+                <marker date="1526617768779" expanded="false" signature="53113:53150" ph="..." />
+                <marker date="1526617768779" expanded="false" signature="53263:53284" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="finder.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hotelFinder.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/hotelFinder.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2719">
+              <caret line="110" column="2" lean-forward="false" selection-start-line="110" selection-start-column="2" selection-end-line="110" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="handlebarsHelpers.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/handlebarsHelpers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1526617768815" expanded="true" signature="8353:8384" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filterMenu.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/filterMenu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="finder.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finder.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="12" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebMvcConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/semantha/config/WebMvcConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="662" column="91" lean-forward="false" selection-start-line="662" selection-start-column="91" selection-end-line="662" selection-end-column="91" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#758#796#0" expanded="true" />
-                <element signature="e#1289#1290#0" expanded="true" />
-                <element signature="e#1324#1325#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/semantha/controllers/AppController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="44" column="33" lean-forward="false" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1901#1917#0" expanded="true" />
+                <marker date="1526712570937" expanded="true" signature="889:1039" ph="..." />
+                <marker date="1526712570937" expanded="true" signature="913:1027" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -102,8 +447,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -112,6 +457,19 @@
       <find>spring-webmvc</find>
       <find>setOrder</find>
       <find>getContext</find>
+      <find>confirm</find>
+      <find>jst</find>
+      <find>&quot;&lt;c:url value=&quot;</find>
+      <find>&quot;&quot;</find>
+      <find>src=/resources</find>
+      <find>/resources/js</find>
+      <find>&quot;/&gt;</find>
+      <find>?v=${version}</find>
+      <find>lnk_logo</find>
+      <find>logo</find>
+      <find>settings</find>
+      <find>Map-F</find>
+      <find>div_map</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,9 +510,17 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/semantha/config/AppConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/semantha/config/PropertySourcesConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/semantha/controllers/AppController.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/semantha/config/WebMvcConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/bridgelayout.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles-defs.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/semantha/controllers/AppController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/pages/hotelfinder.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/settingsContainer.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/pages/settingsContainer.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/scripts/mapui.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finder.jsp" />
       </list>
     </option>
@@ -181,9 +547,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="162" />
-    <option name="y" value="94" />
-    <option name="width" value="1181" />
+    <option name="x" value="97" />
+    <option name="y" value="23" />
+    <option name="width" value="1343" />
     <option name="height" value="740" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -262,6 +628,24 @@
               <item name="semantha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="semantha" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="semantha" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="semantha" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="semantha" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -271,6 +655,36 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="semantha" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="semantha" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="semantha" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="semantha" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="semantha" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
@@ -288,45 +702,6 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-webmvc:5.0.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-webmvc:5.0.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-webmvc-5.0.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-webmvc:5.0.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-webmvc-5.0.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-webmvc:5.0.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-webmvc-5.0.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="semantha" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-webmvc:5.0.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-webmvc-5.0.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -366,12 +741,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="node.js.detected.package.eslint" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.semantha.init" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/resources/images" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -506,15 +885,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526667706678</updated>
-      <workItem from="1526667709532" duration="15194000" />
+      <workItem from="1526667709532" duration="22706000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15194000" />
+    <option name="totallyTimeSpent" value="22706000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="162" y="94" width="1181" height="740" extended-state="0" />
+    <frame x="97" y="23" width="1343" height="740" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -531,7 +910,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34855136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30514988" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -556,7 +935,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -688,14 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.6.RELEASE/spring-webmvc-5.0.6.RELEASE.jar!/org/springframework/web/servlet/ModelAndView.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -708,14 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="78" column="35" lean-forward="false" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -738,22 +1103,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/semantha/controllers/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="44" column="33" lean-forward="false" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1901#1917#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/semantha/config/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="135">
+            <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -768,34 +1125,558 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="135">
-            <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/semantha/config/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/confirmation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="62" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/intermediate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/footer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/semantha/config/WebMvcConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#758#796#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1324#1325#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/semantha/controllers/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="49" column="103" lean-forward="false" selection-start-line="49" selection-start-column="103" selection-end-line="49" selection-end-column="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1902#1918#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles-defs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/bridgelayout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/views/Search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="828" column="30" lean-forward="false" selection-start-line="828" selection-start-column="30" selection-end-line="828" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/maps/google/Content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-954">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/settingsContainer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/pages/settingsContainer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="103" column="15" lean-forward="true" selection-start-line="103" selection-start-column="15" selection-end-line="103" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/pages/hotelfinder.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="1292" column="42" lean-forward="true" selection-start-line="1292" selection-start-column="42" selection-end-line="1292" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/semantha/custom-main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="63" lean-forward="false" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/finder.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="12" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        <state relative-caret-position="195">
+          <caret line="662" column="91" lean-forward="false" selection-start-line="662" selection-start-column="91" selection-end-line="662" selection-end-column="91" />
+          <folding>
+            <marker date="1526712570937" expanded="true" signature="889:1039" ph="..." />
+            <marker date="1526712570937" expanded="true" signature="913:1027" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/mapui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38551">
+          <caret line="3219" column="0" lean-forward="true" selection-start-line="3219" selection-start-column="0" selection-end-line="3219" selection-end-column="0" />
+          <folding>
+            <marker date="1526712398718" expanded="true" signature="70404:70452" ph="..." />
+            <marker date="1526712398718" expanded="true" signature="87171:87229" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/Semantha.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="1814" column="16" lean-forward="false" selection-start-line="1814" selection-start-column="16" selection-end-line="1814" selection-end-column="16" />
+          <folding>
+            <element signature="e#1611#1794#0" expanded="false" />
+            <element signature="e#1817#2009#0" expanded="false" />
+            <element signature="e#2026#3132#0" expanded="false" />
+            <element signature="e#2031#2082#0" expanded="false" />
+            <element signature="e#2087#2138#0" expanded="false" />
+            <element signature="e#2143#2193#0" expanded="false" />
+            <element signature="e#2198#2248#0" expanded="false" />
+            <element signature="e#2253#2302#0" expanded="false" />
+            <element signature="e#2307#2357#0" expanded="false" />
+            <element signature="e#2362#2412#0" expanded="false" />
+            <element signature="e#2417#2467#0" expanded="false" />
+            <element signature="e#2472#2521#0" expanded="false" />
+            <element signature="e#2526#2576#0" expanded="false" />
+            <element signature="e#2581#2631#0" expanded="false" />
+            <element signature="e#2636#2684#0" expanded="false" />
+            <element signature="e#2689#2738#0" expanded="false" />
+            <element signature="e#2743#2794#0" expanded="false" />
+            <element signature="e#2799#2850#0" expanded="false" />
+            <element signature="e#2855#2905#0" expanded="false" />
+            <element signature="e#2910#2961#0" expanded="false" />
+            <element signature="e#2966#3015#0" expanded="false" />
+            <element signature="e#3020#3071#0" expanded="false" />
+            <element signature="e#3076#3127#0" expanded="false" />
+            <element signature="n#!!block;n#getRoomFilterJSON#0" expanded="false" />
+            <element signature="e#3331#3845#0" expanded="false" />
+            <element signature="e#3543#3568#0" expanded="false" />
+            <element signature="e#3578#3841#0" expanded="false" />
+            <element signature="e#3688#3814#0" expanded="false" />
+            <element signature="e#3738#3809#0" expanded="false" />
+            <element signature="n#!!block;n#constructRoomFilter#0" expanded="false" />
+            <element signature="e#4019#4053#0" expanded="false" />
+            <element signature="n#!!block;n#hoteldetailsURL#0" expanded="false" />
+            <element signature="e#4447#4474#0" expanded="false" />
+            <element signature="e#4562#4591#0" expanded="false" />
+            <element signature="e#4621#4650#0" expanded="false" />
+            <element signature="e#4970#4989#0" expanded="false" />
+            <element signature="n#!!block;n#hoteldetails#0" expanded="false" />
+            <element signature="e#5145#5169#0" expanded="false" />
+            <element signature="n#!!block;n#createArray#0" expanded="false" />
+            <element signature="e#5266#5407#0" expanded="false" />
+            <element signature="e#5358#5404#0" expanded="false" />
+            <element signature="n#!!block;n#simulate#0" expanded="false" />
+            <element signature="e#5586#5662#0" expanded="false" />
+            <element signature="e#5794#6310#0" expanded="false" />
+            <element signature="e#5873#5947#0" expanded="false" />
+            <element signature="e#5955#6247#0" expanded="false" />
+            <element signature="e#6267#6306#0" expanded="false" />
+            <element signature="e#6317#6546#0" expanded="false" />
+            <element signature="e#6489#6542#0" expanded="false" />
+            <element signature="n#!!block;n#extend#0" expanded="false" />
+            <element signature="n#!!block;n#initMap#0" expanded="false" />
+            <element signature="e#6963#7023#0" expanded="false" />
+            <element signature="e#7049#7147#0" expanded="false" />
+            <element signature="e#7097#7116#0" expanded="false" />
+            <element signature="e#7126#7144#0" expanded="false" />
+            <element signature="e#7297#7778#0" expanded="false" />
+            <element signature="e#7419#7481#0" expanded="false" />
+            <element signature="e#7526#7588#0" expanded="false" />
+            <element signature="e#7639#7748#0" expanded="false" />
+            <element signature="e#7914#8084#0" expanded="false" />
+            <element signature="e#7950#8036#0" expanded="false" />
+            <element signature="e#8046#8081#0" expanded="false" />
+            <element signature="e#8185#8253#0" expanded="false" />
+            <element signature="e#8328#8607#0" expanded="false" />
+            <element signature="e#8384#8604#0" expanded="false" />
+            <element signature="e#8491#8600#0" expanded="false" />
+            <element signature="e#8528#8592#0" expanded="false" />
+            <element signature="e#8688#8883#0" expanded="false" />
+            <element signature="e#8779#8880#0" expanded="false" />
+            <element signature="e#8814#8874#0" expanded="false" />
+            <element signature="e#9050#9286#0" expanded="false" />
+            <element signature="e#9216#9257#0" expanded="false" />
+            <element signature="e#9368#9783#0" expanded="false" />
+            <element signature="e#9386#9430#0" expanded="false" />
+            <element signature="e#9714#9755#0" expanded="false" />
+            <element signature="e#9945#10061#0" expanded="false" />
+            <element signature="e#10134#10694#0" expanded="false" />
+            <element signature="e#10326#10511#0" expanded="false" />
+            <element signature="e#10519#10691#0" expanded="false" />
+            <element signature="e#10845#10865#0" expanded="false" />
+            <element signature="e#10871#10898#0" expanded="false" />
+            <element signature="n#!!block;n#getHoverBox#0" expanded="false" />
+            <element signature="e#10958#11007#0" expanded="false" />
+            <element signature="n#!!block;n#init#0" expanded="false" />
+            <element signature="e#11183#11273#0" expanded="false" />
+            <element signature="n#!!block;n#setUserPrefs#0" expanded="false" />
+            <element signature="e#11661#12408#0" expanded="false" />
+            <element signature="e#12510#12559#0" expanded="false" />
+            <element signature="e#12677#12784#0" expanded="false" />
+            <element signature="n#!!block;n#setUserPrefStarRating#0" expanded="false" />
+            <element signature="e#13114#13369#0" expanded="false" />
+            <element signature="e#13221#13366#0" expanded="false" />
+            <element signature="n#!!doc;n#setUserPrefSingleSelect#0" expanded="false" />
+            <element signature="n#!!block;n#setUserPrefSingleSelect#0" expanded="false" />
+            <element signature="e#13750#13812#0" expanded="false" />
+            <element signature="n#!!block;n#setSingleSelect#0" expanded="false" />
+            <element signature="e#13914#14041#0" expanded="false" />
+            <element signature="e#14012#14038#0" expanded="false" />
+            <element signature="e#14048#14334#0" expanded="false" />
+            <element signature="e#14052#14096#0" expanded="false" />
+            <element signature="e#14301#14331#0" expanded="false" />
+            <element signature="n#!!block;n#setUserPrefsMultiSelect#0" expanded="false" />
+            <element signature="e#14499#15054#0" expanded="false" />
+            <element signature="e#14573#15051#0" expanded="false" />
+            <element signature="e#14639#14768#0" expanded="false" />
+            <element signature="e#14734#14763#0" expanded="false" />
+            <element signature="e#14800#15047#0" expanded="false" />
+            <element signature="e#14979#15042#0" expanded="false" />
+            <element signature="e#15088#19894#0" expanded="false" />
+            <element signature="e#15172#15247#0" expanded="false" />
+            <element signature="e#15427#15441#0" expanded="false" />
+            <element signature="e#15849#15916#0" expanded="false" />
+            <element signature="e#16014#16877#0" expanded="false" />
+            <element signature="e#16071#16093#0" expanded="false" />
+            <element signature="e#16256#16345#0" expanded="false" />
+            <element signature="e#16353#16400#0" expanded="false" />
+            <element signature="e#16928#18854#0" expanded="false" />
+            <element signature="e#16985#17007#0" expanded="false" />
+            <element signature="e#17188#17276#0" expanded="false" />
+            <element signature="e#17284#17330#0" expanded="false" />
+            <element signature="e#17429#17888#0" expanded="false" />
+            <element signature="e#17499#17575#0" expanded="false" />
+            <element signature="e#17651#17729#0" expanded="false" />
+            <element signature="e#17802#17877#0" expanded="false" />
+            <element signature="e#18138#18203#0" expanded="false" />
+            <element signature="e#18395#18458#0" expanded="false" />
+            <element signature="e#18661#18735#0" expanded="false" />
+            <element signature="e#18800#18851#0" expanded="false" />
+            <element signature="e#18903#19178#0" expanded="false" />
+            <element signature="e#18926#18948#0" expanded="false" />
+            <element signature="e#19230#19432#0" expanded="false" />
+            <element signature="e#19469#19489#0" expanded="false" />
+            <element signature="e#19525#19599#0" expanded="false" />
+            <element signature="e#19622#19812#0" expanded="false" />
+            <element signature="e#19744#19809#0" expanded="false" />
+            <element signature="e#19924#20126#0" expanded="false" />
+            <element signature="e#20097#20124#0" expanded="false" />
+            <element signature="e#20158#21189#0" expanded="false" />
+            <element signature="e#20559#20936#0" expanded="false" />
+            <element signature="e#21098#21186#0" expanded="false" />
+            <element signature="n#!!block;n#getOldValue#0" expanded="false" />
+            <element signature="n#!!block;n#getOldQuery#0" expanded="false" />
+            <element signature="e#21345#21388#0" expanded="false" />
+            <element signature="e#21396#21419#0" expanded="false" />
+            <element signature="e#21463#21493#0" expanded="false" />
+            <element signature="e#21487#21491#0" expanded="false" />
+            <element signature="n#!!block;n#getPriceRange#0" expanded="false" />
+            <element signature="e#21638#21959#0" expanded="false" />
+            <element signature="e#21673#21689#0" expanded="false" />
+            <element signature="e#21761#21878#0" expanded="false" />
+            <element signature="n#!!block;n#getGemmaServerData#0" expanded="false" />
+            <element signature="e#22041#22141#0" expanded="false" />
+            <element signature="e#22104#22138#0" expanded="false" />
+            <element signature="n#!!block;n#getLcmAffinityMappings#0" expanded="false" />
+            <element signature="e#22233#22430#0" expanded="false" />
+            <element signature="n#!!block;n#getPriceMarkerNum#0" expanded="false" />
+            <element signature="e#22508#22537#0" expanded="false" />
+            <element signature="n#!!block;n#mailTo#0" expanded="false" />
+            <element signature="n#!!block;n#openParseWindow#0" expanded="false" />
+            <element signature="e#22659#23913#0" expanded="false" />
+            <element signature="e#22734#23852#0" expanded="false" />
+            <element signature="e#22933#23578#0" expanded="false" />
+            <element signature="e#23448#23563#0" expanded="false" />
+            <element signature="e#23621#23756#0" expanded="false" />
+            <element signature="n#!!block;n#setupAC#0" expanded="false" />
+            <element signature="e#24007#24215#0" expanded="false" />
+            <element signature="e#24110#24212#0" expanded="false" />
+            <element signature="e#24300#24325#0" expanded="false" />
+            <element signature="n#!!block;n#createTravelRequest#0" expanded="false" />
+            <element signature="e#24413#24672#0" expanded="false" />
+            <element signature="e#24487#24537#0" expanded="false" />
+            <element signature="e#24595#24661#0" expanded="false" />
+            <element signature="n#!!block;n#createTravelRequestHandle#0" expanded="false" />
+            <element signature="e#24830#24914#0" expanded="false" />
+            <element signature="e#25199#25588#0" expanded="false" />
+            <element signature="e#25354#25400#0" expanded="false" />
+            <element signature="e#25429#25475#0" expanded="false" />
+            <element signature="e#25507#25554#0" expanded="false" />
+            <element signature="e#25649#25720#0" expanded="false" />
+            <element signature="e#25728#25801#0" expanded="false" />
+            <element signature="e#25899#26110#0" expanded="false" />
+            <element signature="e#26339#26382#0" expanded="false" />
+            <element signature="e#26459#26495#0" expanded="false" />
+            <element signature="e#26592#27493#0" expanded="false" />
+            <element signature="e#26854#27035#0" expanded="false" />
+            <element signature="e#27043#27236#0" expanded="false" />
+            <element signature="e#27521#29140#0" expanded="false" />
+            <element signature="e#27546#27571#0" expanded="false" />
+            <element signature="e#27657#29134#0" expanded="false" />
+            <element signature="e#27815#27890#0" expanded="false" />
+            <element signature="e#28086#28275#0" expanded="false" />
+            <element signature="e#28435#28736#0" expanded="false" />
+            <element signature="e#28748#29061#0" expanded="false" />
+            <element signature="e#29167#29256#0" expanded="false" />
+            <element signature="n#!!block;n#parseNautilusResult#0" expanded="false" />
+            <element signature="e#29523#29575#0" expanded="false" />
+            <element signature="e#29599#29637#0" expanded="false" />
+            <element signature="e#29692#29734#0" expanded="false" />
+            <element signature="e#29786#29827#0" expanded="false" />
+            <element signature="e#29892#29951#0" expanded="false" />
+            <element signature="e#30041#30254#0" expanded="false" />
+            <element signature="e#30083#30199#0" expanded="false" />
+            <element signature="e#30207#30250#0" expanded="false" />
+            <element signature="e#30319#30362#0" expanded="false" />
+            <element signature="e#30413#30447#0" expanded="false" />
+            <element signature="n#!!block;n#nautilusAmbiguousQuery#0" expanded="false" />
+            <element signature="e#30786#32783#0" expanded="false" />
+            <element signature="e#30923#31474#0" expanded="false" />
+            <element signature="e#31012#31078#0" expanded="false" />
+            <element signature="e#31537#32571#0" expanded="false" />
+            <element signature="e#31599#32526#0" expanded="false" />
+            <element signature="e#31678#32090#0" expanded="false" />
+            <element signature="e#32103#32518#0" expanded="false" />
+            <element signature="e#32538#32565#0" expanded="false" />
+            <element signature="e#32644#32779#0" expanded="false" />
+            <element signature="n#!!block;n#nautilusAddressQuery#0" expanded="false" />
+            <element signature="n#!!block;n#nautilusRegionExactQuery#0" expanded="false" />
+            <element signature="e#33588#33635#0" expanded="false" />
+            <element signature="e#33703#33822#0" expanded="false" />
+            <element signature="e#33847#33892#0" expanded="false" />
+            <element signature="e#33916#33966#0" expanded="false" />
+            <element signature="e#34198#34277#0" expanded="false" />
+            <element signature="n#!!doc;n#createLocationTag#0" expanded="false" />
+            <element signature="n#!!block;n#createLocationTag#0" expanded="false" />
+            <element signature="e#34543#34861#0" expanded="false" />
+            <element signature="e#34934#35075#0" expanded="false" />
+            <element signature="n#!!doc;n#createBrandNameTag#0" expanded="false" />
+            <element signature="n#!!block;n#createBrandNameTag#0" expanded="false" />
+            <element signature="e#35312#36208#0" expanded="false" />
+            <element signature="e#35387#36204#0" expanded="false" />
+            <element signature="e#35553#35924#0" expanded="false" />
+            <element signature="e#36005#36198#0" expanded="false" />
+            <element signature="n#!!block;n#nautilusHotelExactQuery#0" expanded="false" />
+            <element signature="e#36419#37230#0" expanded="false" />
+            <element signature="e#36652#36969#0" expanded="false" />
+            <element signature="e#37037#37190#0" expanded="false" />
+            <element signature="n#!!block;n#updateViewport#0" expanded="false" />
+            <element signature="e#37471#38918#0" expanded="false" />
+            <element signature="e#37545#38783#0" expanded="false" />
+            <element signature="e#37822#37890#0" expanded="false" />
+            <element signature="e#37972#38666#0" expanded="false" />
+            <element signature="e#38070#38658#0" expanded="false" />
+            <element signature="e#38113#38566#0" expanded="false" />
+            <element signature="e#38241#38300#0" expanded="false" />
+            <element signature="e#38318#38373#0" expanded="false" />
+            <element signature="e#38604#38648#0" expanded="false" />
+            <element signature="e#38793#38914#0" expanded="false" />
+            <element signature="n#!!block;n#updateMapConfig#0" expanded="false" />
+            <element signature="n#!!block;n#boundsBasedZoom#0" expanded="false" />
+            <element signature="n#!!doc;n#moveMapToPolygon#0" expanded="false" />
+            <element signature="n#!!block;n#moveMapToPolygon#0" expanded="false" />
+            <element signature="e#39629#39696#0" expanded="false" />
+            <element signature="n#!!block;n#centerBasedZoom#0" expanded="false" />
+            <element signature="n#!!block;n#centerToUS#0" expanded="false" />
+            <element signature="n#!!block;n#isExtraFilter#0" expanded="false" />
+            <element signature="e#40093#40161#0" expanded="false" />
+            <element signature="e#40126#40158#0" expanded="false" />
+            <element signature="n#!!block;n#addExtraFilter#0" expanded="false" />
+            <element signature="n#!!doc;n#createFriendlyAttributeTextFromId#0" expanded="false" />
+            <element signature="n#!!block;n#createFriendlyAttributeTextFromId#0" expanded="false" />
+            <element signature="e#40692#40752#0" expanded="false" />
+            <element signature="n#!!block;n#addNewStarRatingListFilterGivenRating#0" expanded="false" />
+            <element signature="n#!!block;n#addStarRatingListFilterGivenId#0" expanded="false" />
+            <element signature="n#!!block;n#addNewStarRatingListFilterWithClass#0" expanded="false" />
+            <element signature="n#!!block;n#selectAmenityFilter#0" expanded="false" />
+            <element signature="e#41762#41967#0" expanded="false" />
+            <element signature="e#41975#42009#0" expanded="false" />
+            <element signature="n#!!block;n#clearAmentityFilter#0" expanded="false" />
+            <element signature="n#!!block;n#updateAmenityLabel#0" expanded="false" />
+            <element signature="e#43142#43582#0" expanded="false" />
+            <element signature="e#43612#44070#0" expanded="false" />
+            <element signature="e#44098#44583#0" expanded="false" />
+            <element signature="e#44606#44993#0" expanded="false" />
+            <element signature="e#45020#45425#0" expanded="false" />
+            <element signature="e#45451#45881#0" expanded="false" />
+            <element signature="e#45939#46411#0" expanded="false" />
+            <element signature="e#46452#46802#0" expanded="false" />
+            <element signature="e#46843#47180#0" expanded="false" />
+            <element signature="e#47225#47551#0" expanded="false" />
+            <element signature="e#47598#47774#0" expanded="false" />
+            <element signature="e#47656#47741#0" expanded="false" />
+            <element signature="e#47819#47876#0" expanded="false" />
+            <element signature="e#47916#48082#0" expanded="false" />
+            <element signature="e#47998#48078#0" expanded="false" />
+            <element signature="n#!!block;n#resultListScroll#0" expanded="false" />
+            <element signature="n#!!block;n#getBriefContent#0" expanded="false" />
+            <element signature="e#48584#48649#0" expanded="false" />
+            <element signature="e#48722#49050#0" expanded="false" />
+            <element signature="e#48756#48824#0" expanded="false" />
+            <element signature="n#!!block;n#renderHotel#0" expanded="false" />
+            <element signature="e#49124#49164#0" expanded="false" />
+            <element signature="e#49210#49251#0" expanded="false" />
+            <element signature="n#!!block;n#renderHotelHandle#0" expanded="false" />
+            <element signature="e#49365#49475#0" expanded="false" />
+            <element signature="e#49369#49426#0" expanded="false" />
+            <element signature="e#49855#49927#0" expanded="false" />
+            <element signature="n#!!block;n#getAffinityCategory#0" expanded="false" />
+            <element signature="e#50082#50131#0" expanded="false" />
+            <element signature="n#!!block;n#addHotelsToList#0" expanded="false" />
+            <element signature="e#50250#50296#0" expanded="false" />
+            <element signature="e#50346#50424#0" expanded="false" />
+            <element signature="n#!!block;n#clearFilterCount#0" expanded="false" />
+            <element signature="n#!!doc;n#formatStarRating#0" expanded="false" />
+            <element signature="n#!!block;n#formatStarRating#0" expanded="false" />
+            <element signature="n#!!block;n#updateHotelRequest#0" expanded="false" />
+            <element signature="e#51142#51522#0" expanded="false" />
+            <element signature="e#51177#51224#0" expanded="false" />
+            <element signature="e#51559#51792#0" expanded="false" />
+            <element signature="e#51690#51786#0" expanded="false" />
+            <element signature="e#51705#51780#0" expanded="false" />
+            <element signature="e#51825#51861#0" expanded="false" />
+            <element signature="e#51921#52106#0" expanded="false" />
+            <element signature="e#51937#52103#0" expanded="false" />
+            <element signature="n#!!block;n#chooseDate#0" expanded="false" />
+            <element signature="n#!!block;n#chooseGuest#0" expanded="false" />
+            <element signature="e#52210#52246#0" expanded="false" />
+            <element signature="n#!!block;n#dateFormatTransfer#0" expanded="false" />
+            <element signature="n#!!block;n#generateMediaUrl#0" expanded="false" />
+            <element signature="e#52621#52735#0" expanded="false" />
+            <element signature="n#!!block;n#handleImage#0" expanded="false" />
+            <element signature="e#52930#53164#0" expanded="false" />
+            <element signature="e#53173#53304#0" expanded="false" />
+            <element signature="e#53438#53721#0" expanded="false" />
+            <element signature="e#53685#53717#0" expanded="false" />
+            <element signature="e#53747#53854#0" expanded="false" />
+            <element signature="e#53874#53934#0" expanded="false" />
+            <element signature="e#53954#54014#0" expanded="false" />
+            <element signature="e#54268#54784#0" expanded="false" />
+            <element signature="e#54463#54525#0" expanded="false" />
+            <element signature="e#54531#54781#0" expanded="false" />
+            <element signature="e#54536#54578#0" expanded="false" />
+            <element signature="n#!!block;n#searchIconClick#0" expanded="false" />
+            <element signature="n#!!block;n#clearNLPData#0" expanded="false" />
+            <element signature="n#!!block;n#clearPopup#0" expanded="false" />
+            <element signature="e#55390#55427#0" expanded="false" />
+            <element signature="e#55487#55770#0" expanded="false" />
+            <element signature="e#55612#55662#0" expanded="false" />
+            <element signature="e#55674#55764#0" expanded="false" />
+            <element signature="n#!!block;n#isSearchPage#0" expanded="false" />
+            <marker date="1526617768779" expanded="false" signature="53113:53150" ph="..." />
+            <marker date="1526617768779" expanded="false" signature="53263:53284" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/mapStyle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/hotelFinder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2719">
+          <caret line="110" column="2" lean-forward="false" selection-start-line="110" selection-start-column="2" selection-end-line="110" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/handlebarsHelpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1526617768815" expanded="true" signature="8353:8384" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/semantha/utils/filterMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
