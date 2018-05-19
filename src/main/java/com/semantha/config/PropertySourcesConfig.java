@@ -7,6 +7,9 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
+/**
+ * Bean init for reading from property files in classpath
+ */
 @Configuration
 @SuppressWarnings("UnusedDeclaration")
 public class PropertySourcesConfig {

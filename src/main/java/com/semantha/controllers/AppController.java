@@ -27,6 +27,13 @@ public class AppController {
     @Value("${environment}")
     private String message;
 
+
+    /**
+     * Default rendering based on property file values
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
     @ResponseBody
     public String render(HttpServletRequest request, HttpServletResponse response) {
@@ -34,6 +41,12 @@ public class AppController {
          return message;
     }
 
+    /**
+     * Returns the view specified
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping(value = "/finder", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
     public ModelAndView renderView(HttpServletRequest request, HttpServletResponse response) {
         return getDefaultModelAndView("finder", request, response);

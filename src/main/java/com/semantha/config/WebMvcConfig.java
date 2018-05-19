@@ -10,6 +10,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+/**
+ * Defines how the views would be resolved by the controller
+ */
 @EnableWebMvc
 @Configuration
 @ComponentScan("com.semantha")
