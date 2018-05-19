@@ -1,0 +1,11 @@
+/******************************************************************************************
+** @Author  <mailto:vmohapatra@expedia.com>Vijayalaxmi Mohapatra</mailto>
+** Custom responsive styles for Semantha pages in IE 9
+** Using bootstrap based classes
+******************************************************************************************/
+.hotel-name-starrating {
+    background-color: rgba(0,0,0,0.2);
+}
+div.loadClusterPhoto div.destination-name {
+    background-color: rgba(0,0,0,0.1);
+}

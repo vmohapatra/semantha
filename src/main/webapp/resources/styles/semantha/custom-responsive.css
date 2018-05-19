@@ -1,0 +1,317 @@
+/******************************************************************************************
+** @Author  <mailto:vmohapatra@expedia.com>Vijayalaxmi Mohapatra</mailto>
+** Custom responsive styles for Semantha pages
+** Using bootstrap based classes
+******************************************************************************************/
+/* col-xs*/
+@media screen and (min-width: 100px) {
+	.search-header-container {
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+    /*datepicker styles*/
+    #ui-datepicker-div { width:18em !important;}
+    .ui-datepicker-multi-2 .ui-datepicker-group {width: 100%;}
+    /*Room Select container styles*/
+    #div_roomGuestContainer {width:290px;}
+    .poptip {padding:15px;}
+    #fld_roomsGuests .roomItem li {margin-right:0px;}
+    #fld_roomsGuests .roomItem li a { width:60px;}
+    #fld_roomsGuests .roomItem li select{width: 50px;}
+    #fld_roomsGuests .roomItem li.select {width: 50px;margin-right:10px;}
+    .childAge select{margin-right:10px;width:50px;}
+    .childAge label{margin-right:0px;}
+    #fld_roomsGuests .roomItem ul.roomGuestsHeader{margin-bottom:10px;}
+    #fld_roomsGuests .roomItem {margin-bottom:10px;padding-bottom:10px;}
+    #div_maxGuestCountWarning {margin-bottom:10px;}
+    /*Modal Windows*/
+    .ui-dialog {width:96% !important;overflow-y:auto;}
+    /*List Cluster styles*/
+    div.loadClusterPhoto div.destination-name h3.destination-name {
+        padding: 10px 0px 10px 10px;
+        font-size: 14px;
+    }
+    #div_resultsList  div.loadClusterPhoto  .cluster-info {
+        padding-left: 10px;
+        padding-top: 12px;
+    }
+    #div_resultsList  div.noClusterPhoto .cluster-info {
+        padding-left: 10px;
+        padding-top: 12px;
+    }
+
+    /*List Hotel styles*/
+    .hotel-name {
+        font-size: 14px;
+        margin-left: 12px;
+    }
+    .hotel-name-starrating {
+        background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0%,rgba(0, 0, 0, 0)),color-stop(100%,rgba(0, 0, 0, 0.6)));
+        height: 70px;
+    }
+    .hotel-starrating {
+        margin: 2px 10px 2px 10px;
+    }
+    .price-info {
+        margin-top: 10px;
+        margin-right: 25px;
+    }
+    h2.list-hotel-price {
+        font-size: 18px;
+    }
+    h4.promo-date {
+        font-size: 11px;
+        line-height: 1.1;
+    }
+    .list-review-container {
+        padding-top: 0px;
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 11px;
+        line-height: 1.1;
+    }
+    .price-info .no-room-txt {
+        font-size: 12px;
+    }
+    .price-info .full-price {
+        font-size: 14px !important;
+        line-height: 1.2 !important;    
+        margin-top: -3px;
+    }
+
+}
+
+
+@media screen and (min-width: 500px) {
+
+    /*List Cluster styles*/
+    div.loadClusterPhoto div.destination-name h3.destination-name {
+        padding: 13px 0px 13px 13px;
+        font-size: 16px;
+    }
+    div.noClusterPhoto div.destination-name h3.destination-name {
+        font-size: 16px;
+        padding-left: 13px;    
+    }
+    #div_resultsList div.loadClusterPhoto .cluster-info {
+        padding-left: 13px;
+        padding-top: 13px;
+    }
+    #div_resultsList  div.noClusterPhoto .cluster-info {
+        padding-left: 13px;
+        padding-top: 13px;
+    }
+    div.loadClusterPhoto div.destination-name {
+        height: 70px;
+    }
+    .hotel-name-starrating {
+        background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0%,rgba(0, 0, 0, 0)),color-stop(100%,rgba(0, 0, 0, 0.4)));
+        height: 90px;
+    }
+
+    /*List Hotel styles*/
+    .hotel-name {
+        font-size: 16px;
+    }
+    h2.list-hotel-price {
+        font-size: 20px;
+        line-height: 1;
+    }
+    .list-review-container {
+        margin-top: 12px;
+    }
+    .price-info .full-price {
+        font-size: 16px !important;
+    }
+    h4.promo-date {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    .list-review-container {
+        padding-top: 0px;
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+}
+
+
+@media screen and (min-width: 600px) {
+    /*List Hotel styles*/
+    .hotel-name {
+        font-size: 18px;
+    }
+    h2.list-hotel-price {
+        font-size: 24px;
+    }    
+}
+
+    /* off canvas */
+@media screen and (max-width: 767px) {
+        
+	.row-offcanvas {
+		position: relative;
+	}
+	
+	.row-offcanvas-right {
+		right:0%;
+		-webkit-transition: right 0.3s ease;
+		-moz-transition: right 0.3s ease;
+		-o-transition: right 0.3s ease;
+		-ms-transition: right 0.3s ease;
+		transition: right 0.3s ease;    
+	}
+	.row-offcanvas-right
+	.sidebar-offcanvas {
+		right: -90%;
+		-webkit-transition: right 0.3s ease;
+		-moz-transition: right 0.3s ease;
+		-o-transition: right 0.3s ease;
+		-ms-transition: right 0.3s ease;
+		transition: right 0.3s ease;    
+				
+	}
+	        
+	/* apply to map? */
+	.row-offcanvas-right.active {
+		right: 90%;
+		-webkit-transition: right 0.3s ease;
+		-moz-transition: right 0.3s ease;
+		-o-transition: right 0.3s ease;
+		-ms-transition: right 0.3s ease;
+		transition: right 0.3s ease;    
+	}
+	
+	/* apply to sidebar? */
+	.sidebar-offcanvas {
+		position: absolute;
+		top: 0;
+		width: 90%;
+		background-color: white;
+	}
+}
+/*col-sm*/
+@media screen and (min-width: 768px) {
+    /*datepicker styles*/
+    #ui-datepicker-div { width:34em !important;}
+    .ui-datepicker-multi-2 .ui-datepicker-group {width: 50%;}
+    /*Room Select container styles*/
+    #div_roomGuestContainer {width:472px;}
+    .poptip {padding:20px;}
+    #fld_roomsGuests .roomItem li {margin-right:20px;}
+    #fld_roomsGuests .roomItem li a { width:86px;}
+    #fld_roomsGuests .roomItem li select{width: 60px;}
+    #fld_roomsGuests .roomItem li.select {width: 100px;margin-right:20px;}
+    .childAge select{margin-right:60px;width:60px;}
+    .childAge label{margin-right:20px;}
+    #fld_roomsGuests .roomItem ul.roomGuestsHeader{margin-bottom:20px;}
+    #fld_roomsGuests .roomItem {margin-bottom:20px;padding-bottom:20px;}
+    #div_maxGuestCountWarning {margin-bottom:20px;}
+    /*Modal Windows*/
+    .ui-dialog {max-width:600px;}
+    /*List Styles*/
+    .hotel-name {
+        font-size: 16px;
+    }
+    h2.list-hotel-price {
+        font-size: 18px;
+    }
+}
+/*Resetting Toggle related styles*/
+@media screen and (min-width: 960px) {
+	.search-header-container {
+		overflow-x: visible;
+		overflow-y: visible;
+	}
+}
+
+/*col-md*/
+@media screen and (min-width: 992px) {
+    /*No style changes for medium*/
+}
+
+
+/*col-lg */
+@media screen and (min-width: 1200px) {
+
+    /*List Cluster styles*/
+    div.loadClusterPhoto div.destination-name h3.destination-name {
+        padding: 20px 0px 20px 20px;
+        font-size: 18px;
+    }
+    div.noClusterPhoto div.destination-name h3.destination-name {
+        font-size: 18px;
+        padding-left: 20px;    
+    }
+    #div_resultsList div.loadClusterPhoto .cluster-info {
+        padding-left: 20px;
+        padding-top: 23px;
+        font-size: 14px;
+    }
+    #div_resultsList  div.noClusterPhoto .cluster-info {
+        padding-left: 20px;
+        padding-top: 23px;
+        font-size: 14px;
+    }
+    div.noClusterPhoto div.destination-name h3.destination-name {
+        padding: 20px 0px 20px 20px;
+    }
+
+    .hotel-name {
+        font-size: 18px;
+    }
+    h2.list-hotel-price {
+        font-size: 22px;
+    }
+}
+
+
+/*below: custom list & map widths beyond bootstrap large*/
+
+
+@media screen and (min-width: 1500px) {
+    .col-lg-4 {
+        width: 29%;
+    }
+    .col-lg-8 {
+        width: 71%;
+    }
+}
+
+
+@media screen and (min-width: 1800px) {
+    .col-lg-4 {
+        width: 25%;
+    }
+    .col-lg-8 {
+        width: 75%;
+    }
+}
+
+
+@media screen and (min-width: 2200px) {
+    .col-lg-4 {
+        width: 22%;
+    }
+    .col-lg-8 {
+        width: 78%;
+    }
+}
+
+
+/*saved: how to shrink image % within list*/
+/* .hotel-name-starrating {
+    margin-left: -40%;
+    width: 40%;
+}
+#div_resultsList .hotel-thumb {
+    width: 40%;
+}
+#div_resultsList .hotel-info {
+    width: 60%;
+}
+.searchsItem .hotel-hover-overlay {
+    width: 40%;
+} */
