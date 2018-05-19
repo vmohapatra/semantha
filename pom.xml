@@ -2,11 +2,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.semantha</groupId>
-  <artifactId>semantha-webapp</artifactId>
+  <groupId>com.sphinx</groupId>
+  <artifactId>sphinx-webapp</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>Semantha</name>
+  <name>Sphinx</name>
 
   <url>http://maven.apache.org</url>
 
@@ -88,7 +88,7 @@
   </dependencies>
 
   <build>
-    <finalName>semantha</finalName>
+    <finalName>sphinx</finalName>
 
     <plugins>
       <plugin>

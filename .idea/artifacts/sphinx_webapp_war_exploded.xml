@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="semantha-webapp:war exploded">
-    <output-path>$PROJECT_DIR$/target/semantha</output-path>
+  <artifact type="exploded-war" name="sphinx-webapp:war exploded">
+    <output-path>$PROJECT_DIR$/target/sphinx</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="semantha-webapp" />
+          <element id="module-output" name="sphinx-webapp" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
@@ -21,9 +21,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/semantha/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/sphinx/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="semantha-webapp/web/Web" />
+      <element id="javaee-facet-resources" facet="sphinx-webapp/web/Web" />
     </root>
   </artifact>
 </component>

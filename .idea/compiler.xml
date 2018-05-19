@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="semantha-webapp" />
+        <module name="sphinx-webapp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="semantha-webapp" target="1.8" />
+      <module name="sphinx-webapp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
