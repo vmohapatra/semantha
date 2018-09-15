@@ -1,6 +1,6 @@
 <!DOCTYPE>
 <html>
 <body>
-<h2>Hello Semantha!</h2>
+<h2>Hello Sphinx!</h2>
 </body>
 </html>
