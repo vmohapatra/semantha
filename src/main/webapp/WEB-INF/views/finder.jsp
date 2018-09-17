@@ -58,8 +58,8 @@
     <link href="/resources/styles/sphinx/custom-responsive.css" rel="stylesheet" type="text/css" />
     <![endif]-->
     <![if !IE]>
-    <link href="/resources/styles/semantha/custom-main.css" rel="stylesheet" type="text/css" />
-    <link href="/resources/styles/semantha/custom-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/styles/sphinx/custom-main.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/styles/sphinx/custom-responsive.css" rel="stylesheet" type="text/css" />
 
     <!--[if lt IE 9]>
     <link href="/resources/styles/sphinx/custom-ie8.css" rel="stylesheet" type="text/css" />
@@ -99,11 +99,11 @@
                         <div id="div_parsePopup">
                             <div id="div_parsePopupStyleContainer">
                                 <h3 id="hdr_parsePopupContainer" color="#222 "style="margin-bottom:5px;">
-                                    <span id='spn_semanthaVersionLabel'>Semantha:</span> <span id='spn_semanthaVersion'>${version}</span><br/>
+                                    <span id='spn_semanthaVersionLabel'>Sphinx:</span> <span id='spn_semanthaVersion'>${version}</span><br/>
                                     <span id='spn_nautilusVersionLabel'>Nautilus:</span> <span id='spn_nautilusVersion'></span><br/>
                                     <span id='spn_gemmaVersionLabel'>Gemma:</span> <span id='spn_gemmaVersion'></span>
                                 </h3>
-                                <div id="div_parseHeader">Semantha Parse</div>
+                                <div id="div_parseHeader">Sphinx Parse</div>
                                 <div id="div_originalParseHeader">Raw Nautilus</div>
                             </div>
                             <div id="div_parseContent"></div>
@@ -172,8 +172,8 @@
                             </div>
                             <div id="div_semanthaFeedback" style="margin-bottom: 31px;">
                                 <h1 id="hdr_semanthaFeedback" ></h1>
-                                <c:set var="feedbackEmail" value="semantha@aidep.com"/>
-                                <span id="spn_feedbackEmail" class="hyperlink" onclick="mailTo('${feedbackEmail}?subject=Semantha Feedback')">${feedbackEmail}</span>
+                                <c:set var="feedbackEmail" value="vijaya_126@hotmail.com"/>
+                                <span id="spn_feedbackEmail" class="hyperlink" onclick="mailTo('${feedbackEmail}?subject=Sphinx Feedback')">${feedbackEmail}</span>
                             </div>
                             <div id="div_bestDiscount">
                                 <h1 id="hdr_bestDiscount"></h1>
@@ -383,7 +383,7 @@
                 <%
                     if(request.getParameter("query")!=null)
                     {
-//                        out.println("<script>$().ready(function() { $('#ip_travelRequest').val(\+request.getParameter('query')+'\');createTravelRequest('Manual', 'SearchBoxEnter'); });</script>");
+                        //
                     }
                 %>
             </form>
@@ -649,18 +649,27 @@
         <script type="text/javascript" src="/resources/scripts/libs/date.format/date.format-v1.2.3.js"></script>
         <script type="text/javascript" src="/resources/scripts/libs/jquery/plugins/jquery.cookie-v1.3.1.js"></script>
         <script type="text/javascript" src="/resources/scripts/libs/jquery/plugins/jquery.lazyload-v1.9.3.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/utils/commonUtil.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/hotelFinder.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/utils/selectRoom.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/utils/filterMenu.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/utils/settingsContainer.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/utils/commonUtil.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/hotelFinder.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/utils/filterMenu.js"></script>
         <script type="text/javascript" src="/resources/scripts/libs/mobile-detect/mobile-detect-v0.4.0.min.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/utils/browserUtils.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/utils/browserUtils.js"></script>
         <script type="text/javascript" src="/resources/scripts/libs/jquery/ui/jquery.ui.datepicker-v1.0.js"></script>
         <script type="text/javascript" src="/resources/scripts/libs/handlebars/handlebars-v2.0.0.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/utils/handlebarsHelpers.js"></script>
-        <script type="text/javascript" src="${googleMapApi}"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/utils/handlebarsHelpers.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.34&key=AIzaSyCWyeNKaoAmUghz7TztFkcBdw-4Ak-pI2A&libraries=geometry"></script>
         <!--<script type="text/javascript" src="/resources/scripts/Map-Full.js"></script>-->
+        <script type="text/javascript" src="/resources/scripts/maps/common/Utilities.js"></script>
+        <script type="text/javascript" src="/resources/scripts/maps/common/Events.js"></script>
+        <script type="text/javascript" src="/resources/scripts/maps/common/Json.js"></script>
+        <script type="text/javascript" src="/resources/scripts/maps/Item.js"></script>
+        <script type="text/javascript" src="/resources/scripts/maps/LatLong.js"></script>
+        <script type="text/javascript" src="/resources/scripts/maps/Bounds.js"></script>
+        <script type="text/javascript" src="/resources/scripts/maps/ItemsRequests.js"></script>
+        <script type="text/javascript" src="/resources/scripts/maps/ItemService.js"></script>
+        <script type="text/javascript" src="/resources/scripts/maps/google/Map.js"></script>
+        <script type="text/javascript" src="/resources/scripts/maps/google/Content.js"></script>
+        <script type="text/javascript" src="/resources/scripts/maps/Provider.js"></script>
         <!-- Lodash noConflict -->
         <script type="text/javascript" src="/resources/scripts/libs/lodash/lodash-v3.7.0.min.js"></script>
         <script>
@@ -674,37 +683,37 @@
         <script type="text/javascript" src="/resources/scripts/libs/json2/json2-v1.0.2.js"></script>
         <script type="text/javascript" src="/resources/scripts/libs/backbone/backbone-v1.1.2.min.js"></script>
         <script type="text/javascript" src="/resources/scripts/libs/backbone/backbone.marionette-v2.1.0.min.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/utils/marionetteOverrides.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/utils/marionetteOverrides.js"></script>
 
         <!-- Backbone app files -->
-        <script type="text/javascript" src="/resources/scripts/semantha/app.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/app.js"></script>
         <!-- Results list files -->
-        <script type="text/javascript" src="/resources/scripts/semantha/models/ResultListItem.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/collections/ResultList.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/views/subviews/ResultListView.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/models/ResultListItem.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/collections/ResultList.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/views/subviews/ResultListView.js"></script>
 
-        <script type="text/javascript" src="/resources/scripts/semantha/views/Search.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/views/Search.js"></script>
 
         <!-- Details pane files -->
-        <script type="text/javascript" src="/resources/scripts/semantha/models/DetailsPaneItem.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/collections/DetailsPane.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/views/subviews/DetailsPaneView.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/models/DetailsPaneItem.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/collections/DetailsPane.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/views/subviews/DetailsPaneView.js"></script>
 
 
         <!-- JS file containing the custom map style -->
-        <script type="text/javascript" src="/resources/scripts/semantha/utils/mapStyle.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/utils/mapStyle.js"></script>
 
 
-        <!-- Semantha files -->
+        <!-- sphinx files -->
         <script type="text/javascript" src="/resources/scripts/mapui.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/utils/semanthaAttr.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/servicePlugins/Review.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/servicePlugins/Nautilus.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/servicePlugins/Gemma.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/servicePlugins/Capture.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/servicePlugins/HotelSearch.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/servicePlugins/PriceRange.js"></script>
-        <script type="text/javascript" src="/resources/scripts/semantha/servicePlugins/HotelBrief.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/utils/semanthaAttr.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/servicePlugins/Review.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/servicePlugins/Nautilus.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/servicePlugins/Gemma.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/servicePlugins/Capture.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/servicePlugins/HotelSearch.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/servicePlugins/PriceRange.js"></script>
+        <script type="text/javascript" src="/resources/scripts/sphinx/servicePlugins/HotelBrief.js"></script>
 
 
         <script>
@@ -746,7 +755,7 @@
                 });
 
                 // Call setNautilusVersion to set nautilus version for capture requests
-                App.searchView.setNautilusVersion();
+                // App.searchView.setNautilusVersion();
 
                 //Utility function to find the size of a object by counting keys
                 Object.size = function(obj) {

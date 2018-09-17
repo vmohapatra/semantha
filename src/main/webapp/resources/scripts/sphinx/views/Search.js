@@ -1,10 +1,7 @@
-/**
- * @Author  <mailto:vmohapatra@aidep.com>Vijayalaxmi Mohapatra</mailto>
- */
 'use strict';
 
 App.Views.SearchView = Backbone.Marionette.View.extend({
- 
+
   feedback: '',
   vote: '',
 
@@ -15,12 +12,12 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     // id for new nanobar
     id: 'div_nautilusProgressbar'
   },
-  
+
   /**
    * Attaches `this.el` to an existing element
    */
-  el: $('body'), 
-  
+  el: $('body'),
+
   /**
    * Automatically called upon instantiation
    * You make all types of bindings, excluding UI events, such as clicks, etc
@@ -40,10 +37,10 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     //Initialize a collection for list items
     this.render();
   },
-  
+
   /**
-   * DOM events are bound to View methods. 
-   * Backbone doesn't have a separate controller to handle such bindings 
+   * DOM events are bound to View methods.
+   * Backbone doesn't have a separate controller to handle such bindings
    * It all happens in a View.
    */
   events: {
@@ -55,9 +52,9 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     'click #ambig_thumbdown, #ambigup_thumbdown, #ambigdown_thumbdown' : 'showAmbigDownFeedback',
     'click #lnk_sendAmbig' : 'showAmbigFinalFeedback'
    },
-  
+
   /**
-   * Function in charge of rendering the entire view in this.el. 
+   * Function in charge of rendering the entire view in this.el.
    * Needs to be manually called by the user.
    */
   render: function() {},
@@ -163,11 +160,11 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     if (detailPaneContainer === undefined || !detailPaneContainer.is(':visible')) {
       return;
     }
-    
+
     //IE 8 hide details pane
     if($.browser.msie && $.browser.version === 8) {
       detailPaneContainer.stop().animate({
-        right: '-600px'   
+        right: '-600px'
       }, 500).hide();
     }
     // Modern browser hide details pane
@@ -177,14 +174,14 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       }, 500).hide();
     }
 
-    this.resetHotelMapMarkers(); 
+    this.resetHotelMapMarkers();
   },
-  
+
   /**
-   * Update details pane view item 
+   * Update details pane view item
    */
   updateDetailsPaneContent: function(data) {
-      
+
     this.resetHotelMapMarkers();
     // Declare a new ItemView and link in the DetailsPaneItem item to the view
     App.detailsPaneView = new App.Views.DetailsPaneView({
@@ -250,8 +247,8 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
           currentHotelReviewReasonToBelieve: null,//Object storing review reasonToBelieve
           previousHotelId: null,// EAN Id of the previous hotel in the list
           nextHotelId: null//EAN Id of the next hotel in the list
-        };     
-      }  
+        };
+      }
     }
 
     App.detailsPaneView.addDetailsPaneContent(item);
@@ -332,7 +329,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
 
     }
   },
-  
+
   /**
    * Add the list item to the list view
    *
@@ -984,7 +981,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
 
     return checkInYear + '-' + checkInMonth + '-' + checkInDay;
   },
-   
+
   /**
    * Update cluster images
    * @param {string} clusterIds - string of cluster names (ids) seperated by '_'
@@ -998,7 +995,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
           var clusterData = data[idx],
               thumbDiv = $('#thumb_'+clusterData['Cluster ID'].replace(/[,\.\s'\(\)]/g,'_')),
               clusterImage = '';
-            
+
           thumbDiv.parent().removeClass('cluster-info').addClass('loadClusterPhoto');
           if (window.devicePixelRatio && window.devicePixelRatio > 1) {
             clusterImage = clusterData['Cluster Large Thumbnail'];
@@ -1007,18 +1004,18 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
             clusterImage = clusterData['Cluster Small Thumbnail'];
           }
           thumbDiv.append('<img src="" class="lazy img-responsive" style="display:block;" ' +
-            'data-original="resources/img/temp/cluster/' + clusterImage + '" />');   
+            'data-original="resources/img/temp/cluster/' + clusterImage + '" />');
         }
 
         $('img.lazy').show().lazyload({
             container: $('#div_resultsList'),
             effect:'fadeIn',
-            threshold : 150 
+            threshold : 150
         });
-          
+
         $('#div_resultsListContainer #div_resultsList div.cluster').not('[class~="loadClusterPhoto"]').removeClass('cluster-info').addClass('noClusterPhoto');
       });
-    } 
+    }
   },
 
   /**
@@ -1057,7 +1054,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         $('#div_priceUpdateNotice').show();
       }
       $('.zeroCountComment').hide();
-    }    
+    }
   },
 
   /**
@@ -1070,7 +1067,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     if(dpFrom.indexOf('/') === -1 && dpTo.indexOf('/') === -1) {
       $('.promoDate').css('display','block');
     }
-    else {  
+    else {
       $('.promoDate').css('display','none');
     }
   },
@@ -1084,7 +1081,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     $('#div_tagContainer').qtip({
       overwrite: true,
       content: {
-        text: '<div style="padding:5px;">' + txt + '</div>' 
+        text: '<div style="padding:5px;">' + txt + '</div>'
       },
       position: {
         my: 'top left',
@@ -1106,7 +1103,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         classes: 'qtip-tags',
         tip: {corner: false}
       }
-    });  
+    });
   },
 
   /**
@@ -1127,7 +1124,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         obj['UV.CheckinDate'] = checkinDate.format('yyyy-mm-dd');
       }
      }
-    
+
      if($('#ip_dpto').val()) {
       if($('#ip_dpto').val().indexOf('/') === -1) {
         obj['UV.CheckoutDate'] = '';
@@ -1135,7 +1132,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       else {
         var checkoutDate = new Date($('#ip_dpto').val());
         obj['UV.CheckoutDate'] = checkoutDate.format('yyyy-mm-dd');
-      }     
+      }
      }
 
      obj['UV.ChildCount'] = capture.getChildrenCount();
@@ -1183,7 +1180,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     }
 
     //Send capture request, return status
-    return capture.sendCaptureRequest(eventInfo, eventTriggerer, true);  
+    return capture.sendCaptureRequest(eventInfo, eventTriggerer, true);
   },
 
   /**
@@ -1220,7 +1217,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     }
 
     //Send capture request
-    return capture.sendCaptureRequest(eventInfo, eventTriggerer, true);  
+    return capture.sendCaptureRequest(eventInfo, eventTriggerer, true);
   },
 
   /**
@@ -1254,10 +1251,10 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
 
       var regionName = _.first(data.regions).name;
       this.feedback = 'Ambiguity resolved. Region selected: ' + regionName;
-      
+
       if(!_.isEmpty(regionName) && regionName.length > 40) {
         var showRegion = regionName.substring(0,40);
-       
+
         $('#div_tagContainer').before('<span class="nonClickableTag truncatedTag" tagData="' +
           regionName.replace(regex,'&#39;') + '" onmouseover="App.searchView.showTagTooltip(\'' +
             regionName.replace(regex,'&#39;') + '\', event)" >' + showRegion + '...</span>');
@@ -1272,7 +1269,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         nlpBrandNames = nlpbrand.split(',');
       }
       var tempCount = 0;
-      
+
       if (!_.isEmpty(nlpBrandNames)) {
         for (tempCount=0; tempCount < nlpBrandNames.length; tempCount++) {
 
@@ -1285,7 +1282,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
                   showBrand + '...<span class="clickableTagCloseIcon"></span></span>');
           }
           else if(!_.isEmpty(nlpBrandNames[tempCount]) && nlpBrandNames[tempCount].length <= 20) {
-            $('#div_tagContainer').before('<span class="clickableTag" tagData="' + 
+            $('#div_tagContainer').before('<span class="clickableTag" tagData="' +
               nlpBrandNames[tempCount].replace(regex,'&#39;') + '" >' + nlpBrandNames[tempCount] +
               '<span class="clickableTagCloseIcon"></span></span>');
           }
@@ -1312,30 +1309,30 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       nlpHotelIds[0] = data.hotels[0].id;
       isQueryExactHotelSearch = true;
       detailsOfExactMatchHotel.HOTEL = data.hotels[0].name;
-      detailsOfExactMatchHotel.CENTER = data.hotels[0].center;        
+      detailsOfExactMatchHotel.CENTER = data.hotels[0].center;
       ambigSearchQuery = this.getUserQuery();
       this.feedback = 'Ambiguity resolved. Hotel selected: ' + data.hotels[0].name;
-      
+
       if(!_.isEmpty(data.hotels[0].name) && data.hotels[0].name.length > 20) {
         var showHotel = data.hotels[0].name.substring(0,20);
-        $('#div_tagContainer').before('<span class="nonClickableTag truncatedTag" tagData"' + 
-          data.hotels[0].name.replace(regex,'&#39;') +'" onmouseover="App.searchView.showTagTooltip(\'' + 
+        $('#div_tagContainer').before('<span class="nonClickableTag truncatedTag" tagData"' +
+          data.hotels[0].name.replace(regex,'&#39;') +'" onmouseover="App.searchView.showTagTooltip(\'' +
             data.hotels[0].name.replace(regex, '&#39;') + '\', event)" >' + showHotel + '...</span>');
       }
       else if(!_.isEmpty(data.hotels[0].name) && data.hotels[0].name.length <= 20) {
-        $('#div_tagContainer').before('<span class="nonClickableTag" tagData"' + 
+        $('#div_tagContainer').before('<span class="nonClickableTag" tagData"' +
           data.hotels[0].name.replace(regex,'&#39;') + '">' + data.hotels[0].name + '</span>');
       }
       var center = new aidep.dmap.LatLong(data.hotels[0].center.lat, data.hotels[0].center.lng);
       map.setCenter(center);
       map.setZoom(15);
     }
-    
+
     var ambigoptions = '';
     $('#ul_disambigOptions li').each(function(){
       ambigoptions += $(this).text() + ' | ';
     });
-    
+
     //Define variables related to event
     var eventInfo = {
       'UV.EventType': 'Ambig',                                  // This needs to be event dependent
@@ -1354,10 +1351,10 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       eventInfo['UV.SearchQueryId'] = capturePrevSearchID.SearchQueryId;
       eventInfo['UV.BrowserGUID'] =  capturePrevSearchID.BrowserGUID;
     }
-  
+
     //Send capture request
-    capture.sendCaptureRequest(eventInfo, 'AmbigSelection', true); 
-    
+    capture.sendCaptureRequest(eventInfo, 'AmbigSelection', true);
+
     //itemsvcHotel.makeRequests();
     itemsvcHotel.clearItemsRequests();
     this.putVotingPop();
@@ -1375,7 +1372,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         e = region.center.lng,
         s = region.center.lat,
         w = region.center.lng;
-    
+
     for(var i = 0; i < hotels.length; i++) {
       lat = hotels[i].center.lat;
       lng = hotels[i].center.lng;
@@ -1400,7 +1397,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       SWlng : w
     };
   },
-  
+
   /**
    * Put single POI marker of type 'classname' on map, defaults to 'poiMarker'
    *
@@ -1434,9 +1431,9 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
           }
         });
 
-    poiContent.push(poiMapMarker);             
+    poiContent.push(poiMapMarker);
   },
-  
+
   /**
    * Put all POI markers on map and assigns the class 'poiMarker', i.e. non-special markers
    * @param {Array} pois - An array of poi objects
@@ -1446,7 +1443,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       this.putPOIMarkerOnMap(poi, 'poiMarker');
     }, this);
   },
-  
+
   /**
    * Remove all POI markers from map
    *
@@ -1457,7 +1454,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       poi.remove();
     });
 
-    poiContent = [];  
+    poiContent = [];
   },
 
 
@@ -1479,13 +1476,13 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
 
   /**
    * Display a marker for a hotel not found in the DMAP response
-   */  
+   */
   displayHotelNotFoundMarker: function (notFoundHotelDetails) {
     var hotelLat = notFoundHotelDetails.CENTER.lat,
         hotelLng = notFoundHotelDetails.CENTER.lng,
-        hotelName = notFoundHotelDetails.HOTEL, 
-        center = new aidep.dmap.LatLong(hotelLat,hotelLng);   
-    
+        hotelName = notFoundHotelDetails.HOTEL,
+        center = new aidep.dmap.LatLong(hotelLat,hotelLng);
+
     var missingHotel = new Content(map, center, {
       id : hotelName,
       className : 'missingHotelMarker',
@@ -1511,8 +1508,8 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
           }
         }
       }
-    }); 
-     
+    });
+
     var dataForMissingHotel = {
         hotelId : null,
         name : hotelName,
@@ -1523,11 +1520,11 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         displayPrice : null,
         missingHotelMessage : ''
     };
-      
+
     this.updateDetailsPaneContent(dataForMissingHotel);
     this.showDetailsPane();
   },
-  
+
   /**
    * Remove missing hotel marker from the map
    */
@@ -1536,18 +1533,18 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       $('div').remove('.missingHotelMarker');
     }
   },
-  
+
   /**
    * Set ambig feedback and filter attributes
    * @param {Object} result - Semantha's Nautilus Service result response
    */
   ambigHelper: function(result) {
-    this.feedback = result.FEEDBACK;     
+    this.feedback = result.FEEDBACK;
     var ambigoptions = '';
     $('#ul_disambigOptions li').each(function(){
       ambigoptions += $(this).text() + ' | ';
     });
-    
+
     //Define variables related to event
     var eventInfo = {
       'UV.EventType': 'Ambig',                          // This needs to be event dependent
@@ -1567,9 +1564,9 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       eventInfo['UV.BrowserGUID'] =  capturePrevSearchID.BrowserGUID;
     }
 
-    return capture.sendCaptureRequest(eventInfo, 'AmbigWindowOpen', true); 
-  },    
-  
+    return capture.sendCaptureRequest(eventInfo, 'AmbigWindowOpen', true);
+  },
+
   /**
    * Update filter attributes in case of successful NLP response
    * @param {Object} result - Semantha's Nautilus Service result response
@@ -1580,23 +1577,23 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       nlpHotelIds = [result.HOTELID];
       isQueryExactHotelSearch = true;
       zoom = 15;
-      updateAmenityLabel(); 
+      updateAmenityLabel();
 
       if (result.HOTEL != undefined) {
-        detailsOfExactMatchHotel.HOTEL = result.HOTEL;              
+        detailsOfExactMatchHotel.HOTEL = result.HOTEL;
       }
-      
+
       if (result.CENTER != undefined) {
         detailsOfExactMatchHotel.CENTER = result.CENTER;
-      }       
-    } 
+      }
+    }
     else { // only apply star rating/themes/brand when NOT exact hotel match
       //Set star rating
       if (result.HOTEL_STAR_RATING != undefined) {
         nlpStar = nlpStarMin = nlpStarMax = result.HOTEL_STAR_RATING;
         addNewStarRatingListFilterGivenRating(nlpStar);
       }
-      
+
       //Set brand string
       if (result.HOTEL_BRAND != undefined) {
 
@@ -1605,7 +1602,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         this.feedback = this.feedback + ' Hotel Brand Match ' + nlpbrand;
         regionhotelbrandlabel = ' | Brands: ' + nlpbrand;
       }
-      
+
       //Set hotel attributes of theme and amenities
       if (result.HOTEL_ATTRIBUTE != undefined) {
 
@@ -1623,7 +1620,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
 
             nlpAmenityIds.push(amenityId);
 
-            if (getAffinityCategory(amenityId) === 'Theme') {                     
+            if (getAffinityCategory(amenityId) === 'Theme') {
               if (isExtraFilter(amenityId)) {
                 addExtraFilter('div_themesList',amenityId);
               }
@@ -1631,24 +1628,24 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
                 selectAmenityFilter(amenityId);
               }
             }
-            else {                     
-              if(isExtraFilter(amenityId)){                         
+            else {
+              if(isExtraFilter(amenityId)){
                 addExtraFilter('div_amenitiesList',amenityId);
               }
               else {
                 selectAmenityFilter(amenityId);
               }
             }
-          } 
-        }         
+          }
+        }
       }
       //Update the amenity labels
       updateAmenityLabel();
     }
-        
+
     return 'filterAttributesUpdated';
   },
-  
+
   /**
    * Returns an attribute string (ex. "+ Pool & Beach & 4 star") to be shown in disambig dialog
    *
@@ -1660,10 +1657,10 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     var starRating = '',
         amenities = '';
 
-    if (typeof(result.HOTEL_STAR_RATING) !== 'undefined') {     
+    if (typeof(result.HOTEL_STAR_RATING) !== 'undefined') {
       starRating = result.HOTEL_STAR_RATING.substring(0,1) + ' stars';
     }
-  
+
     if (typeof(result.HOTEL_ATTRIBUTE) !== 'undefined') {
       for (var n = 0; n < result.HOTEL_ATTRIBUTE.length; n++) {
         if (!_.isEmpty(amenities)) {
@@ -1674,9 +1671,9 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         else if (!_.isEmpty(result.HOTEL_ATTRIBUTE)) {
           amenities = amenities + ' & ' + result.HOTEL_ATTRIBUTE[n].capitalize();
         }
-      }         
+      }
     }
-  
+
     if (_.isEmpty(starRating) && _.isEmpty(amenities)) {
       return '';
     } else if (_.isEmpty(starRating) && !_.isEmpty(amenities)) { //amenities with no star rating
@@ -1687,7 +1684,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       return amenities + ' & ' + starRating;
     }
   },
-  
+
   /**
    * Remove clicked brand tag and update the filter brand string to be sent to dmap and show new result
    * @returns {String} 'brandRemoved'
@@ -1702,13 +1699,13 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     else if($(e.target).hasClass('clickableTagCloseIcon')) {
       brandNameToBeRemoved = $(e.target).parent().attr('tagData');
       $(e.target).parent().remove();
-    }     
-    
+    }
+
     //if brandNameToBeRemoved is not undefined
     if(brandNameToBeRemoved !== undefined ) {
       brandNameToBeRemoved = brandNameToBeRemoved.substring(0,brandNameToBeRemoved.length);
     }
-    //update nlpbrand variable 
+    //update nlpbrand variable
     nlpbrand = this.removeValueFromString(nlpbrand,brandNameToBeRemoved);
     //Clear map items
     itemsvcHotel.clearItems();
@@ -1720,10 +1717,10 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     //make DMAP requests
     itemsvcHotel.makeRequests();
     itemsvcHotel.clearItemsRequests();
-    
+
     return 'brandRemoved';
   },
-  
+
   /**
    * Remove a value from a string/list based on a given separator
    *
@@ -1743,7 +1740,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     }
     return list;
   },
-  
+
   /**
    * Display voting popup (thumbs up/down)
    */
@@ -1752,7 +1749,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     $('#div_filterBarOuterContainer').qtip({
       prerender: true,
       content: {
-        text: '', 
+        text: '',
         title: content,
         button: $('<span class="customCloseIcon"></span>')
       },
@@ -1772,11 +1769,11 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       hide: {
         fixed: true,
         event: 'this.click',
-        target: $('.thumbup','.thumbdown')          
+        target: $('.thumbup','.thumbdown')
       },
       style: {
         classes: 'qtip-dark',
-        tip: { 
+        tip: {
           corner: 'top left',
           mimic: 'top right',
           border: 1,
@@ -1786,7 +1783,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       }
     });
   },
-  
+
   /**
    * Show thumb up feedback, send info to capture
    */
@@ -1796,7 +1793,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     $('#div_filterBarOuterContainer').qtip({
       prerender: true,
       content: {
-        text: '<textarea id="ip_feedback" class="jq_watermark" spellcheck="false" placeholder=\"' + getLocalizedString('feedback.up.watermark') + '\"></textarea><div id="div_sendVoteButtonOuter" class="roundEdgeForIE9 sendVoteButtonOuter"><a class="blueButton sendFeedbackButton" id="lnk_sendVote">Send</a></div>',  
+        text: '<textarea id="ip_feedback" class="jq_watermark" spellcheck="false" placeholder=\"' + getLocalizedString('feedback.up.watermark') + '\"></textarea><div id="div_sendVoteButtonOuter" class="roundEdgeForIE9 sendVoteButtonOuter"><a class="blueButton sendFeedbackButton" id="lnk_sendVote">Send</a></div>',
         title: content,
         button: $('<span class="customCloseIcon"></span>')
       },
@@ -1817,7 +1814,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       },
       style: {
         classes: 'qtip-dark',
-        tip: { 
+        tip: {
           corner: 'top left',
           mimic: 'top right',
           border: 1,
@@ -1825,7 +1822,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
           height: 8
         }
       }
-    }); 
+    });
     //Define variables related to event
     var eventInfo = {
       'UV.EventType': 'Vote',                         // This needs to be event dependent
@@ -1843,11 +1840,11 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       eventInfo['UV.SearchQueryId'] = capturePrevSearchID.SearchQueryId;
       eventInfo['UV.BrowserGUID'] =  capturePrevSearchID.BrowserGUID;
     }
-  
+
     //Send capture request
-    return capture.sendCaptureRequest(eventInfo, 'ThumbsIconClicked', true); 
+    return capture.sendCaptureRequest(eventInfo, 'ThumbsIconClicked', true);
   },
-  
+
   /**
    * Show thumb down feedback, send info to capture
    */
@@ -1857,7 +1854,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     $('#div_filterBarOuterContainer').qtip({
       prerender: true,
       content: {
-        text: '<textarea id="ip_feedback" class="jq_watermark" spellcheck="false" placeholder=\"' + getLocalizedString('feedback.down.watermark') + '\"></textarea><div id="div_sendVoteButtonOuter" class="roundEdgeForIE9 sendVoteButtonOuter"><a class="blueButton sendFeedbackButton" id="lnk_sendVote">Send</a></div>',  
+        text: '<textarea id="ip_feedback" class="jq_watermark" spellcheck="false" placeholder=\"' + getLocalizedString('feedback.down.watermark') + '\"></textarea><div id="div_sendVoteButtonOuter" class="roundEdgeForIE9 sendVoteButtonOuter"><a class="blueButton sendFeedbackButton" id="lnk_sendVote">Send</a></div>',
         title: content,
         button: $('<span class="customCloseIcon"></span>')
       },
@@ -1878,7 +1875,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       },
       style: {
         classes: 'qtip-dark',
-        tip: { 
+        tip: {
           corner: 'top left',
           mimic: 'top right',
           border: 1,
@@ -1904,19 +1901,19 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       eventInfo['UV.SearchQueryId'] = capturePrevSearchID.SearchQueryId;
       eventInfo['UV.BrowserGUID'] =  capturePrevSearchID.BrowserGUID;
     }
-  
+
     //Send capture request
-     return capture.sendCaptureRequest(eventInfo, 'ThumbsIconClicked', true);  
+     return capture.sendCaptureRequest(eventInfo, 'ThumbsIconClicked', true);
   },
-  
+
   /**
    * Send detail feedback, send info to capture
    */
-  sendFeedback: function () { 
+  sendFeedback: function () {
     var tempCaptureResponse = '';
 
     if ($('#ip_feedback').val() !== '') {
-      
+
       //Define variables related to event
       var eventInfo = {
         'UV.EventType': 'Vote',                         // This needs to be event dependent
@@ -1936,13 +1933,13 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       }
 
       //Send capture request
-      tempCaptureResponse = capture.sendCaptureRequest(eventInfo, 'DetailFeedbackSend', true); 
+      tempCaptureResponse = capture.sendCaptureRequest(eventInfo, 'DetailFeedbackSend', true);
     }
 
     $('#div_filterBarOuterContainer').qtip({
       prerender: true,
       content: {
-        text: '', 
+        text: '',
         title: '<div class="finalFeedback">' + getLocalizedString('feedback.final') + '</div>'
       },
       position: {
@@ -1966,7 +1963,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       },
       style: {
         classes: 'qtip-dark',
-        tip: { 
+        tip: {
           corner: 'top left',
           mimic: 'top right',
           border: 1,
@@ -1977,12 +1974,12 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     });
 
     return tempCaptureResponse;
-  },  
-  
+  },
+
   /**
    * Show ambig thumbup feedback, send info to capture
    */
-  showAmbigUpFeedback: function () {  
+  showAmbigUpFeedback: function () {
     $('#div_ambigFeedback').hide();
     $('#div_ambigDown').hide();
     $('#div_ambigUp').show();
@@ -1994,7 +1991,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     $('#ul_disambigOptions li').each(function(){
       ambigoptions += $(this).text() + ' | ';
     });
-    
+
     //Define variables related to event
     var eventInfo = {
       'UV.EventType': 'Ambig',                        // This needs to be event dependent
@@ -2013,15 +2010,15 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       eventInfo['UV.SearchQueryId'] = capturePrevSearchID.SearchQueryId;
       eventInfo['UV.BrowserGUID'] =  capturePrevSearchID.BrowserGUID;
     }
-  
+
     //Send capture request
-    return capture.sendCaptureRequest(eventInfo, 'AmbigThumbsIconClicked', true);  
+    return capture.sendCaptureRequest(eventInfo, 'AmbigThumbsIconClicked', true);
   },
-  
+
   /**
    * Show ambig thumbdown feedback. send info to capture
    */
-  showAmbigDownFeedback: function () {  
+  showAmbigDownFeedback: function () {
     $('#div_ambigFeedback').hide();
     $('#div_ambigUp').hide();
     $('#div_ambigDown').show();
@@ -2033,7 +2030,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
     $('#ul_disambigOptions li').each(function(){
       ambigoptions += $(this).text() + ' | ';
     });
-    
+
     //Define variables related to event
     var eventInfo = {
       'UV.EventType': 'Ambig',                        // This needs to be event dependent
@@ -2052,15 +2049,15 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       eventInfo['UV.SearchQueryId'] = capturePrevSearchID.SearchQueryId;
       eventInfo['UV.BrowserGUID'] =  capturePrevSearchID.BrowserGUID;
     }
-  
+
     //Send capture request
-    return capture.sendCaptureRequest(eventInfo, 'AmbigThumbsIconClicked', true);  
+    return capture.sendCaptureRequest(eventInfo, 'AmbigThumbsIconClicked', true);
   },
 
   /**
    * Show ambig detail feedback, send info to capture
    */
-  showAmbigFinalFeedback: function () { 
+  showAmbigFinalFeedback: function () {
       $('#div_ambigFeedback').hide();
       $('#div_ambigUp').hide();
       $('#div_ambigDown').hide();
@@ -2069,7 +2066,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
       $('#ul_disambigOptions li').each(function(){
         ambigoptions += $(this).text() + ' | ';
       });
-    
+
       var userfeedback = '';
       if ($('#ip_ambigfeedbackup').val() !== '')
       {
@@ -2080,7 +2077,7 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         userfeedback = $('#ip_ambigfeedbackdown').val();
       }
       if (userfeedback !== '') {
-        
+
       //Define variables related to event
       var eventInfo = {
         'UV.EventType': 'Ambig',                        // This needs to be event dependent
@@ -2099,10 +2096,10 @@ App.Views.SearchView = Backbone.Marionette.View.extend({
         eventInfo['UV.SearchQueryId'] = capturePrevSearchID.SearchQueryId;
         eventInfo['UV.BrowserGUID'] =  capturePrevSearchID.BrowserGUID;
       }
-    
+
       //Send capture request
-       return capture.sendCaptureRequest(eventInfo, 'AmbigDetailFeedbackSend', true); 
-      } 
+       return capture.sendCaptureRequest(eventInfo, 'AmbigDetailFeedbackSend', true);
+      }
   },
 
   /**

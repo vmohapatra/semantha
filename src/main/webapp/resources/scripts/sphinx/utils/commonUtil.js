@@ -32,7 +32,12 @@ function getAndRemoveSessionStorageKey(key) {
 }
 
 var getLocalizedString = function() {
-	var localizedStrings = JSON.parse(document.getElementById('localizedStrings').getAttribute('data-json'));
+    return function(key) {
+        return "no localization";
+    };
+
+    var localizedStrings = JSON.parse(document.getElementById('localizedStrings').getAttribute('data-json'));
+
 
 	return function(key) {
 		return localizedStrings[key];
@@ -136,10 +141,10 @@ function setTravelRequestWidth() {
 
 	// ... and the date picker...
 	width -= $("#div_datepicker").outerWidth(true);
-	
+
 	// ... and the view reservations container
 	width -= $("#div_viewReservationsContainer").outerWidth(true);
-	
+
 	// ... and the view Language container
 	width -= $("#div_viewLanguageContainer").outerWidth(true);
 
@@ -148,15 +153,15 @@ function setTravelRequestWidth() {
 
 	// ... and finally the settings container.
 	width -= $("#div_settingsContainer").outerWidth(true);
-	
+
 	width += 15;//Adjusting the width to offset width after settings block
-	
+
 	if($('#div_micBtnContainer').css('display')=='block'){
 		$('#ip_travelRequest').css("width",width - 24 - 3 + 43 - 12 + 14); // fixed bug [DEMO-965]
 		$('#div_input').css("margin-left","40px");
 	} else {
-        
-		
+
+
         //Adjustment for IE 8
         if($.browser.msie && $.browser.version == 8) {
             $('#ip_travelRequest').css("width",width - 3 + 43 - 12 + 14 - 2);
@@ -166,59 +171,59 @@ function setTravelRequestWidth() {
             $('#ip_travelRequest').css("width",width - 3 + 43 - 12 + 14);
         }
 	}
-	
+
 }
 
 /**
  * Adjusts the width of the specified element based on the length of its placeholder text.
  * IE does not support the placeholder attribute. So for this to work on IE, define a
- * custom attribute called 'customPlaceholder' that holds the placeholder text as well.  
+ * custom attribute called 'customPlaceholder' that holds the placeholder text as well.
  */
 function adjustWidthBasedOnPlaceholder(element) {
-	
+
 	// Create a span element around the placeholder text of the element
 	// (which is most likely going to be a textbox) whose width needs to
 	// be adjusted based on its placeholder text.
 	// Getting the width on the span element will give the width in px.
 	// Delete the span element when done.
-	
+
 	var testSpan = document.createElement( "span" );
 	var testSpanElement = $(testSpan);
-	
+
 	var spanContent = document.createTextNode( element.attr("customPlaceholder") );
 	testSpan.appendChild( spanContent );
-	
+
 	element.parent().prepend( testSpan );
-	
+
 	testSpanElement.attr({
 	    'style': 'visibility:hidden',
 	    'class': element.attr('class')
 	});
-	
+
 	testSpanElement.css( "font", element.css('font') );
-	
+
 	// Add the width of the 'padding + border + margin' of the existing
 	// element to the width of the test span element.
 	var extraWidth = element.outerWidth(true) - element.width();
 	element.css( "width", testSpanElement.width() + extraWidth );
-	
+
 	testSpanElement.remove();
 }
 
 /**
  * Constructs a string that encapsulates the room details information as
  * selected by the user.
- * 
+ *
  * The format of the string is as follows:
  * "adultCountRoom1,child1_age,...childN_age-adultCountRoom2,child1_age,...childN_age"
  * and so on.
  */
 function getRoomDetails() {
-	
+
 	var roomDetails = '';
 	var roomItems = getRoomItems();
 	var roomCount = roomItems.length;
-	
+
 	roomItems.each(function(roomIdx) {
 		roomDetails = roomDetails + $(this).find('select.adultsCount').val();
 		$(this).find('div.childAge select:enabled').each(function(idx) {
@@ -228,25 +233,25 @@ function getRoomDetails() {
 				roomDetails = roomDetails + ',' + age;
 			}
 		});
-		
+
 		if( roomIdx < roomCount-1 )
 		{
 			roomDetails = roomDetails + '-';
 		}
 	});
-	
+
 	return roomDetails;
 };
 
 function isDateless() {
   var dpFrom = $("#ip_dpfrom").val(),
       dpTo = $("#ip_dpto").val();
-  
+
   return (dpFrom.indexOf('/') === -1 && dpTo.indexOf('/') === -1);
 }
 
 function getLengthOfStay(checkInDate, checkOutDate){
-       
+
   var los;
 
   if(!isNaN(checkInDate) && !isNaN(checkOutDate)) {
@@ -293,7 +298,7 @@ String.prototype.format = function() {
 // Reference: http://es5.github.io/#x15.4.4.18
 // Implementation of Array.prototype.forEach
 (function() {
-	
+
 	if (!Array.prototype.forEach) {
 
 	  Array.prototype.forEach = function(callback, thisArg) {

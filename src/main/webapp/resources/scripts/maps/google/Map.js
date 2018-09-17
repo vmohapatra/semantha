@@ -1,4 +1,4 @@
-var 
+var
 	Item=aidep.dmap.Item,//import
 	Bounds=aidep.dmap.Bounds,//import
 	LatLong=aidep.dmap.LatLong,//import
@@ -21,7 +21,7 @@ Util.namespace("aidep.dmap.google");
 function initProvider() {
 	var scripts=document.getElementsByTagName('script'),
 		scriptUrl=scripts[scripts.length-1].src,
-		parseChannel=/\?.*?[&]?channel=([a-zA-Z0-9\-\.]*)/.exec(scriptUrl),
+		parseChannel=/\?.*?[&]?channel=([a-zA-Z0-9\-\.]*)/.exec(scriptUrl) || 'aidep.dmap.demo',
 		parseHost=/\?.*?[&]?host=([a-zA-Z0-9:\-\.]*)/.exec(scriptUrl),
         parseProtocol=/\?.*?[&]?protocol=([a-zA-Z]*)/.exec(scriptUrl),
 		url="http://maps.googleapis.com/maps/api/js?sensor=true&v="+GOOGLE_VERSION;
@@ -40,7 +40,7 @@ function initProvider() {
 initProvider();
 
 /**
- * @namespace implementation of Dynamic Map API that uses Google Maps.  
+ * @namespace implementation of Dynamic Map API that uses Google Maps.
  * @param {Node} container owning div.  Also supports {String} as the ID of the div, which can be used prior to the 'load' event.
  * @param {aidep.dmap.google.Map.Configuration} config Configuration to initialize with.  Map supports passing a regular {Object} with the same property names as {aidep.dmap.google.Map.Configuration}.
  * @Author Sven Zethelius
@@ -49,9 +49,9 @@ aidep.dmap.google.Map=function(container,config){
 	this.container=null;
 	this.provider=null; // provider is delay s_loaded
 	this.events=new aidep.dmap.common.Events(this, MAP_EVENT_NAMES, MAP_EVENT_HANDLERS);
-	
+
 	this.config=new Map.Configuration(config);
-	
+
 	var map=this,
 		timerTimeout=setTimeout(function() {
 			timerTimeout=null;
@@ -106,7 +106,7 @@ aidep.dmap.google.Map.Configuration=function(config) {
 // better description for listener
 // TODO customize jsdoc template to better display events
 /**
- * @event 
+ * @event
  * @description Event fired when the map provider is loaded
  */
 aidep.dmap.google.Map.EVENT_MAP_PROVIDER_LOADED='mapproviderloaded';
@@ -203,9 +203,9 @@ aidep.dmap.google.Map.prototype.addEventListener=function(evt,listener) {
 };
 
 /**
- * Remove an existing listener for a specific event.  Caller of #addEventListener must track the function instance 
+ * Remove an existing listener for a specific event.  Caller of #addEventListener must track the function instance
  * to remove it.
- * 
+ *
  * @param {String} evt event to listen for
  * @param {Function} listener function to invoke when the event happens
  * @return true if the listener was successfully removed
@@ -215,7 +215,7 @@ aidep.dmap.google.Map.prototype.removeEventListener=function(evt,listener){
 };
 
 /**
- * The current map provider, or null if the provider has not been initialized.  Map provider may be delay 
+ * The current map provider, or null if the provider has not been initialized.  Map provider may be delay
  * initialized.  If this method returns null, register an event listener for #EVENT_MAP_PROVIDER_LOADED.  Note that
  * this method is a leaky abstraction that will tie you to the particular map provider.
  * @returns {Object} the current map provider instance
@@ -241,7 +241,7 @@ aidep.dmap.google.Map.prototype.getConfiguration=function() {
 };
 
 /**
- * Change the center for the map.  
+ * Change the center for the map.
  * @param {aidep.dmap.LatLong} center
  */
 aidep.dmap.google.Map.prototype.setCenter=function(/*LatLong*/center) {
@@ -256,10 +256,10 @@ aidep.dmap.google.Map.prototype.setCenter=function(/*LatLong*/center) {
  */
 aidep.dmap.google.Map.prototype.getCenter=function() {
 	var c;
-	if(this.provider && // provider initialized 
+	if(this.provider && // provider initialized
 		(c=this.provider.getCenter())) {// center set on provider
 		return fromLatLongImpl(c);
-	} 
+	}
 	if(c=this.config.center) {
 		if(c instanceof LatLong) {
 			return c;
@@ -269,12 +269,12 @@ aidep.dmap.google.Map.prototype.getCenter=function() {
 };
 
 /**
- * Get the viewable bounds 
- * @returns {aidep.dmap.Bounds} 
+ * Get the viewable bounds
+ * @returns {aidep.dmap.Bounds}
  */
 aidep.dmap.google.Map.prototype.getBounds=function() {
 	var b,c,z,h,w;
-	if(this.provider && 
+	if(this.provider &&
 		(b=this.provider.getBounds())) {
 		return new Bounds(fromLatLongImpl(b.getNorthEast()), fromLatLongImpl(b.getSouthWest()));
 	}
@@ -323,15 +323,15 @@ aidep.dmap.google.Map.prototype.getZoom=function() {
 
 /**
  * called before initMapProvider to ensure map container and google.maps is available before attempting to create Map.
- * 
- * @param {aidep.dmap.google.Map} map 
+ *
+ * @param {aidep.dmap.google.Map} map
  * @param {String} container
  * @returns {Boolean} true if its ready to initialize, false otherwise.
  */
 function beforeInit(map, container) {
 	if(!window.google || !google.maps || !google.maps.Map)
 		return false; // google hasn't loaded
-	
+
 	if(!map.container) {
 		if(container.parentElement)
 			map.container=container;
@@ -358,11 +358,11 @@ function initContainer(map) {
 }
 
 /**
- * @param {aidep.dmap.google.Map} map 
+ * @param {aidep.dmap.google.Map} map
  * @param {String} evte {aidep.dmap.google.Map} event
  * @param {String} evtg {google.maps.Map} event
  * @param {Function} argf function to convert the {google.maps.Map} event arguments to {aidep.dmap.google.Map} event arguments
- * 
+ *
  */
 function registerGoogleEvent(map,evte,evtg,argf) {
 	// delay register any event that requires google until the map provider is initialized so we make sure google is available
@@ -378,7 +378,7 @@ function convertDefaultArguments() {
 	return [];
 };
 function convertMouseEvents(me) {
-	return [fromLatLongImpl(me.latLng)]; 
+	return [fromLatLongImpl(me.latLng)];
 };
 function createMapEventHandler(evte,evtg,argf) {
 	MAP_EVENT_HANDLERS[evte]=function(){
@@ -399,7 +399,7 @@ createMapEventHandler(Map.EVENT_MOUSE_OVER,     'mouseover',      convertMouseEv
 
 /**
  * create the {google.maps.Map} implementation and wire the necessary event handling.
- * @param map 
+ * @param map
  */
 function initMapProvider(map) {
 	if(map.provider) // oops, we got initialized twice, shouldn't happen
@@ -408,7 +408,7 @@ function initMapProvider(map) {
 	LatLongImpl=google.maps.LatLng;
 	var implConfig={
 			zoom : map.config.zoom,
-			center : toLatLongImpl(map.config.center), 
+			center : toLatLongImpl(map.config.center),
 			mapTypeId : google.maps.MapTypeId.ROADMAP,
 			minZoom : map.config.zoomMin,
 			maxZoom : map.config.zoomMax,
@@ -420,13 +420,13 @@ function initMapProvider(map) {
             streetViewControl:map.config.showStreetViewControl,
             streetViewControlOptions:map.config.streetViewControlOpts
 		};
-	
+
 	initContainer(map);
 
 	map.provider=new MapImpl(map.container,implConfig);
 
 	// TODO handle div resizes: google.maps.event.trigger(map, 'resize');
-	
+
 	map.events.fireEvent(Map.EVENT_MAP_PROVIDER_LOADED, [map.provider]);
 	map.events.clearListeners(Map.EVENT_MAP_PROVIDER_LOADED); // don't keep listener references since this is fired once.
 };
@@ -434,7 +434,7 @@ function initMapProvider(map) {
 
 /**
  * convert either {aidep.dmap.Item} or {aidep.dmap.LatLong} to a {google.maps.LatLng}
- * @param o 
+ * @param o
  * @returns {google.maps.LatLng}
  */
 function toLatLongImpl(o) {
@@ -442,7 +442,7 @@ function toLatLongImpl(o) {
 		o=o.getLatLong();
 	}
 	if(o instanceof Array) {
-		if(o.length == 1) 
+		if(o.length == 1)
 			o=o[0];
 		else {
 			// TODO support multi lat/lng region
@@ -450,7 +450,7 @@ function toLatLongImpl(o) {
 		}
 	}
 	if(o instanceof LatLong) {
-		return new LatLongImpl(o.getLat(),o.getLong());		
+		return new LatLongImpl(o.getLat(),o.getLong());
 	}
 	return null;
 };

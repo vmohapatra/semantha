@@ -1015,12 +1015,12 @@ function getPriceRange(){
 	});
 }
 
-function getGemmaServerData(){
-	$.getJSON('gemmaServerData',function(data){
-		gemmaServerData = data;
-		getGemmaVersionProcess();
-	});
-}
+// function getGemmaServerData(){
+// 	$.getJSON('gemmaServerData',function(data){
+// 		gemmaServerData = data;
+// 		getGemmaVersionProcess();
+// 	});
+// }
 
 function getLcmAmenityIdMappings(){
 
@@ -1124,9 +1124,9 @@ function getData() {
 	if(lcmAmenityIdMappingData==null){
 		getLcmAmenityIdMappings();
 	}
-	if(gemmaServerData==null){
-		getGemmaServerData();
-	}
+	// if(gemmaServerData==null){
+	// 	getGemmaServerData();
+	// }
 	if (!$.browser.msie||window.XDomainRequest)
 		autoUrl =  gemmaServerData.gemmaURL + "&prefix=" + prefix;
 	if (!window.XDomainRequest) {
@@ -2505,8 +2505,8 @@ function renderHotel(sendRequest)
 	}
 }
 
-function getLCMAttrIds(semanthaid){
-	return lcmAmenityIdMappingData.data[semanthaid];
+function getLCMAttrIds(sphinxid){
+	return lcmAmenityIdMappingData.data[sphinxid];
 }
 
 function filterHotel(data, content) {
@@ -3138,7 +3138,7 @@ function onPageReady()
 //	if ($.browser.msie &&parseInt($.browser.version, 10) == 7)
 //	$("#parseDiv").css("top", "26px");
 
-	getGemmaServerData();
+	// getGemmaServerData();
 
 	getLcmAmenityIdMappings();
 	getPriceMarkerNum();
@@ -3183,19 +3183,20 @@ function onPageReady()
 	roomFilter=getRoomFilterJSON();
 }
 
-function getGemmaVersionProcess(){
-	//console.log('getGemmaVersionProcess');
-	getGemmaVersion();
-	gemmaVersionHandler = setTimeout(function(){
-		//console.log('setTimeout');
-		if($('#gemmaVersion').text()==''){
-			getGemmaVersionProcess();
-		}else{
-			//console.log('clearTimeout');
-			clearTimeout(gemmaVersionHandler);
-		}
-	},2000);
-}
+// function getGemmaVersionProcess(){
+// 	//console.log('getGemmaVersionProcess');
+// 	getGemmaVersion();
+// 	gemmaVersionHandler = setTimeout(function(){
+// 		//console.log('setTimeout');
+// 		if($('#gemmaVersion').text()==''){
+// 			getGemmaVersionProcess();
+// 		}else{
+// 			//console.log('clearTimeout');
+// 			clearTimeout(gemmaVersionHandler);
+// 		}
+// 	},2000);
+// }
+
 function searchIconClick(){
 	createTravelRequest('Manual', 'SearchBoxIconClick');
 }
